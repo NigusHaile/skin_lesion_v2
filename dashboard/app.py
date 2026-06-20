@@ -3,6 +3,7 @@ dashboard/app.py  ·  DermiAI  ·  Skin Lesion Analysis Platform
 Run:  streamlit run dashboard/app.py
 """
 import sys
+import json
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -346,8 +347,242 @@ hr { border-color: var(--gray-200) !important; }
   padding: .75rem 1rem; font-size: .81rem; color: var(--teal-700);
   display: flex; align-items: flex-start; gap: .5rem; margin-top: .75rem;
 }
+
 </style>
 """, unsafe_allow_html=True)
+
+# ── Top-right toolbar — injected into parent document via iframe ─
+# st.markdown() uses React dangerouslySetInnerHTML which never executes
+# <script> tags. st.components.v1.html() runs in a real iframe so JS
+# executes reliably; we push everything into window.parent.document.
+st.components.v1.html(r"""
+<script>
+(function () {
+  'use strict';
+  var P = window.parent, D = P.document;
+
+  /* ── Idempotent: remove previous render on Streamlit rerun ─── */
+  ['_trbar', '_trstyle', '_trscript'].forEach(function (id) {
+    var el = D.getElementById(id); if (el) el.remove();
+  });
+  if (P._trCloseKb) D.removeEventListener('click', P._trCloseKb);
+
+  /* ── CSS → parent <head> ─────────────────────────────────────── */
+  var sty = D.createElement('style');
+  sty.id  = '_trstyle';
+  sty.textContent = [
+    '#_trbar{position:fixed;top:10px;right:14px;z-index:2147483647;pointer-events:none}',
+    '#_trbar>*{pointer-events:auto}',
+    '#_kbwrap{position:relative;display:inline-block}',
+    '#_kbbtn{position:relative;width:36px;height:36px;background:rgba(15,23,42,.88);color:#e2e8f0;',
+    'border:1px solid rgba(255,255,255,.16);border-radius:10px;font-size:22px;line-height:1;',
+    'cursor:pointer;display:flex;align-items:center;justify-content:center;',
+    'backdrop-filter:blur(10px);padding:0;font-family:system-ui,sans-serif;',
+    'transition:background .15s,border-color .15s}',
+    '#_kbbtn:hover{background:rgba(30,41,59,.96);border-color:rgba(255,255,255,.26)}',
+    '#_kbbtn._kbrec{border-color:#ef4444!important;background:rgba(239,68,68,.22)!important}',
+    '#_recdot{display:none;position:absolute;top:5px;right:5px;width:7px;height:7px;',
+    'border-radius:50%;background:#ef4444;animation:_blink 1s step-start infinite}',
+    '@keyframes _blink{50%{opacity:0}}',
+    '#_kbpanel{display:none;position:absolute;right:0;top:44px;width:256px;',
+    'background:#1e293b;border:1px solid rgba(255,255,255,.1);border-radius:13px;',
+    'box-shadow:0 18px 52px rgba(0,0,0,.6),0 2px 8px rgba(0,0,0,.3);overflow:hidden;z-index:2147483647}',
+    '#_kbpanel._kbopen{display:block}',
+    '._kbptitle{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;',
+    'color:rgba(100,116,139,.85);padding:12px 14px 8px;border-bottom:1px solid rgba(255,255,255,.07);',
+    'font-family:Inter,system-ui,sans-serif}',
+    '._kbpsect{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;',
+    'color:rgba(100,116,139,.6);padding:10px 14px 4px;font-family:Inter,system-ui,sans-serif}',
+    '._kbprec{display:flex;align-items:center;gap:8px;padding:6px 14px 10px;',
+    'border-bottom:1px solid rgba(255,255,255,.06)}',
+    '#_recbtn{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;',
+    'background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;',
+    'color:rgba(203,213,225,.9);font-size:12px;font-weight:600;padding:7px 10px;cursor:pointer;',
+    'font-family:Inter,system-ui,sans-serif;transition:background .14s,border-color .14s,color .14s}',
+    '#_recbtn:hover{background:rgba(255,255,255,.13);color:#fff}',
+    '#_recbtn._recon{background:rgba(239,68,68,.2);border-color:#ef4444;color:#fca5a5}',
+    '#_recbtn._recon #_recicon{animation:_blink 1s step-start infinite}',
+    '#_rectimer{display:none;background:#ef4444;color:#fff;font-size:11px;font-weight:700;',
+    'font-family:monospace;padding:4px 8px;border-radius:6px;letter-spacing:.05em;white-space:nowrap}',
+    '._kbprow{display:flex;align-items:center;justify-content:space-between;padding:6px 14px}',
+    '._kbplbl{font-size:12px;color:rgba(203,213,225,.9);font-weight:500;font-family:Inter,system-ui,sans-serif}',
+    '._kbpclr{width:32px;height:24px;border:1px solid rgba(255,255,255,.18);',
+    'border-radius:5px;background:none;cursor:pointer;padding:1px}',
+    '._kbppresets{display:flex;flex-wrap:wrap;gap:5px;padding:6px 14px 10px}',
+    '._kbppre{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);',
+    'border-radius:6px;color:rgba(203,213,225,.85);font-size:11px;cursor:pointer;padding:4px 8px;',
+    'transition:background .12s;font-family:Inter,system-ui,sans-serif}',
+    '._kbppre:hover{background:rgba(255,255,255,.14);color:#fff}',
+    '._kbpfoot{border-top:1px solid rgba(255,255,255,.07);padding:8px 14px}',
+    '._kbpreset{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);',
+    'border-radius:7px;color:rgba(148,163,184,.75);font-size:11px;cursor:pointer;padding:6px;',
+    'transition:background .12s,color .12s;font-family:Inter,system-ui,sans-serif}',
+    '._kbpreset:hover{background:rgba(255,255,255,.1);color:#e2e8f0}',
+  ].join('');
+  D.head.appendChild(sty);
+
+  /* ── HTML → parent <body> ────────────────────────────────────── */
+  var bar = D.createElement('div');
+  bar.id  = '_trbar';
+  bar.innerHTML =
+    '<div id="_kbwrap">'
+    + '<button id="_kbbtn" onclick="trToggleKb(event)" title="Settings &amp; Recorder" aria-label="Settings">'
+    + '&#x22EE;<span id="_recdot"></span></button>'
+    + '<div id="_kbpanel">'
+    + '<div class="_kbptitle">System Settings</div>'
+    + '<div class="_kbpsect">Screen Recording</div>'
+    + '<div class="_kbprec">'
+    +   '<button id="_recbtn" onclick="trToggleRec()">'
+    +     '<span id="_recicon">&#x23FA;</span>'
+    +     '<span id="_reclabel">Start Recording</span>'
+    +   '</button>'
+    +   '<span id="_rectimer">00:00</span>'
+    + '</div>'
+    + '<div class="_kbpsect" style="margin-top:4px">Appearance</div>'
+    + '<div class="_kbprow"><label class="_kbplbl">App background</label>'
+    +   '<input type="color" id="_setbg" class="_kbpclr" value="#f1f5f9"'
+    +   ' oninput="trApply(\'app-bg\',this.value)"></div>'
+    + '<div class="_kbprow"><label class="_kbplbl">Sidebar color</label>'
+    +   '<input type="color" id="_setsb" class="_kbpclr" value="#0f172a"'
+    +   ' oninput="trApply(\'sb-bg\',this.value)"></div>'
+    + '<div class="_kbprow"><label class="_kbplbl">Accent color</label>'
+    +   '<input type="color" id="_setac" class="_kbpclr" value="#14b8a6"'
+    +   ' oninput="trApply(\'accent\',this.value)"></div>'
+    + '<div class="_kbprow"><label class="_kbplbl">Card background</label>'
+    +   '<input type="color" id="_setcard" class="_kbpclr" value="#ffffff"'
+    +   ' oninput="trApply(\'card-bg\',this.value)"></div>'
+    + '<div class="_kbprow"><label class="_kbplbl">Text color</label>'
+    +   '<input type="color" id="_settxt" class="_kbpclr" value="#111827"'
+    +   ' oninput="trApply(\'text\',this.value)"></div>'
+    + '<div class="_kbpsect" style="margin-top:4px">Theme Presets</div>'
+    + '<div class="_kbppresets">'
+    +   '<button class="_kbppre" onclick="trPreset(\'teal\')">&#x1F7E2; Teal</button>'
+    +   '<button class="_kbppre" onclick="trPreset(\'dark\')">&#x1F311; Dark</button>'
+    +   '<button class="_kbppre" onclick="trPreset(\'purple\')">&#x1F7E3; Purple</button>'
+    +   '<button class="_kbppre" onclick="trPreset(\'rose\')">&#x1F339; Rose</button>'
+    +   '<button class="_kbppre" onclick="trPreset(\'ocean\')">&#x1F30A; Ocean</button>'
+    + '</div>'
+    + '<div class="_kbpfoot">'
+    +   '<button class="_kbpreset" onclick="trReset()">&#x21BA; Reset to defaults</button>'
+    + '</div>'
+    + '</div></div>';
+  D.body.appendChild(bar);
+
+  /* ── Parent-context script ───────────────────────────────────────
+     Injecting a <script> into the parent document means all functions
+     (trToggleKb, trToggleRec, trApply, …) live on the parent window,
+     so onclick="trToggleKb(event)" on the parent's buttons works.    */
+  if (!P._trS) P._trS = { mr:null, stream:null, chunks:[], ti:null, secs:0, timerText:'00:00' };
+
+  var sc = D.createElement('script');
+  sc.id  = '_trscript';
+  sc.textContent = '(function(){'
+  /* state */
+  + 'var S=window._trS;'
+  /* panel toggle */
+  + 'if(window._trCloseKb)document.removeEventListener("click",window._trCloseKb);'
+  + 'window.trToggleKb=function(e){if(e&&e.stopPropagation)e.stopPropagation();'
+  +   'var p=document.getElementById("_kbpanel");if(p)p.classList.toggle("_kbopen");};'
+  + 'window._trCloseKb=function(e){'
+  +   'var w=document.getElementById("_kbwrap");'
+  +   'if(w&&!w.contains(e.target)){var p=document.getElementById("_kbpanel");if(p)p.classList.remove("_kbopen");}};'
+  + 'document.addEventListener("click",window._trCloseKb);'
+  /* screen recorder */
+  + 'window.trToggleRec=async function(){'
+  +   'var btn=document.getElementById("_recbtn"),icon=document.getElementById("_recicon"),'
+  +       'lbl=document.getElementById("_reclabel"),tmr=document.getElementById("_rectimer"),'
+  +       'dot=document.getElementById("_recdot"),kbb=document.getElementById("_kbbtn");'
+  +   'if(!S.mr||S.mr.state==="inactive"){'
+  +     'try{S.stream=await navigator.mediaDevices.getDisplayMedia({video:{frameRate:30},audio:true});}'
+  +     'catch(e){return;}'
+  +     'var mime="video/webm;codecs=vp9,opus";'
+  +     'if(!MediaRecorder.isTypeSupported(mime))mime="video/webm";'
+  +     'S.mr=new MediaRecorder(S.stream,{mimeType:mime});S.chunks=[];'
+  +     'S.mr.ondataavailable=function(e){if(e.data.size)S.chunks.push(e.data);};'
+  +     'S.mr.onstop=function(){'
+  +       'var blob=new Blob(S.chunks,{type:"video/webm"});'
+  +       'var a=document.createElement("a");'
+  +       'a.href=URL.createObjectURL(blob);'
+  +       'a.download="DermiAI-"+new Date().toISOString().slice(0,19).replace(/[T:]/g,"-")+".webm";'
+  +       'document.body.appendChild(a);a.click();document.body.removeChild(a);'
+  +       'clearInterval(S.ti);S.mr=null;'
+  +       'var t=document.getElementById("_rectimer"),d=document.getElementById("_recdot"),'
+  +           'b=document.getElementById("_recbtn"),k=document.getElementById("_kbbtn"),'
+  +           'i=document.getElementById("_recicon"),l=document.getElementById("_reclabel");'
+  +       'if(t)t.style.display="none";if(d)d.style.display="none";'
+  +       'if(b)b.classList.remove("_recon");if(k)k.classList.remove("_kbrec");'
+  +       'if(i)i.textContent="⏺";if(l)l.textContent="Start Recording";'
+  +     '};'
+  +     'S.stream.getVideoTracks()[0].onended=function(){if(S.mr&&S.mr.state!=="inactive")S.mr.stop();};'
+  +     'S.mr.start(200);S.secs=0;'
+  +     'if(tmr)tmr.style.display="inline";if(dot)dot.style.display="block";'
+  +     'if(btn)btn.classList.add("_recon");if(kbb)kbb.classList.add("_kbrec");'
+  +     'if(icon)icon.textContent="⏹";if(lbl)lbl.textContent="Stop Recording";'
+  +     'S.ti=setInterval(function(){'
+  +       'S.secs++;'
+  +       'var m=String(Math.floor(S.secs/60)).padStart(2,"0"),s=String(S.secs%60).padStart(2,"0");'
+  +       'S.timerText=m+":"+s;'
+  +       'var t=document.getElementById("_rectimer");if(t)t.textContent=S.timerText;'
+  +     '},1000);'
+  +   '}else{S.mr.stop();S.stream.getTracks().forEach(function(t){t.stop();});}'
+  + '};'
+  /* colour helpers */
+  + 'var LS="dermai_v1_settings";'
+  + 'function gS(){try{return JSON.parse(localStorage.getItem(LS))||{};}catch(e){return {};}}'
+  + 'function sS(o){localStorage.setItem(LS,JSON.stringify(o));}'
+  + 'function hx(r,g,b){return "#"+[r,g,b].map(function(v){return Math.round(Math.max(0,Math.min(255,v))).toString(16).padStart(2,"0");}).join("");}'
+  + 'function dk(h){var r=parseInt(h.slice(1,3),16),g=parseInt(h.slice(3,5),16),b=parseInt(h.slice(5,7),16);return hx(r*.75,g*.75,b*.75);}'
+  + 'function lk(h){var r=parseInt(h.slice(1,3),16),g=parseInt(h.slice(3,5),16),b=parseInt(h.slice(5,7),16);return hx(r*.9+30,g*.9+30,b*.9+30);}'
+  + 'function iCSS(id,css){var el=document.getElementById(id);if(!el){el=document.createElement("style");el.id=id;document.head.appendChild(el);}el.textContent=css;}'
+  + 'function aK(k,v){'
+  +   'if(k==="app-bg")iCSS("_cs_appbg",".stApp{background:"+v+"!important}");'
+  +   'else if(k==="sb-bg")iCSS("_cs_sbbg","[data-testid=\'stSidebar\']{background:"+v+"!important}[data-testid=\'stSidebar\']>div:first-child{background:"+v+"!important}");'
+  +   'else if(k==="accent"){var d=dk(v),l=lk(v);'
+  +     'iCSS("_cs_accent","[data-testid=\'stSidebar\'] button[data-testid=\'baseButton-primary\']{border-left-color:"+v+"!important}"'
+  +     '+"[data-testid=\'stSidebar\'] .sb-mark{background:linear-gradient(135deg,"+d+","+v+")!important}"'
+  +     '+".conf-bar-fill,.rank-fill{background:linear-gradient(90deg,"+d+","+v+")!important}"'
+  +     '+".stProgress>div>div>div{background:linear-gradient(90deg,"+d+","+v+")!important}"'
+  +     '+".tile-val,.conf-pct,.rank-pct{color:"+d+"!important}"'
+  +     '+":root{--teal-500:"+v+";--teal-600:"+d+";--teal-400:"+l+"}");}'
+  +   'else if(k==="card-bg")iCSS("_cs_cardbg",".card,.tile{background:"+v+"!important}");'
+  +   'else if(k==="text")iCSS("_cs_text",".stApp{color:"+v+"!important}.rank-name,.pred-name{color:"+v+"!important}");'
+  + '}'
+  + 'window.trApply=function(k,v){var o=gS();o[k]=v;sS(o);aK(k,v);};'
+  /* presets */
+  + 'var PRE={"teal":{"app-bg":"#f1f5f9","sb-bg":"#0f172a","accent":"#14b8a6","card-bg":"#ffffff","text":"#111827"},'
+  +   '"dark":{"app-bg":"#0f172a","sb-bg":"#020617","accent":"#14b8a6","card-bg":"#1e293b","text":"#e2e8f0"},'
+  +   '"purple":{"app-bg":"#faf5ff","sb-bg":"#2e1065","accent":"#8b5cf6","card-bg":"#ffffff","text":"#111827"},'
+  +   '"rose":{"app-bg":"#fff1f2","sb-bg":"#4c0519","accent":"#f43f5e","card-bg":"#ffffff","text":"#111827"},'
+  +   '"ocean":{"app-bg":"#f0f9ff","sb-bg":"#0c1a2e","accent":"#0ea5e9","card-bg":"#ffffff","text":"#111827"}};'
+  + 'var CID={"app-bg":"_setbg","sb-bg":"_setsb","accent":"_setac","card-bg":"_setcard","text":"_settxt"};'
+  + 'window.trPreset=function(n){'
+  +   'var p=PRE[n];if(!p)return;var o=gS();Object.assign(o,p);sS(o);'
+  +   'Object.entries(p).forEach(function(kv){aK(kv[0],kv[1]);});'
+  +   'Object.entries(CID).forEach(function(kv){var el=document.getElementById(kv[1]);if(el&&p[kv[0]])el.value=p[kv[0]];});};'
+  + 'window.trReset=function(){localStorage.removeItem(LS);window.trPreset("teal");};'
+  /* restore saved settings */
+  + '(function(){var o=gS();if(!Object.keys(o).length)return;'
+  +   'Object.entries(o).forEach(function(kv){aK(kv[0],kv[1]);});'
+  +   'Object.entries(CID).forEach(function(kv){var el=document.getElementById(kv[1]);if(el&&o[kv[0]])el.value=o[kv[0]];});})();'
+  /* sync recording UI if already active */
+  + 'if(S.mr&&S.mr.state==="recording"){'
+  +   'var b=document.getElementById("_recbtn"),d=document.getElementById("_recdot"),'
+  +       'k=document.getElementById("_kbbtn"),i=document.getElementById("_recicon"),'
+  +       'l=document.getElementById("_reclabel"),t=document.getElementById("_rectimer");'
+  +   'if(b)b.classList.add("_recon");if(d)d.style.display="block";'
+  +   'if(k)k.classList.add("_kbrec");if(i)i.textContent="⏹";'
+  +   'if(l)l.textContent="Stop Recording";'
+  +   'if(t){t.style.display="inline";t.textContent=S.timerText||"00:00";}}'
+  + '})();';
+
+  D.head.appendChild(sc);
+})();
+</script>
+""", height=0, scrolling=False)
+
+# ── (dead code sentinel — the old st.markdown block below is gone) ─
+if False:
+  pass
 
 # ── Constants ──────────────────────────────────────────────────
 RISK_CSS   = {"High": "high",   "Medium": "medium",   "Low": "low"}
@@ -456,23 +691,96 @@ def _strip(sd: dict) -> dict:
     return {k.removeprefix("_orig_mod."): v for k, v in sd.items()} \
            if any(k.startswith("_orig_mod.") for k in sd) else sd
 
+# ── Best-checkpoint auto-selection ─────────────────────────────
+# For each model we gather all (checkpoint_abs_path, bacc, label) candidates
+# and pick the one with the highest balanced accuracy.
+# Ablation checkpoints live in results/ablations/{tag}_best.pth and their
+# val-bacc is stored in the corresponding study JSON file.
+# Base checkpoints live in checkpoints/{model}/... and their test bacc is
+# read from results/{model}_metrics.json.
+
+def _read_json_safe(p: Path) -> dict:
+    try:
+        with open(p) as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+def _ablation_candidates(model_key: str) -> list:
+    """Return list of (abs_path, bacc, label) from all ablation study JSONs for this model."""
+    _model_json_glob = {
+        "efficientnet": "study*.json",
+        "simple_cnn":   "simplecnn_study*.json",
+        "resnet50":     "resnet50_study*.json",
+        "vit":          "vit_study*.json",
+    }
+    glob_pat = _model_json_glob.get(model_key)
+    if not glob_pat:
+        return []
+
+    abl_dir     = Path(CFG.paths.results) / "ablations"
+    study_jsons = sorted(abl_dir.glob(glob_pat))
+    candidates  = []
+    for sjson in study_jsons:
+        data = _read_json_safe(sjson)
+        for _condition, info in data.items():
+            tag  = info.get("tag", "")
+            bacc = info.get("best_val_bacc")
+            if not tag or bacc is None:
+                continue
+            ckpt = abl_dir / f"{tag}_best.pth"
+            if ckpt.exists():
+                candidates.append((ckpt, float(bacc), f"ablation:{tag}"))
+    return candidates
+
+@st.cache_resource
+def _pick_best_ckpt(model_key: str) -> tuple:
+    """Return (abs_path, bacc, label) for the best checkpoint of this model."""
+    base_ckpt_map = {
+        "efficientnet": Path(CFG.paths.checkpoints) / "efficientnet" / "final_best.pth",
+        "vit":          Path(CFG.paths.checkpoints) / "vit"          / "best.pth",
+        "resnet50":     Path(CFG.paths.checkpoints) / "resnet50"     / "best.pth",
+        "simple_cnn":   Path(CFG.paths.checkpoints) / "simple_cnn"   / "best.pth",
+    }
+    candidates = []
+
+    # Base checkpoint
+    base_p = base_ckpt_map.get(model_key)
+    if base_p and base_p.exists():
+        metrics_p = Path(CFG.paths.results) / f"{model_key}_metrics.json"
+        base_bacc = _read_json_safe(metrics_p).get("balanced_accuracy", 0.0)
+        candidates.append((base_p, float(base_bacc), "base"))
+
+    # Ablation candidates
+    candidates.extend(_ablation_candidates(model_key))
+
+    if not candidates:
+        # Fallback: return base path even if file is missing
+        return (base_ckpt_map.get(model_key, Path(".")), 0.0, "base")
+
+    best = max(candidates, key=lambda c: c[1])
+    return best
+
 # ── Model loaders ──────────────────────────────────────────────
 @st.cache_resource
-def _load(model_key: str, ckpt_rel: str):
+def _load(model_key: str, ckpt_abs: Path, label: str):
     dev = get_device(CFG)
     m   = build_model(model_key, dev)
-    p   = Path(CFG.paths.checkpoints) / ckpt_rel
-    if p.exists():
-        m.load_state_dict(_strip(torch.load(str(p), map_location=dev, weights_only=True)))
+    if ckpt_abs.exists():
+        m.load_state_dict(_strip(torch.load(str(ckpt_abs), map_location=dev, weights_only=True)))
         m.eval()
     else:
-        st.warning(f"Checkpoint not found: {p}")
+        st.warning(f"Checkpoint not found: {ckpt_abs}")
     return m, dev
 
-def load_efficientnet(): return _load("efficientnet", "efficientnet/final_best.pth")
-def load_vit():          return _load("vit",          "vit/best.pth")
-def load_resnet():       return _load("resnet50",     "resnet50/best.pth")
-def load_simple_cnn():   return _load("simple_cnn",   "simple_cnn/best.pth")
+def _load_best(model_key: str):
+    p, bacc, label = _pick_best_ckpt(model_key)
+    return _load(model_key, p, label)
+
+def load_efficientnet(): return _load_best("efficientnet")
+def load_vit():          return _load_best("vit")
+def load_resnet():       return _load_best("resnet50")
+def load_simple_cnn():   return _load_best("simple_cnn")
 
 def pick_model(choice: str):
     if "EfficientNet" in choice: return load_efficientnet()
@@ -536,6 +844,30 @@ with st.sidebar:
       <div class="sb-chip"><div class="sb-dot" style="background:#9ca3af;"></div>
         <span class="sb-chip-name">Simple CNN</span><span class="sb-badge">Scratch</span></div>
     </div>""", unsafe_allow_html=True)
+
+    st.divider()
+
+    # Auto-selected checkpoint info
+    st.markdown('<p class="sb-sect">Active Checkpoints</p>', unsafe_allow_html=True)
+    _ckpt_labels = {
+        "efficientnet": "EfficientNet-B3",
+        "vit":          "ViT-B/16",
+        "resnet50":     "ResNet50",
+        "simple_cnn":   "Simple CNN",
+    }
+    _ckpt_rows = ""
+    for _mk, _display in _ckpt_labels.items():
+        _cp, _bacc, _lbl = _pick_best_ckpt(_mk)
+        _tag = "ablation" if _lbl.startswith("ablation:") else "base"
+        _tag_name = _lbl.replace("ablation:", "") if _tag == "ablation" else "base"
+        _color = "#f59e0b" if _tag == "ablation" else "#14b8a6"
+        _ckpt_rows += (
+            f'<div class="sb-row">'
+            f'<span class="sb-key">{_display}</span>'
+            f'<span class="sb-val" style="color:{_color};font-size:0.72rem;">'
+            f'{_tag_name} ({_bacc:.3f})</span></div>'
+        )
+    st.markdown(f'<div class="sb-stat">{_ckpt_rows}</div>', unsafe_allow_html=True)
 
     st.divider()
 
