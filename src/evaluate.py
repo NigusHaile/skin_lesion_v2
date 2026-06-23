@@ -16,8 +16,6 @@ import os
 import json
 import numpy as np
 import pandas as pd
-import matplotlib
-matplotlib.use("Agg")    # non-interactive backend (no display needed)
 import matplotlib.pyplot as plt
 import seaborn as sns
 import torch
@@ -42,9 +40,7 @@ from src.config import CFG
 from src.dataset import CLASS_LABELS, CLASS_NAMES, CLASS_COLORS
 
 
-# =============================================================================
 # Full evaluation pass on a DataLoader
-# =============================================================================
 
 @torch.no_grad()
 def evaluate_model(
@@ -59,7 +55,6 @@ def evaluate_model(
     Computes all metrics, saves all plots, returns a results dict.
 
     This is only called with the BEST checkpoint loaded.
-    Rubric: "Final testing performed only on the best selected model" (+0.5 pt)
     """
     os.makedirs(save_dir, exist_ok=True)
     model.eval()
@@ -97,11 +92,11 @@ def evaluate_model(
     row_sums = probabilities.sum(axis=1, keepdims=True).clip(min=1e-8)
     probabilities = probabilities / row_sums
 
-    # ── One-vs-Rest binarisation for ROC / PR ─────────────────────────────
+    #  One-vs-Rest binarisation for ROC / PR 
     n_classes  = probabilities.shape[1]
     labels_bin = label_binarize(ground_truth, classes=list(range(n_classes)))
 
-    # ── Scalar metrics ─────────────────────────────────────────────────────
+    # Scalar metrics 
     try:
         roc_auc_macro = roc_auc_score(
             labels_bin, probabilities, average="macro", multi_class="ovr")
@@ -109,17 +104,16 @@ def evaluate_model(
         roc_auc_macro = float("nan")
 
     metrics = {
-        "accuracy":          float(accuracy_score(ground_truth, predictions)),
-        "balanced_accuracy": float(balanced_accuracy_score(ground_truth, predictions)),
-        "precision_macro":   float(precision_score(ground_truth, predictions,
+        "accuracy": float(balanced_accuracy_score(ground_truth, predictions)),
+        "precision":   float(precision_score(ground_truth, predictions,
                                                     average="macro", zero_division=0)),
-        "recall_macro":      float(recall_score(ground_truth, predictions,
+        "recall":      float(recall_score(ground_truth, predictions,
                                                  average="macro", zero_division=0)),
-        "f1_macro":          float(f1_score(ground_truth, predictions,
+        "f1_score":          float(f1_score(ground_truth, predictions,
                                              average="macro", zero_division=0)),
         "f1_weighted":       float(f1_score(ground_truth, predictions,
                                              average="weighted", zero_division=0)),
-        "roc_auc_macro":     float(roc_auc_macro),
+        "roc_auc":     float(roc_auc_macro),
     }
 
     # Per-class metrics
@@ -136,13 +130,13 @@ def evaluate_model(
         CLASS_LABELS[i]: {
             "precision": float(per_class_pre[i]),
             "recall":    float(per_class_rec[i]),
-            "f1":        float(per_class_f1[i]),
+            "f1 score":        float(per_class_f1[i]),
             "auc":       float(per_class_auc[i]),
         }
         for i in range(n_classes)
     }
 
-    # ── Print summary ──────────────────────────────────────────────────────
+    # Summary
     print(f"\n{'=' * 55}")
     print(f"  {model_name} — Test Set Results")
     print(f"{'=' * 55}")
@@ -152,7 +146,7 @@ def evaluate_model(
 
     print("\n  Per-class metrics:")
     for i, label in enumerate(CLASS_LABELS):
-        print(f"  {label:6s}: F1={per_class_f1[i]:.3f}  "
+        print(f"  {label:6s}: Pre={per_class_pre[i]:.3f}  F1={per_class_f1[i]:.3f}  "
               f"Rec={per_class_rec[i]:.3f}  AUC={per_class_auc[i]:.3f}")
 
     print("\n" + classification_report(
@@ -162,8 +156,8 @@ def evaluate_model(
     with open(f"{save_dir}/{model_name}_metrics.json", "w") as f:
         json.dump(metrics, f, indent=2)
 
-    # ── Generate all plots ─────────────────────────────────────────────────
-    _plot_confusion_matrix(ground_truth, predictions, save_dir, model_name)
+    # Generate all plots
+    plot_confusion_matrix(ground_truth, predictions, save_dir, model_name)
     _plot_roc_curves(labels_bin, probabilities, save_dir, model_name)
     _plot_precision_recall_curves(labels_bin, probabilities, save_dir, model_name)
     _plot_error_analysis(ground_truth, predictions, probabilities, save_dir, model_name)
@@ -177,15 +171,14 @@ def evaluate_model(
     }
 
 
-# =============================================================================
 # Normalised confusion matrix
-# =============================================================================
 
-def _plot_confusion_matrix(
+def plot_confusion_matrix(
     ground_truth: np.ndarray,
     predictions:  np.ndarray,
     save_dir:     str,
     model_name:   str,
+    show:         bool = True,
 ) -> None:
     """
     Plot raw counts and row-normalised confusion matrix side by side.
@@ -215,13 +208,13 @@ def _plot_confusion_matrix(
     plt.tight_layout()
     plt.savefig(f"{save_dir}/{model_name}_confusion_matrix.png",
                 dpi=150, bbox_inches="tight")
+    if show:
+        plt.show()
     plt.close()
     print(f"  [eval] Confusion matrix saved.")
 
 
-# =============================================================================
 # Per-class ROC curves
-# =============================================================================
 
 def _plot_roc_curves(
     labels_bin:   np.ndarray,
@@ -260,9 +253,7 @@ def _plot_roc_curves(
     print(f"  [eval] ROC curves saved.")
 
 
-# =============================================================================
 # Precision-Recall curves
-# =============================================================================
 
 def _plot_precision_recall_curves(
     labels_bin:    np.ndarray,
@@ -300,9 +291,7 @@ def _plot_precision_recall_curves(
     print(f"  [eval] PR curves saved.")
 
 
-# =============================================================================
 # Error analysis
-# =============================================================================
 
 def _plot_error_analysis(
     ground_truth:  np.ndarray,
@@ -313,12 +302,10 @@ def _plot_error_analysis(
 ) -> None:
     """
     Identify and visualise failure patterns.
-    Rubric: "In-depth error analysis: failed examples, confused classes" (+2.0 pt)
-
     1. Top-5 most confused class pairs (off-diagonal confusion matrix)
     2. Confidence distribution: correct vs incorrect predictions
     """
-    # ── Most confused pairs ────────────────────────────────────────────────
+    # Most confused pairs
     cm = confusion_matrix(ground_truth, predictions)
     np.fill_diagonal(cm, 0)    # zero diagonal → only errors remain
 
@@ -344,7 +331,7 @@ def _plot_error_analysis(
                      ha="center", va="bottom", fontsize=10)
     plt.setp(axes[0].get_xticklabels(), rotation=20, ha="right")
 
-    # ── Confidence distribution ────────────────────────────────────────────
+    # Confidence distribution 
     correct_mask = (ground_truth == predictions)
     max_probs = probabilities[np.arange(len(predictions)), predictions]
 
@@ -374,15 +361,13 @@ def _plot_error_analysis(
     print(f"  [eval] Error analysis saved.")
 
 
-# =============================================================================
 # Training history plot
-# =============================================================================
 
 def plot_training_history(history: dict, save_dir: str, model_name: str) -> None:
-    """Plot loss and balanced accuracy curves across all training epochs."""
+    """Plot loss, accuracy, F1, precision, and ROC-AUC curves across all training epochs."""
     os.makedirs(save_dir, exist_ok=True)
 
-    fig, axes = plt.subplots(1, 3, figsize=(16, 5))
+    fig, axes = plt.subplots(1, 5, figsize=(26, 5))
 
     axes[0].plot(history["train_loss"], label="Train", color="#3498db")
     axes[0].plot(history["val_loss"],   label="Val",   color="#e74c3c")
@@ -399,17 +384,27 @@ def plot_training_history(history: dict, save_dir: str, model_name: str) -> None
     axes[2].set_title("Macro F1"); axes[2].set_xlabel("Epoch")
     axes[2].legend(); axes[2].grid(alpha=0.3)
 
+    axes[3].plot(history["train_precision"], label="Train", color="#3498db")
+    axes[3].plot(history["val_precision"],   label="Val",   color="#e74c3c")
+    axes[3].set_title("Macro Precision"); axes[3].set_xlabel("Epoch")
+    axes[3].legend(); axes[3].grid(alpha=0.3)
+
+    axes[4].plot(history["train_roc_auc"], label="Train", color="#3498db")
+    axes[4].plot(history["val_roc_auc"],   label="Val",   color="#e74c3c")
+    axes[4].set_title("ROC-AUC (macro)"); axes[4].set_xlabel("Epoch")
+    axes[4].legend(); axes[4].grid(alpha=0.3)
+
     plt.suptitle(f"{model_name} — Training History", fontsize=14)
     plt.tight_layout()
     plt.savefig(f"{save_dir}/{model_name}_training_history.png",
                 dpi=150, bbox_inches="tight")
+    plt.show()
     plt.close()
+
     print(f"  [eval] Training history plot saved.")
 
 
-# =============================================================================
 # Model comparison table
-# =============================================================================
 
 def build_comparison_table(results_dict: dict, save_dir: str) -> pd.DataFrame:
     """
@@ -420,10 +415,10 @@ def build_comparison_table(results_dict: dict, save_dir: str) -> pd.DataFrame:
     for model_name, metrics in results_dict.items():
         rows.append({
             "Model":           model_name,
-            "Accuracy":        f"{metrics['accuracy']:.4f}",
-            "Balanced Acc":    f"{metrics['balanced_accuracy']:.4f}",
-            "Macro F1":        f"{metrics['f1_macro']:.4f}",
-            "ROC-AUC (macro)": f"{metrics['roc_auc_macro']:.4f}",
+            "Balanced Acc":    f"{metrics['accuracy']:.4f}",
+            "Macro Precision": f"{metrics['precision']:.4f}",
+            "Macro F1":        f"{metrics['f1_score']:.4f}",
+            "ROC-AUC (macro)": f"{metrics['roc_auc']:.4f}",
         })
 
     comparison_df = pd.DataFrame(rows)
@@ -435,8 +430,8 @@ def build_comparison_table(results_dict: dict, save_dir: str) -> pd.DataFrame:
     print(comparison_df.to_string(index=False))
 
     # Bar chart
-    metric_cols = ["Balanced Acc", "Macro F1", "ROC-AUC (macro)"]
-    fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+    metric_cols = ["Balanced Acc", "Macro Precision", "Macro F1", "ROC-AUC (macro)"]
+    fig, axes = plt.subplots(1, 4, figsize=(20, 5))
     bar_colors = ["#3498db", "#e74c3c", "#2ecc71", "#9b59b6"]
 
     for ax, col in zip(axes, metric_cols):

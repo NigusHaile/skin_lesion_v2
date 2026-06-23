@@ -110,5 +110,5 @@ def get_device(cfg: SimpleNamespace) -> torch.device:
 
 # Module-level singleton
 # Loaded once at import time; all modules share the same object.
-# Override with load_config(custom_path) only when running tests or sweeps.
+# Override with load_config(custom_path) only when running tests.
 CFG = load_config()

@@ -90,8 +90,6 @@ def _sanitise_features(features: np.ndarray) -> np.ndarray:
 
 def apply_pca(features: np.ndarray, n_components: int = 50) -> tuple:
     """
-    StandardScaler → PCA, following the course lab pipeline.
-
     Reducing to 50 dims before t-SNE removes noise and cuts t-SNE runtime
     by ~30× (t-SNE is O(N² log N) in feature dimensionality).
 
@@ -161,7 +159,7 @@ def apply_tsne(pca_result: np.ndarray) -> np.ndarray:
     return tsne.fit_transform(pca_result)
 
 
-# ── Visualisation helpers 
+#  Visualisation helpers 
 def _scatter_ax(ax, embedding, labels, title, xlabel, ylabel) -> None:
     """Shared scatter-plot logic used by both PCA and t-SNE static plots."""
     for idx, (label, name, color) in enumerate(zip(CLASS_LABELS, CLASS_NAMES, CLASS_COLORS)):
@@ -264,7 +262,7 @@ def build_plotly_scatter(
     return fig
 
 
-# ── Full pipeline ─────────────────────────────────────────────────────────────
+# Full pipeline
 
 def run_embedding_analysis(
     model:      nn.Module,

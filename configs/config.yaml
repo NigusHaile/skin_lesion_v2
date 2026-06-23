@@ -71,32 +71,12 @@ augmentation:
   cutout_hole_width:   20
   cutout_p:            0.3
 
-#  EfficientNet-B3 (primary model) 
-efficientnet:
-  backbone:     "efficientnet_b3"   # timm model name
-  pretrained:   true
-  dropout:      0.3
-  # 3-stage fine-tuning schedule (progressive unfreezing)
-  stage1_epochs:        5     # frozen backbone, train head only
-  stage1_lr:            1.0e-3
-  stage1_weight_decay:  1.0e-4
-  stage2_epochs:        15    # unfreeze last 2 blocks
-  stage2_lr:            1.0e-4
-  stage2_weight_decay:  1.0e-4
-  stage3_epochs:        20    # full fine-tuning
-  stage3_lr:            5.0e-5
-  stage3_weight_decay:  1.0e-5
-  early_stopping_patience: 10
-  min_lr:               1.0e-7
-  use_amp:              true  
-  use_compile:          true  
-
-# ViT-B/16 + LoRA (comparison model) 
+# ViT-B/16 + LoRA (comparison model)
 vit:
   backbone:     "vit_base_patch16_224"  # timm model name
   pretrained:   true
   dropout:      0.1
-  epochs:       30
+  epochs:       20
   lr:           1.0e-4
   weight_decay: 1.0e-4
   early_stopping_patience: 10
@@ -112,7 +92,7 @@ resnet50:
   backbone:     "resnet50"
   pretrained:   true
   dropout:      0.3
-  epochs:       25
+  epochs:       20
   lr:           1.0e-4
   weight_decay: 1.0e-4
   early_stopping_patience: 10
@@ -121,7 +101,7 @@ resnet50:
 
 # Simple CNN (from-scratch baseline) 
 simple_cnn:
-  epochs:       30
+  epochs:       40
   lr:           1.0e-3
   weight_decay: 1.0e-4
   early_stopping_patience: 10

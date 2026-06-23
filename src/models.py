@@ -18,42 +18,46 @@ from src.config import CFG
 class SimpleCNN(nn.Module):
     """
     4-block CNN trained entirely from scratch.
-    Purpose: establishes the performance floor for the comparison table.
-
-    Architecture: Conv → BN → ReLU → MaxPool (×4) → GlobalAvgPool → FC
+    Architecture: Conv2d(k=2,same) → ReLU → MaxPool(2), ×4,
+    then Dropout(0.3) → Flatten → FC(150) → ReLU → Dropout(0.4) → FC(num_classes).
     """
 
     def __init__(self) -> None:
         super().__init__()
         num_classes = CFG.data.num_classes
+        img_size    = CFG.data.image_size   # 224
 
-        # Each block halves the spatial resolution
-        self.block1 = self._conv_block(3,   32)   # 224→112
-        self.block2 = self._conv_block(32,  64)   # 112→56
-        self.block3 = self._conv_block(64,  128)  # 56→28
-        self.block4 = self._conv_block(128, 256)  # 28→14
-
-        self.global_pool = nn.AdaptiveAvgPool2d(1)
-
-        self.classifier = nn.Sequential(
-            nn.Dropout(0.5),
-            nn.Linear(256, 128),
+        self.block1 = nn.Sequential(
+            nn.Conv2d(3,   16,  kernel_size=2, padding='same'),
             nn.ReLU(inplace=True),
-            nn.Dropout(0.25),
-            nn.Linear(128, num_classes),
+            nn.MaxPool2d(2),
+        )
+        self.block2 = nn.Sequential(
+            nn.Conv2d(16,  32,  kernel_size=2, padding='same'),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(2),
+        )
+        self.block3 = nn.Sequential(
+            nn.Conv2d(32,  64,  kernel_size=2, padding='same'),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(2),
+        )
+        self.block4 = nn.Sequential(
+            nn.Conv2d(64,  128, kernel_size=2, padding='same'),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(2),
         )
 
-    @staticmethod
-    def _conv_block(in_channels: int, out_channels: int) -> nn.Sequential:
-        """Two conv layers + BN + ReLU + MaxPool."""
-        return nn.Sequential(
-            nn.Conv2d(in_channels,  out_channels, kernel_size=3, padding=1, bias=False),
-            nn.BatchNorm2d(out_channels),
+        # 4 × MaxPool(2) on 224×224 → 14×14; flat = 128 × 14 × 14 = 25,088
+        flat_size = 128 * (img_size // 16) ** 2
+
+        self.classifier = nn.Sequential(
+            nn.Dropout(0.3),
+            nn.Flatten(),
+            nn.Linear(flat_size, 150),
             nn.ReLU(inplace=True),
-            nn.Conv2d(out_channels, out_channels, kernel_size=3, padding=1, bias=False),
-            nn.BatchNorm2d(out_channels),
-            nn.ReLU(inplace=True),
-            nn.MaxPool2d(2, 2),
+            nn.Dropout(0.4),
+            nn.Linear(150, num_classes),
         )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
@@ -61,50 +65,58 @@ class SimpleCNN(nn.Module):
         x = self.block2(x)
         x = self.block3(x)
         x = self.block4(x)
-        features = self.global_pool(x).flatten(1)   # (B, 256)
-        return self.classifier(features)
+        return self.classifier(x)
 
     def get_features(self, x: torch.Tensor) -> torch.Tensor:
-        """Return 256-dim embedding (before classifier)."""
+        """Return flattened conv features before the classifier."""
         x = self.block1(x)
         x = self.block2(x)
         x = self.block3(x)
         x = self.block4(x)
-        return self.global_pool(x).flatten(1)
+        return x.flatten(1)
 
     def get_gradcam_layer(self) -> nn.Module:
         """Return the last conv layer in block4 for GradCAM hooks."""
-        return self.block4[3]
+        return self.block4[0]
 
 
 class SimpleCNNShallow(nn.Module):
     """
     2-block variant of SimpleCNN used for the depth ablation study.
-    Keeps everything identical to SimpleCNN except only 2 conv blocks.
     """
 
     def __init__(self) -> None:
         super().__init__()
         num_classes = CFG.data.num_classes
+        img_size    = CFG.data.image_size
 
-        self.block1 = SimpleCNN._conv_block(3,  32)   # 224→112
-        self.block2 = SimpleCNN._conv_block(32, 64)   # 112→56
+        self.block1 = nn.Sequential(
+            nn.Conv2d(3,  16, kernel_size=2, padding='same'),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(2),
+        )
+        self.block2 = nn.Sequential(
+            nn.Conv2d(16, 32, kernel_size=2, padding='same'),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(2),
+        )
 
-        self.global_pool = nn.AdaptiveAvgPool2d(1)
+        # 2 × MaxPool(2) on 224×224 → 56×56; flat = 32 × 56 × 56 = 100,352
+        flat_size = 32 * (img_size // 4) ** 2
 
         self.classifier = nn.Sequential(
-            nn.Dropout(0.5),
-            nn.Linear(64, 128),
+            nn.Dropout(0.3),
+            nn.Flatten(),
+            nn.Linear(flat_size, 150),
             nn.ReLU(inplace=True),
-            nn.Dropout(0.25),
-            nn.Linear(128, num_classes),
+            nn.Dropout(0.4),
+            nn.Linear(150, num_classes),
         )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         x = self.block1(x)
         x = self.block2(x)
-        features = self.global_pool(x).flatten(1)
-        return self.classifier(features)
+        return self.classifier(x)
 
 
 # ResNet50 strong pretrained baseline
@@ -113,7 +125,6 @@ class SimpleCNNShallow(nn.Module):
 class ResNet50(nn.Module):
     """
     ResNet50 pretrained on ImageNet with standard fine-tuning.
-    Represents a strong baseline against which EfficientNet is compared.
     """
 
     def __init__(self) -> None:
@@ -146,98 +157,6 @@ class ResNet50(nn.Module):
     def get_gradcam_layer(self) -> nn.Module:
         """Return the last residual block group for GradCAM hooks."""
         return self.backbone.layer4
-
-
-# EfficientNetB3  — primary model with 3-stage transfer learning
-
-
-class EfficientNetB3(nn.Module):
-    """
-    EfficientNet-B3 pretrained on ImageNet with 3-stage progressive fine-tuning.
-
-    Why EfficientNet-B3?
-    - Compound scaling: jointly scales depth + width + resolution
-    - 12M parameters: optimal for 10k-image datasets
-    - 81.6% top-1 ImageNet accuracy
-    - Fits in 12 GB VRAM at batch=32
-
-    3-Stage fine-tuning strategy:
-    Stage 1: Freeze backbone → train head only (LR=1e-3, 5 epochs)
-             Rationale: head learns domain features from random init quickly
-    Stage 2: Unfreeze last 2 blocks (LR=1e-4, 15 epochs)
-             Rationale: deep features adapt gradually to dermoscopy
-    Stage 3: Unfreeze all (LR=5e-5, 20 epochs)
-             Rationale: full fine-tune with small LR avoids catastrophic forgetting
-    """
-
-    def __init__(self) -> None:
-        super().__init__()
-        num_classes = CFG.data.num_classes
-        dropout = CFG.efficientnet.dropout
-
-        # Backbone without head
-        self.backbone = timm.create_model(
-            CFG.efficientnet.backbone,
-            pretrained=True,
-            num_classes=0,
-            global_pool="avg",
-        )
-        feat_dim = self.backbone.num_features   # 1536 for B3
-
-        self.classifier = nn.Sequential(
-            nn.Dropout(dropout),
-            nn.Linear(feat_dim, num_classes),
-        )
-
-        # Start with frozen backbone (Stage 1)
-        self.freeze_backbone()
-
-    # Freeze / unfreeze methods
-
-    def freeze_backbone(self) -> None:
-        """Stage 1: freeze all backbone params, only head trains."""
-        for param in self.backbone.parameters():
-            param.requires_grad = False
-        n_trainable = sum(p.numel() for p in self.parameters() if p.requires_grad)
-        print(f"[model] EfficientNet: backbone FROZEN — trainable params: {n_trainable:,}")
-
-    def unfreeze_top_blocks(self, n_blocks: int = 2) -> None:
-        """Stage 2: unfreeze last n blocks of the EfficientNet backbone."""
-        blocks = list(self.backbone.blocks.children())
-        for block in blocks[-n_blocks:]:
-            for param in block.parameters():
-                param.requires_grad = True
-        # Also unfreeze the final conv head
-        for param in self.backbone.conv_head.parameters():
-            param.requires_grad = True
-        for param in self.backbone.bn2.parameters():
-            param.requires_grad = True
-        n_trainable = sum(p.numel() for p in self.parameters() if p.requires_grad)
-        print(f"[model] EfficientNet: top {n_blocks} blocks UNFROZEN — "
-              f"trainable params: {n_trainable:,}")
-
-    def unfreeze_all(self) -> None:
-        """Stage 3: unfreeze entire network for full fine-tuning."""
-        for param in self.parameters():
-            param.requires_grad = True
-        n_trainable = sum(p.numel() for p in self.parameters() if p.requires_grad)
-        print(f"[model] EfficientNet: FULLY UNFROZEN — trainable params: {n_trainable:,}")
-
-    # Forward
-
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
-        features = self.backbone(x)          # (B, 1536)
-        return self.classifier(features)
-
-    def get_features(self, x: torch.Tensor) -> torch.Tensor:
-        """Return 1536-dim embedding (before classifier)."""
-        return self.backbone(x)
-
-    def get_gradcam_layer(self) -> nn.Module:
-        """Return the final conv layer for GradCAM hooks."""
-        return self.backbone.conv_head
-
-
 
 # LoRALinear  — Low-Rank Adaptation wrapper
 
@@ -374,7 +293,7 @@ def build_model(model_name: str, device: torch.device) -> nn.Module:
     Instantiate and move model to device.
 
     Args:
-        model_name: one of "simple_cnn", "resnet50", "efficientnet", "vit"
+        model_name: one of "simple_cnn", "resnet50", "vit"
         device:     torch.device
 
     Returns:
@@ -384,7 +303,6 @@ def build_model(model_name: str, device: torch.device) -> nn.Module:
         "simple_cnn":         SimpleCNN,
         "simple_cnn_shallow": SimpleCNNShallow,
         "resnet50":           ResNet50,
-        "efficientnet":       EfficientNetB3,
         "vit":                ViTWithLoRA,
     }
 
@@ -399,6 +317,5 @@ def build_model(model_name: str, device: torch.device) -> nn.Module:
 
 
 # Aliases for dashboard/app.py compatibility
-EfficientNetClassifier = EfficientNetB3
-ViTLoRAClassifier      = ViTWithLoRA
-ResNet50Classifier     = ResNet50
+ViTLoRAClassifier  = ViTWithLoRA
+ResNet50Classifier = ResNet50

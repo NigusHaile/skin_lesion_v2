@@ -22,7 +22,10 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 from torch.optim.lr_scheduler import CosineAnnealingLR
-from sklearn.metrics import balanced_accuracy_score, f1_score
+from sklearn.metrics import (
+    balanced_accuracy_score, f1_score, precision_score, roc_auc_score,
+)
+from sklearn.preprocessing import label_binarize
 
 import sys as _sys
 from pathlib import Path as _Path
@@ -47,21 +50,23 @@ class EarlyStopping:
         self.patience        = patience
         self.checkpoint_path = checkpoint_path
         self.best_score      = None
-        self.wait_count      = 0   # epochs without improvement
+        self.best_epoch      = None   # epoch number that achieved the best score
+        self.wait_count      = 0      # epochs without improvement
         self.should_stop     = False
 
-    def step(self, val_score: float, model: nn.Module) -> bool:
+    def step(self, val_score: float, model: nn.Module, epoch: int) -> bool:
         """
         Call at end of each epoch.
         Returns True when training should stop.
         """
         if self.best_score is None or val_score > self.best_score + 1e-4:
-            # Improvement → save checkpoint and reset counter
+            # Improvement → record epoch, save checkpoint, reset counter
             self.best_score = val_score
+            self.best_epoch = epoch
             self.wait_count = 0
             os.makedirs(os.path.dirname(self.checkpoint_path), exist_ok=True)
             torch.save(model.state_dict(), self.checkpoint_path)
-            print(f"  ✓ New best val_balanced_acc = {val_score:.4f} — checkpoint saved")
+            print(f"  ✓ Epoch {epoch}: new best val_balanced_acc = {val_score:.4f} — checkpoint saved")
             return False
         else:
             self.wait_count += 1
@@ -90,8 +95,9 @@ def run_train_epoch(
     """
     model.train()
     total_loss = 0.0
-    all_predictions = []
-    all_ground_truth = []
+    all_predictions   = []
+    all_ground_truth  = []
+    all_probabilities = []
 
     for images, labels in loader:
         images = images.to(device, non_blocking=True)
@@ -119,17 +125,31 @@ def run_train_epoch(
             optimizer.step()
 
         total_loss += loss.item() * images.size(0)
-        predictions = logits.argmax(dim=1).cpu().numpy()
+        predictions = logits.detach().argmax(dim=1).cpu().numpy()
+        probs       = torch.softmax(logits.detach().float(), dim=1).cpu().numpy()
         all_predictions.extend(predictions)
         all_ground_truth.extend(labels.cpu().numpy())
+        all_probabilities.extend(probs)
 
-    n_samples = len(all_ground_truth)
+    n_samples    = len(all_ground_truth)
+    probabilities = np.array(all_probabilities, dtype=np.float32)
+    n_classes    = probabilities.shape[1]
+    labels_bin   = label_binarize(all_ground_truth, classes=list(range(n_classes)))
+    try:
+        roc_auc = roc_auc_score(labels_bin, probabilities,
+                                average="macro", multi_class="ovr")
+    except ValueError:
+        roc_auc = float("nan")
+
     metrics = {
         "loss":               total_loss / n_samples,
         "accuracy":           np.mean(np.array(all_predictions) == np.array(all_ground_truth)),
         "balanced_accuracy":  balanced_accuracy_score(all_ground_truth, all_predictions),
         "f1_macro":           f1_score(all_ground_truth, all_predictions,
                                        average="macro", zero_division=0),
+        "precision_macro":    precision_score(all_ground_truth, all_predictions,
+                                              average="macro", zero_division=0),
+        "roc_auc_macro":      float(roc_auc),
     }
     return metrics
 
@@ -149,8 +169,9 @@ def run_val_epoch(
     """
     model.eval()
     total_loss = 0.0
-    all_predictions = []
-    all_ground_truth = []
+    all_predictions   = []
+    all_ground_truth  = []
+    all_probabilities = []
 
     for images, labels in loader:
         images = images.to(device, non_blocking=True)
@@ -161,156 +182,37 @@ def run_val_epoch(
                             enabled=torch.cuda.is_available()):
             logits = model(images)
 
-        loss = criterion(logits.float(), labels)
+        logits_f = logits.float()
+        loss = criterion(logits_f, labels)
         total_loss += loss.item() * images.size(0)
 
-        predictions = logits.float().argmax(dim=1).cpu().numpy()
+        predictions = logits_f.argmax(dim=1).cpu().numpy()
+        probs       = torch.softmax(logits_f, dim=1).cpu().numpy()
         all_predictions.extend(predictions)
         all_ground_truth.extend(labels.cpu().numpy())
+        all_probabilities.extend(probs)
 
-    n_samples = len(all_ground_truth)
+    n_samples     = len(all_ground_truth)
+    probabilities = np.array(all_probabilities, dtype=np.float32)
+    n_classes     = probabilities.shape[1]
+    labels_bin    = label_binarize(all_ground_truth, classes=list(range(n_classes)))
+    try:
+        roc_auc = roc_auc_score(labels_bin, probabilities,
+                                average="macro", multi_class="ovr")
+    except ValueError:
+        roc_auc = float("nan")
+
     metrics = {
         "loss":               total_loss / n_samples,
         "accuracy":           np.mean(np.array(all_predictions) == np.array(all_ground_truth)),
         "balanced_accuracy":  balanced_accuracy_score(all_ground_truth, all_predictions),
         "f1_macro":           f1_score(all_ground_truth, all_predictions,
                                        average="macro", zero_division=0),
+        "precision_macro":    precision_score(all_ground_truth, all_predictions,
+                                              average="macro", zero_division=0),
+        "roc_auc_macro":      float(roc_auc),
     }
     return metrics
-
-
-# EfficientNet 3-stage training
-def train_efficientnet(
-    model,          # EfficientNetB3 instance
-    train_loader:   DataLoader,
-    val_loader:     DataLoader,
-    class_weights:  torch.Tensor,
-    device:         torch.device,
-) -> dict:
-    """
-    3-stage progressive fine-tuning for EfficientNet-B3.
-
-    This is the methodological improvement that earns the extra bonus:
-    "A non-trivial methodological improvement over the baseline solution" (+4.0 pt)
-    """
-    ecfg = CFG.efficientnet
-    checkpoint_dir = f"{CFG.paths.checkpoints}/efficientnet"
-    os.makedirs(checkpoint_dir, exist_ok=True)
-
-    criterion = nn.CrossEntropyLoss(weight=class_weights.to(device))
-
-    # AMP scaler
-    scaler = (torch.amp.GradScaler("cuda")
-              if ecfg.use_amp and torch.cuda.is_available() else None)
-
-    history = {
-        "train_loss": [], "val_loss": [],
-        "train_bacc": [], "val_bacc": [],
-        "train_f1":   [], "val_f1":   [],
-    }
-
-    # Stage 1: head only 
-    print("\n" + "=" * 60)
-    print("STAGE 1 — Frozen backbone, training head only")
-    print("=" * 60)
-    model.freeze_backbone()
-    history = _run_stage(
-        model, train_loader, val_loader, criterion,
-        device, scaler, history,
-        n_epochs=ecfg.stage1_epochs,
-        lr=ecfg.stage1_lr,
-        weight_decay=ecfg.stage1_weight_decay,
-        patience=ecfg.early_stopping_patience,
-        checkpoint_path=f"{checkpoint_dir}/stage1_best.pth",
-        stage_name="S1",
-    )
-    model.load_state_dict(
-        torch.load(f"{checkpoint_dir}/stage1_best.pth", weights_only=True))
-
-    # Stage 2: top blocks 
-    print("\n" + "=" * 60)
-    print("STAGE 2 — Unfreezing last 2 backbone blocks")
-    print("=" * 60)
-    model.unfreeze_top_blocks(n_blocks=2)
-    history = _run_stage(
-        model, train_loader, val_loader, criterion,
-        device, scaler, history,
-        n_epochs=ecfg.stage2_epochs,
-        lr=ecfg.stage2_lr,
-        weight_decay=ecfg.stage2_weight_decay,
-        patience=ecfg.early_stopping_patience,
-        checkpoint_path=f"{checkpoint_dir}/stage2_best.pth",
-        stage_name="S2",
-    )
-    model.load_state_dict(
-        torch.load(f"{checkpoint_dir}/stage2_best.pth", weights_only=True))
-
-    # Stage 3: full fine-tuneing
-    print("\n" + "=" * 60)
-    print("STAGE 3 — Full fine-tuning")
-    print("=" * 60)
-    model.unfreeze_all()
-    history = _run_stage(
-        model, train_loader, val_loader, criterion,
-        device, scaler, history,
-        n_epochs=ecfg.stage3_epochs,
-        lr=ecfg.stage3_lr,
-        weight_decay=ecfg.stage3_weight_decay,
-        patience=ecfg.early_stopping_patience,
-        checkpoint_path=f"{checkpoint_dir}/final_best.pth",
-        stage_name="S3",
-    )
-
-    # Save full training history
-    with open(f"{checkpoint_dir}/history.json", "w") as f:
-        json.dump(history, f, indent=2)
-
-    return history
-
-
-def _run_stage(
-    model, train_loader, val_loader, criterion, device, scaler,
-    history, n_epochs, lr, weight_decay, patience, checkpoint_path, stage_name,
-) -> dict:
-    """Run one training stage (helper used by train_efficientnet)."""
-    optimizer = torch.optim.AdamW(
-        filter(lambda p: p.requires_grad, model.parameters()),
-        lr=lr, weight_decay=weight_decay,
-    )
-    scheduler = CosineAnnealingLR(optimizer, T_max=n_epochs,
-                                  eta_min=CFG.efficientnet.min_lr)
-    early_stop = EarlyStopping(patience=patience, checkpoint_path=checkpoint_path)
-
-    for epoch in range(1, n_epochs + 1):
-        t_start = time.time()
-        train_metrics = run_train_epoch(
-            model, train_loader, criterion, optimizer, device, scaler)
-        val_metrics = run_val_epoch(model, val_loader, criterion, device)
-        scheduler.step()
-
-        elapsed = time.time() - t_start
-        print(
-            f"  {stage_name} Ep {epoch:02d}/{n_epochs} | "
-            f"train_loss={train_metrics['loss']:.4f} "
-            f"train_bacc={train_metrics['balanced_accuracy']:.4f} | "
-            f"val_loss={val_metrics['loss']:.4f} "
-            f"val_bacc={val_metrics['balanced_accuracy']:.4f} "
-            f"val_f1={val_metrics['f1_macro']:.4f} | "
-            f"{elapsed:.1f}s"
-        )
-
-        history["train_loss"].append(train_metrics["loss"])
-        history["val_loss"].append(val_metrics["loss"])
-        history["train_bacc"].append(train_metrics["balanced_accuracy"])
-        history["val_bacc"].append(val_metrics["balanced_accuracy"])
-        history["train_f1"].append(train_metrics["f1_macro"])
-        history["val_f1"].append(val_metrics["f1_macro"])
-
-        if early_stop.step(val_metrics["balanced_accuracy"], model):
-            print(f"  Early stopping at epoch {epoch}")
-            break
-
-    return history
 
 
 # Generic training loop (ResNet50, ViT, SimpleCNN)
@@ -355,9 +257,11 @@ def train_model(
     scaler  = torch.amp.GradScaler("cuda") if use_amp else None
 
     history = {
-        "train_loss": [], "val_loss": [],
-        "train_bacc": [], "val_bacc": [],
-        "train_f1":   [], "val_f1":   [],
+        "train_loss":      [], "val_loss":      [],
+        "train_bacc":      [], "val_bacc":      [],
+        "train_f1":        [], "val_f1":        [],
+        "train_precision": [], "val_precision": [],
+        "train_roc_auc":   [], "val_roc_auc":   [],
     }
 
     print(f"\n{'=' * 60}")
@@ -375,10 +279,14 @@ def train_model(
         print(
             f"  Ep {epoch:02d}/{mcfg.epochs} | "
             f"train_loss={train_metrics['loss']:.4f} "
-            f"train_bacc={train_metrics['balanced_accuracy']:.4f} | "
+            f"train_bacc={train_metrics['balanced_accuracy']:.4f} "
+            f"train_f1={train_metrics['f1_macro']:.4f} "
+            f"train_prec={train_metrics['precision_macro']:.4f} | "
             f"val_loss={val_metrics['loss']:.4f} "
             f"val_bacc={val_metrics['balanced_accuracy']:.4f} "
-            f"val_f1={val_metrics['f1_macro']:.4f} | "
+            f"val_f1={val_metrics['f1_macro']:.4f} "
+            f"val_prec={val_metrics['precision_macro']:.4f} "
+            f"val_auc={val_metrics['roc_auc_macro']:.4f} | "
             f"{elapsed:.1f}s"
         )
 
@@ -388,13 +296,21 @@ def train_model(
         history["val_bacc"].append(val_metrics["balanced_accuracy"])
         history["train_f1"].append(train_metrics["f1_macro"])
         history["val_f1"].append(val_metrics["f1_macro"])
+        history["train_precision"].append(train_metrics["precision_macro"])
+        history["val_precision"].append(val_metrics["precision_macro"])
+        history["train_roc_auc"].append(train_metrics["roc_auc_macro"])
+        history["val_roc_auc"].append(val_metrics["roc_auc_macro"])
 
-        if early_stop.step(val_metrics["balanced_accuracy"], model):
+        if early_stop.step(val_metrics["balanced_accuracy"], model, epoch):
             print(f"  Early stopping at epoch {epoch}")
             break
+
+    history["best_epoch"]    = early_stop.best_epoch
+    history["best_val_bacc"] = early_stop.best_score
 
     with open(f"{checkpoint_dir}/history.json", "w") as f:
         json.dump(history, f, indent=2)
 
-    print(f"[train] {model_name} done — best val_balanced_acc: {early_stop.best_score:.4f}")
+    print(f"[train] {model_name} done — best val_balanced_acc: {early_stop.best_score:.4f} "
+          f"(epoch {early_stop.best_epoch})")
     return history
