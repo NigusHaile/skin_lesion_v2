@@ -588,12 +588,11 @@ if False:
 RISK_CSS   = {"High": "high",   "Medium": "medium",   "Low": "low"}
 BADGE_CSS  = {"High": "badge-high", "Medium": "badge-medium", "Low": "badge-low"}
 RISK_ICON  = {"High": "⚠️",  "Medium": "⚡",  "Low": "✅"}
-MODEL_OPTS   = ["EfficientNet-B3 (recommended)", "ViT-B/16 + LoRA", "ResNet50", "Simple CNN"]
-GRADCAM_OPTS = ["EfficientNet-B3", "ResNet50", "Simple CNN"]   # CNN-based (ViT has no conv layer)
+MODEL_OPTS   = ["ViT-B/16 + LoRA", "ResNet50", "Simple CNN"]
+GRADCAM_OPTS = ["ResNet50", "Simple CNN"]   # CNN-based (ViT has no conv layer)
 TEAL_SEQ     = ["#0d9488", "#14b8a6", "#2dd4bf", "#5eead4"]
 
-EMBED_KEYS = {"EfficientNet-B3": "efficientnet", "ViT+LoRA": "vit",
-              "ResNet50": "resnet50", "Simple CNN": "simple_cnn"}
+EMBED_KEYS = {"ViT+LoRA": "vit", "ResNet50": "resnet50", "Simple CNN": "simple_cnn"}
 
 # ── Helpers ────────────────────────────────────────────────────
 def page_banner(icon: str, title: str, sub: str = "") -> None:
@@ -709,10 +708,9 @@ def _read_json_safe(p: Path) -> dict:
 def _ablation_candidates(model_key: str) -> list:
     """Return list of (abs_path, bacc, label) from all ablation study JSONs for this model."""
     _model_json_glob = {
-        "efficientnet": "study*.json",
-        "simple_cnn":   "simplecnn_study*.json",
-        "resnet50":     "resnet50_study*.json",
-        "vit":          "vit_study*.json",
+        "simple_cnn": "simplecnn_study*.json",
+        "resnet50":   "resnet50_study*.json",
+        "vit":        "vit_study*.json",
     }
     glob_pat = _model_json_glob.get(model_key)
     if not glob_pat:
@@ -737,10 +735,9 @@ def _ablation_candidates(model_key: str) -> list:
 def _pick_best_ckpt(model_key: str) -> tuple:
     """Return (abs_path, bacc, label) for the best checkpoint of this model."""
     base_ckpt_map = {
-        "efficientnet": Path(CFG.paths.checkpoints) / "efficientnet" / "final_best.pth",
-        "vit":          Path(CFG.paths.checkpoints) / "vit"          / "best.pth",
-        "resnet50":     Path(CFG.paths.checkpoints) / "resnet50"     / "best.pth",
-        "simple_cnn":   Path(CFG.paths.checkpoints) / "simple_cnn"   / "best.pth",
+        "vit":        Path(CFG.paths.checkpoints) / "vit"       / "best.pth",
+        "resnet50":   Path(CFG.paths.checkpoints) / "resnet50"  / "best.pth",
+        "simple_cnn": Path(CFG.paths.checkpoints) / "simple_cnn" / "best.pth",
     }
     candidates = []
 
@@ -777,21 +774,18 @@ def _load_best(model_key: str):
     p, bacc, label = _pick_best_ckpt(model_key)
     return _load(model_key, p, label)
 
-def load_efficientnet(): return _load_best("efficientnet")
-def load_vit():          return _load_best("vit")
-def load_resnet():       return _load_best("resnet50")
-def load_simple_cnn():   return _load_best("simple_cnn")
+def load_vit():        return _load_best("vit")
+def load_resnet():     return _load_best("resnet50")
+def load_simple_cnn(): return _load_best("simple_cnn")
 
 def pick_model(choice: str):
-    if "EfficientNet" in choice: return load_efficientnet()
-    if "ViT"          in choice: return load_vit()
-    if "Simple CNN"   in choice: return load_simple_cnn()
+    if "ViT"       in choice: return load_vit()
+    if "Simple CNN" in choice: return load_simple_cnn()
     return load_resnet()
 
 def pick_gradcam_model(choice: str):
     """GradCAM only works on CNN-based models that expose get_gradcam_layer()."""
-    if "EfficientNet" in choice: return load_efficientnet()
-    if "ResNet"       in choice: return load_resnet()
+    if "ResNet" in choice: return load_resnet()
     return load_simple_cnn()
 
 # ── Sidebar ────────────────────────────────────────────────────
@@ -835,8 +829,6 @@ with st.sidebar:
     st.markdown('<p class="sb-sect">Models</p>', unsafe_allow_html=True)
     st.markdown("""
     <div class="sb-chips">
-      <div class="sb-chip"><div class="sb-dot" style="background:#14b8a6;"></div>
-        <span class="sb-chip-name">EfficientNet-B3</span><span class="sb-badge">Primary</span></div>
       <div class="sb-chip"><div class="sb-dot" style="background:#818cf8;"></div>
         <span class="sb-chip-name">ViT-B/16 + LoRA</span><span class="sb-badge">Transformer</span></div>
       <div class="sb-chip"><div class="sb-dot" style="background:#60a5fa;"></div>
@@ -850,10 +842,9 @@ with st.sidebar:
     # Auto-selected checkpoint info
     st.markdown('<p class="sb-sect">Active Checkpoints</p>', unsafe_allow_html=True)
     _ckpt_labels = {
-        "efficientnet": "EfficientNet-B3",
-        "vit":          "ViT-B/16",
-        "resnet50":     "ResNet50",
-        "simple_cnn":   "Simple CNN",
+        "vit":        "ViT-B/16",
+        "resnet50":   "ResNet50",
+        "simple_cnn": "Simple CNN",
     }
     _ckpt_rows = ""
     for _mk, _display in _ckpt_labels.items():
@@ -1069,10 +1060,10 @@ def render_comparison():
         st.warning("No results found. Run `python train_all.py` first.")
         st.markdown("**Demo values (placeholder):**")
         st.dataframe(pd.DataFrame({
-            "Model":           ["Simple CNN","ResNet50","EfficientNet-B3","ViT + LoRA"],
-            "Balanced Acc":    ["0.612","0.761","0.872","0.843"],
-            "Macro F1":        ["0.589","0.748","0.858","0.831"],
-            "ROC-AUC (macro)": ["0.891","0.938","0.972","0.965"],
+            "Model":           ["Simple CNN","ResNet50","ViT + LoRA"],
+            "Balanced Acc":    ["0.612","0.761","0.843"],
+            "Macro F1":        ["0.589","0.748","0.831"],
+            "ROC-AUC (macro)": ["0.891","0.938","0.965"],
         }), use_container_width=True)
         return
 
@@ -1116,9 +1107,9 @@ def render_comparison():
                 st.plotly_chart(fig, use_container_width=True)
 
     with tabs[2]:
-        model_names = ["simple_cnn","resnet50","vit","efficientnet"]
-        disp_names  = ["Simple CNN","ResNet50","ViT+LoRA","EfficientNet-B3"]
-        cols = st.columns(4, gap="small")
+        model_names = ["simple_cnn","resnet50","vit"]
+        disp_names  = ["Simple CNN","ResNet50","ViT+LoRA"]
+        cols = st.columns(3, gap="small")
         for col, mname, dname in zip(cols, model_names, disp_names):
             p = res / f"{mname}_confusion_matrix.png"
             with col:
@@ -1130,7 +1121,7 @@ def render_comparison():
                     st.info(f"{dname}: not yet trained")
 
     with tabs[3]:
-        cols = st.columns(4, gap="small")
+        cols = st.columns(3, gap="small")
         for col, mname, dname in zip(cols, model_names, disp_names):
             p = res / "plots" / f"{mname}_training_history.png"
             with col:
@@ -1142,7 +1133,7 @@ def render_comparison():
                     st.info(f"{dname}: not yet trained")
 
     with tabs[4]:
-        cols = st.columns(4, gap="small")
+        cols = st.columns(3, gap="small")
         for col, mname, dname in zip(cols, model_names, disp_names):
             p = res / f"{mname}_roc_curves.png"
             with col:
@@ -1152,7 +1143,7 @@ def render_comparison():
                     st.markdown('</div>', unsafe_allow_html=True)
 
     with tabs[5]:
-        cols = st.columns(4, gap="small")
+        cols = st.columns(3, gap="small")
         for col, mname, dname in zip(cols, model_names, disp_names):
             p = res / f"{mname}_pr_curves.png"
             with col:
@@ -1171,7 +1162,7 @@ def render_embeddings():
 
     ca, cb, _ = st.columns([1,1,2])
     with ca:
-        mc = st.selectbox("Embedding model", ["EfficientNet-B3","ViT+LoRA","ResNet50"])
+        mc = st.selectbox("Embedding model", ["ViT+LoRA","ResNet50"])
     with cb:
         vt = st.radio("Projection", ["t-SNE","PCA"], horizontal=True)
 
@@ -1353,28 +1344,232 @@ def render_batch():
 # ═══════════════════════════════════════════════════════════════
 # PAGE 6 — Ablation Studies
 # ═══════════════════════════════════════════════════════════════
-_ABL_PLOTS = {
-    "EfficientNet-B3": [
-        ("study1_augmentation.png",  "Study 1 — Data Augmentation"),
-        ("study2_class_weights.png", "Study 2 — Class Weighting"),
-        ("study3_backbone.png",      "Study 3 — Backbone Freezing"),
-    ],
+
+# Complete map: JSON + PNG files + human labels per model × study
+_MODEL_STUDY_MAP = {
     "SimpleCNN": [
-        ("simplecnn_study1_augmentation.png",  "Study 1 — Data Augmentation"),
-        ("simplecnn_study2_class_weights.png", "Study 2 — Class Weighting"),
-        ("simplecnn_study3_depth.png",         "Study 3 — Network Depth"),
+        dict(json="simplecnn_study1_augmentation.json",   png="simplecnn_study1_augmentation.png",
+             title="Study 1 — Data Augmentation",
+             label_a="No augmentation",                   label_b="With augmentation"),
+        dict(json="simplecnn_study2_class_weights.json",  png="simplecnn_study2_class_weights.png",
+             title="Study 2 — Class Weighting",
+             label_a="Uniform loss",                      label_b="Weighted CE loss"),
+        dict(json="simplecnn_study3_depth.json",          png="simplecnn_study3_depth.png",
+             title="Study 3 — Network Depth",
+             label_a="Shallow (2 blocks)",                label_b="Deep (4 blocks)"),
     ],
     "ResNet50": [
-        ("resnet50_study1_augmentation.png",  "Study 1 — Data Augmentation"),
-        ("resnet50_study2_class_weights.png", "Study 2 — Class Weighting"),
-        ("resnet50_study3_backbone.png",      "Study 3 — Backbone Freezing"),
+        dict(json="resnet50_study1_augmentation.json",   png="resnet50_study1_augmentation.png",
+             title="Study 1 — Data Augmentation",
+             label_a="No augmentation",                  label_b="With augmentation"),
+        dict(json="resnet50_study2_class_weights.json",  png="resnet50_study2_class_weights.png",
+             title="Study 2 — Class Weighting",
+             label_a="Uniform loss",                     label_b="Weighted CE loss"),
+        dict(json="resnet50_study3_backbone.json",       png="resnet50_study3_backbone.png",
+             title="Study 3 — Backbone Freezing",
+             label_a="Frozen backbone",                  label_b="Full fine-tuning"),
     ],
     "ViT+LoRA": [
-        ("vit_study1_augmentation.png",  "Study 1 — Data Augmentation"),
-        ("vit_study2_class_weights.png", "Study 2 — Class Weighting"),
-        ("vit_study3_lora_rank.png",     "Study 3 — LoRA Rank"),
+        dict(json="vit_study1_augmentation.json",   png="vit_study1_augmentation.png",
+             title="Study 1 — Data Augmentation",
+             label_a="No augmentation",              label_b="With augmentation"),
+        dict(json="vit_study2_class_weights.json",  png="vit_study2_class_weights.png",
+             title="Study 2 — Class Weighting",
+             label_a="Uniform loss",                label_b="Weighted CE loss"),
+        dict(json="vit_study3_lora_rank.json",      png="vit_study3_lora_rank.png",
+             title="Study 3 — LoRA Rank",
+             label_a="LoRA rank=2",                 label_b="LoRA rank=8"),
     ],
 }
+
+# Model prefix used in the Study column of ablation_summary.csv
+_MODEL_CSV_PREFIX = {
+    "SimpleCNN": "SimpleCNN",
+    "ResNet50":  "ResNet50",
+    "ViT+LoRA":  "ViT+LoRA",
+}
+
+
+def _extract_study_metrics(cdata: dict) -> dict:
+    """
+    Pull best-val metrics from a study condition dict.
+    Handles both the old JSON format (best_val_bacc only) and
+    the new format (best_val_acc + best_val_f1 + best_val_precision + best_val_roc_auc).
+    Falls back to history max when direct values are missing.
+    """
+    hist = cdata.get("history", {})
+    acc     = cdata.get("best_val_acc")     or cdata.get("best_val_bacc")
+    f1      = cdata.get("best_val_f1")
+    prec    = cdata.get("best_val_precision")
+    roc_auc = cdata.get("best_val_roc_auc")
+    # Fallback: derive from training history
+    if acc     is None and hist.get("val_acc"):
+        acc     = max(hist["val_acc"])
+    if f1      is None and hist.get("val_f1"):
+        f1      = max(hist["val_f1"])
+    if prec    is None and hist.get("val_precision"):
+        prec    = max(hist["val_precision"])
+    if roc_auc is None and hist.get("val_roc_auc"):
+        valid = [v for v in hist["val_roc_auc"] if v == v]  # filter NaN
+        roc_auc = max(valid) if valid else None
+    return {
+        "acc":     float(acc)     if acc     is not None else None,
+        "f1":      float(f1)      if f1      is not None else None,
+        "prec":    float(prec)    if prec    is not None else None,
+        "roc_auc": float(roc_auc) if roc_auc is not None else None,
+    }
+
+
+def _study_bar_chart(label_a: str, label_b: str,
+                     m_a: dict, m_b: dict, title: str) -> go.Figure:
+    """
+    Grouped Plotly bar chart comparing two ablation conditions
+    across all available metrics (Acc, F1, Precision, ROC-AUC).
+    """
+    metric_keys  = ["acc", "f1", "prec", "roc_auc"]
+    metric_names = {
+        "acc":     "Balanced Acc",
+        "f1":      "Macro F1",
+        "prec":    "Macro Precision",
+        "roc_auc": "ROC-AUC (macro)",
+    }
+
+    # Only include metrics that have data for at least one condition
+    available = [k for k in metric_keys
+                 if m_a.get(k) is not None or m_b.get(k) is not None]
+
+    x_labels = [metric_names[k] for k in available]
+    vals_a   = [m_a.get(k, 0) or 0 for k in available]
+    vals_b   = [m_b.get(k, 0) or 0 for k in available]
+
+    fig = go.Figure()
+    fig.add_trace(go.Bar(
+        name=label_a, x=x_labels, y=vals_a,
+        marker_color="#ef4444",
+        text=[f"{v:.3f}" for v in vals_a], textposition="outside",
+        textfont=dict(size=11),
+    ))
+    fig.add_trace(go.Bar(
+        name=label_b, x=x_labels, y=vals_b,
+        marker_color="#2ecc71",
+        text=[f"{v:.3f}" for v in vals_b], textposition="outside",
+        textfont=dict(size=11),
+    ))
+    fig.update_layout(
+        title=dict(text=title, font_size=13),
+        barmode="group",
+        yaxis=dict(range=[0, 1.05], title="Score",
+                   gridcolor="#f3f4f6", showgrid=True),
+        xaxis=dict(title="Metric"),
+        plot_bgcolor="white", paper_bgcolor="white",
+        font_family="Inter",
+        legend=dict(orientation="h", yanchor="bottom", y=1.02,
+                    xanchor="right", x=1,
+                    bgcolor="rgba(255,255,255,.9)",
+                    bordercolor="#e5e7eb", borderwidth=1),
+        margin=dict(t=60, b=40, l=16, r=16),
+        height=340,
+    )
+    fig.update_traces(marker_line_width=0)
+    return fig
+
+
+def _learning_curve_chart(label_a: str, label_b: str,
+                           hist_a: dict, hist_b: dict, title: str) -> go.Figure | None:
+    """
+    Plotly line chart comparing val accuracy (and val_f1 / precision if present)
+    over epochs for two ablation conditions. Returns None when no history available.
+    Accepts both old key (val_bacc) and new key (val_acc).
+    """
+    va_a = hist_a.get("val_acc") or hist_a.get("val_bacc", [])
+    va_b = hist_b.get("val_acc") or hist_b.get("val_bacc", [])
+    if not va_a and not va_b:
+        return None
+
+    fig = go.Figure()
+    if va_a:
+        fig.add_trace(go.Scatter(
+            x=list(range(1, len(va_a) + 1)), y=va_a,
+            name=f"{label_a} — Acc", mode="lines+markers",
+            line=dict(color="#ef4444", width=2),
+            marker=dict(size=5),
+        ))
+    if va_b:
+        fig.add_trace(go.Scatter(
+            x=list(range(1, len(va_b) + 1)), y=va_b,
+            name=f"{label_b} — Acc", mode="lines+markers",
+            line=dict(color="#2ecc71", width=2),
+            marker=dict(size=5),
+        ))
+    # Add F1 curves if present (dashed)
+    vf_a = hist_a.get("val_f1", [])
+    vf_b = hist_b.get("val_f1", [])
+    if vf_a:
+        fig.add_trace(go.Scatter(
+            x=list(range(1, len(vf_a) + 1)), y=vf_a,
+            name=f"{label_a} — F1", mode="lines",
+            line=dict(color="#ef4444", width=1.5, dash="dot"),
+        ))
+    if vf_b:
+        fig.add_trace(go.Scatter(
+            x=list(range(1, len(vf_b) + 1)), y=vf_b,
+            name=f"{label_b} — F1", mode="lines",
+            line=dict(color="#2ecc71", width=1.5, dash="dot"),
+        ))
+    # Add Precision curves if present (dashed-long)
+    vp_a = hist_a.get("val_precision", [])
+    vp_b = hist_b.get("val_precision", [])
+    if vp_a:
+        fig.add_trace(go.Scatter(
+            x=list(range(1, len(vp_a) + 1)), y=vp_a,
+            name=f"{label_a} — Prec", mode="lines",
+            line=dict(color="#ef4444", width=1.5, dash="longdash"),
+        ))
+    if vp_b:
+        fig.add_trace(go.Scatter(
+            x=list(range(1, len(vp_b) + 1)), y=vp_b,
+            name=f"{label_b} — Prec", mode="lines",
+            line=dict(color="#2ecc71", width=1.5, dash="longdash"),
+        ))
+    # Add ROC-AUC curves if present (dashdot)
+    va_auc_a = hist_a.get("val_roc_auc", [])
+    va_auc_b = hist_b.get("val_roc_auc", [])
+    if va_auc_a:
+        fig.add_trace(go.Scatter(
+            x=list(range(1, len(va_auc_a) + 1)), y=va_auc_a,
+            name=f"{label_a} — AUC", mode="lines",
+            line=dict(color="#ef4444", width=2, dash="dashdot"),
+        ))
+    if va_auc_b:
+        fig.add_trace(go.Scatter(
+            x=list(range(1, len(va_auc_b) + 1)), y=va_auc_b,
+            name=f"{label_b} — AUC", mode="lines",
+            line=dict(color="#2ecc71", width=2, dash="dashdot"),
+        ))
+
+    fig.update_layout(
+        title=dict(text=f"Learning Curves — {title}", font_size=12),
+        xaxis=dict(title="Epoch", dtick=1),
+        yaxis=dict(title="Score", range=[0, 1.05],
+                   gridcolor="#f3f4f6", showgrid=True),
+        plot_bgcolor="white", paper_bgcolor="white", font_family="Inter",
+        legend=dict(font_size=10, bgcolor="rgba(255,255,255,.9)",
+                    bordercolor="#e5e7eb", borderwidth=1),
+        margin=dict(t=50, b=40, l=16, r=16),
+        height=320,
+    )
+    return fig
+
+
+def _normalize_summary_df(df: pd.DataFrame) -> pd.DataFrame:
+    """Handle both old (Best Val Bacc) and new (Best Val Acc/F1/Prec/AUC) CSV formats."""
+    if "Best Val Bacc" in df.columns and "Best Val Acc" not in df.columns:
+        df = df.rename(columns={"Best Val Bacc": "Best Val Acc"})
+    for col in ["Best Val Acc", "Best Val F1", "Best Val Prec", "Best Val AUC"]:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors="coerce")
+    return df
+
 
 def render_ablations():
     page_banner("🔬", "Ablation Studies",
@@ -1383,61 +1578,208 @@ def render_ablations():
     abl_dir  = Path(CFG.paths.results) / "ablations"
     csv_path = abl_dir / "ablation_summary.csv"
 
-    if not csv_path.exists():
+    # ── Check if any results exist at all ────────────────────────
+    any_json = any(
+        (abl_dir / study["json"]).exists()
+        for studies in _MODEL_STUDY_MAP.values()
+        for study   in studies
+    )
+    if not any_json and not csv_path.exists():
         empty_card("🔬", "No ablation results yet",
                    "Run `python train_all.py` to generate ablation results. "
                    "They will appear here automatically once training completes.")
         return
 
-    df = pd.read_csv(csv_path)
-    df["Best Val Bacc"] = df["Best Val Bacc"].astype(float)
+    # ── Load + normalise summary CSV ─────────────────────────────
+    df_summary = None
+    if csv_path.exists():
+        df_summary = _normalize_summary_df(pd.read_csv(csv_path))
 
-    # Summary stats row
-    models_present = df["Study"].str.split(" / ", n=1, expand=True)[0].unique()
+    # ── Global KPI tiles — best metric per model ──────────────────
+    acc_col = "Best Val Acc"
     tile_data = []
-    for mn in models_present:
-        peak = df[df["Study"].str.startswith(mn)]["Best Val Bacc"].max()
-        tile_data.append((f"{peak:.3f}", mn, "#0d9488"))
-    stat_tiles(tile_data)
-    st.markdown("<br>", unsafe_allow_html=True)
+    for model_name, csv_prefix in _MODEL_CSV_PREFIX.items():
+        peak_acc, peak_f1, peak_prec = None, None, None
+        if df_summary is not None:
+            mask = df_summary["Study"].str.startswith(csv_prefix)
+            sub  = df_summary[mask]
+            if not sub.empty and acc_col in sub.columns:
+                peak_acc = sub[acc_col].max()
+            if not sub.empty and "Best Val F1" in sub.columns:
+                peak_f1  = sub["Best Val F1"].max()
+            if not sub.empty and "Best Val Prec" in sub.columns:
+                peak_prec = sub["Best Val Prec"].max()
+        # Fallback: scan JSON files
+        if peak_acc is None:
+            for study in _MODEL_STUDY_MAP[model_name]:
+                jp = abl_dir / study["json"]
+                if not jp.exists():
+                    continue
+                try:
+                    jdata = _read_json_safe(jp)
+                    for cdata in jdata.values():
+                        m = _extract_study_metrics(cdata)
+                        if m["acc"] is not None:
+                            peak_acc  = max(peak_acc  or 0, m["acc"])
+                        if m["f1"]  is not None:
+                            peak_f1   = max(peak_f1   or 0, m["f1"])
+                        if m["prec"] is not None:
+                            peak_prec = max(peak_prec or 0, m["prec"])
+                except Exception:
+                    pass
+        if peak_acc is not None:
+            display = f"{peak_acc:.3f}"
+            if peak_f1   is not None: display += f"  ·  F1 {peak_f1:.3f}"
+            if peak_prec is not None: display += f"  ·  Prec {peak_prec:.3f}"
+            tile_data.append((f"{peak_acc:.3f}", f"{model_name} peak acc", "#0d9488"))
 
-    # Summary table
-    st.markdown("### Summary Table")
-    st.markdown('<div class="card card-sm">', unsafe_allow_html=True)
-    st.dataframe(
-        df.style.highlight_max(subset=["Best Val Bacc"], color="#ccfbf1").format(precision=4),
-        use_container_width=True,
-        height=min(100 + len(df) * 36, 700))
-    st.markdown('</div>', unsafe_allow_html=True)
+    if tile_data:
+        stat_tiles(tile_data)
+        st.markdown("<br>", unsafe_allow_html=True)
 
-    # Per-model tabs with plots
-    st.markdown("### Learning Curves & Bar Charts")
-    model_tabs = st.tabs(list(_ABL_PLOTS.keys()))
-    for tab, (model_name, studies) in zip(model_tabs, _ABL_PLOTS.items()):
+    # ── Summary table ─────────────────────────────────────────────
+    if df_summary is not None and not df_summary.empty:
+        st.markdown("### Summary Table — All Models × All Studies")
+        num_cols = [c for c in ["Best Val Acc", "Best Val F1", "Best Val Prec", "Best Val AUC"]
+                    if c in df_summary.columns]
+        st.markdown('<div class="card card-sm">', unsafe_allow_html=True)
+        style = df_summary.style
+        for c in num_cols:
+            style = style.highlight_max(subset=[c], color="#ccfbf1")
+        style = style.format({c: "{:.4f}" for c in num_cols})
+        st.dataframe(style, use_container_width=True,
+                     height=min(100 + len(df_summary) * 36, 700))
+        st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown("<br>", unsafe_allow_html=True)
+
+    # ── Per-model interactive tabs ────────────────────────────────
+    st.markdown("### Detailed Results — All Models")
+    model_tabs = st.tabs(list(_MODEL_STUDY_MAP.keys()))
+
+    for tab, (model_name, studies) in zip(model_tabs, _MODEL_STUDY_MAP.items()):
         with tab:
-            found = [(abl_dir / fn, caption)
-                     for fn, caption in studies
-                     if (abl_dir / fn).exists()]
-            if not found:
-                st.info(f"No plots yet for {model_name}. "
-                        "Run the training pipeline to generate them.")
-                continue
-            for path, caption in found:
-                st.markdown(f'<div class="card card-sm">', unsafe_allow_html=True)
-                st.image(str(path), caption=caption, use_container_width=True)
-                st.markdown('</div>', unsafe_allow_html=True)
+            # Model-level KPI row from CSV
+            if df_summary is not None:
+                prefix = _MODEL_CSV_PREFIX[model_name]
+                sub    = df_summary[df_summary["Study"].str.startswith(prefix)]
+                if not sub.empty:
+                    kpi_cols = [c for c in ["Best Val Acc","Best Val F1","Best Val Prec","Best Val AUC"]
+                                if c in sub.columns]
+                    if kpi_cols:
+                        kpi_items = []
+                        for c in kpi_cols:
+                            kpi_items.append((f"{sub[c].max():.3f}", f"Peak {c}", "#0d9488"))
+                        kpi_items.append((str(len(sub)), "Conditions run", "#6b7280"))
+                        stat_tiles(kpi_items)
+                        st.markdown("<br>", unsafe_allow_html=True)
 
+            # Per-study breakdown
+            model_has_any = False
+            for study in studies:
+                jp  = abl_dir / study["json"]
+                png = abl_dir / study["png"]
+
+                # ── Interactive charts from JSON ─────────────────
+                if jp.exists():
+                    model_has_any = True
+                    try:
+                        jdata = _read_json_safe(jp)
+                        keys  = list(jdata.keys())
+                        if len(keys) >= 2:
+                            cdata_a = jdata[keys[0]]
+                            cdata_b = jdata[keys[1]]
+                            m_a     = _extract_study_metrics(cdata_a)
+                            m_b     = _extract_study_metrics(cdata_b)
+                            hist_a  = cdata_a.get("history", {})
+                            hist_b  = cdata_b.get("history", {})
+
+                            st.markdown(
+                                f'<div class="card card-sm" style="margin-bottom:.5rem;">'
+                                f'<b style="font-size:.95rem;">{study["title"]}</b>'
+                                f'</div>',
+                                unsafe_allow_html=True,
+                            )
+
+                            col_bar, col_curve = st.columns([1, 1], gap="medium")
+                            with col_bar:
+                                fig = _study_bar_chart(
+                                    study["label_a"], study["label_b"],
+                                    m_a, m_b, study["title"],
+                                )
+                                st.plotly_chart(fig, use_container_width=True)
+
+                            with col_curve:
+                                fig_lc = _learning_curve_chart(
+                                    study["label_a"], study["label_b"],
+                                    hist_a, hist_b, study["title"],
+                                )
+                                if fig_lc:
+                                    st.plotly_chart(fig_lc, use_container_width=True)
+                                else:
+                                    st.info("No per-epoch history in this JSON.")
+
+                            # Inline metric comparison table
+                            def _fmt(v): return f"{v:.4f}" if v is not None else "—"
+                            rows_tbl = [
+                                {
+                                    "Condition":       study["label_a"],
+                                    "Best Val Acc":    _fmt(m_a["acc"]),
+                                    "Best Val F1":     _fmt(m_a["f1"]),
+                                    "Best Val Prec":   _fmt(m_a["prec"]),
+                                    "Δ vs baseline":   "",
+                                },
+                                {
+                                    "Condition":       study["label_b"],
+                                    "Best Val Acc":    _fmt(m_b["acc"]),
+                                    "Best Val F1":     _fmt(m_b["f1"]),
+                                    "Best Val Prec":   _fmt(m_b["prec"]),
+                                    "Δ vs baseline":   "",
+                                },
+                            ]
+                            # Fill delta column
+                            for metric_key, col_name in [("acc","Best Val Acc"),
+                                                          ("f1","Best Val F1"),
+                                                          ("prec","Best Val Prec")]:
+                                va, vb = m_a.get(metric_key), m_b.get(metric_key)
+                                if va is not None and vb is not None:
+                                    delta = vb - va
+                                    sign  = "+" if delta >= 0 else ""
+                                    rows_tbl[1]["Δ vs baseline"] = (
+                                        f"{sign}{delta:+.4f} acc"
+                                        if metric_key == "acc" else
+                                        rows_tbl[1]["Δ vs baseline"]
+                                    )
+                            tdf = pd.DataFrame(rows_tbl)
+                            st.markdown('<div class="card card-sm">', unsafe_allow_html=True)
+                            st.dataframe(tdf, use_container_width=True, hide_index=True)
+                            st.markdown('</div>', unsafe_allow_html=True)
+
+                    except Exception as e:
+                        st.warning(f"Could not parse {study['json']}: {e}")
+
+                # ── Static PNG fallback ──────────────────────────
+                elif png.exists():
+                    model_has_any = True
+                    st.markdown('<div class="card card-sm">', unsafe_allow_html=True)
+                    st.image(str(png), caption=study["title"], use_container_width=True)
+                    st.markdown('</div>', unsafe_allow_html=True)
+
+            if not model_has_any:
+                st.info(f"No ablation results yet for {model_name}. "
+                        "Run the training pipeline to generate them.")
+
+    # ── Study design reference ────────────────────────────────────
     with st.expander("ℹ️ Study design"):
         st.markdown("""
 | Model | Study 1 | Study 2 | Study 3 |
 |:---|:---|:---|:---|
-| **EfficientNet-B3** | Augmentation on/off | Class weighting on/off | Frozen ↔ full fine-tuning |
 | **SimpleCNN**       | Augmentation on/off | Class weighting on/off | 2 blocks ↔ 4 blocks |
 | **ResNet50**        | Augmentation on/off | Class weighting on/off | Frozen ↔ full fine-tuning |
 | **ViT+LoRA**        | Augmentation on/off | Class weighting on/off | LoRA rank=2 ↔ rank=8 |
 
 All other hyperparameters are held constant within each study.
 Each condition trains for up to **10 epochs** with patience-5 early stopping.
+Solid lines = Balanced Accuracy · Dotted lines = Macro F1 · Long-dashed lines = Macro Precision
         """)
 
 

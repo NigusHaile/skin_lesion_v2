@@ -15,7 +15,7 @@ from pathlib import Path
 # Make `src` importable regardless of how this file is invoked.
 # When run directly (python src/dataset.py), Python puts src/ on sys.path and
 # the `src` package itself is invisible. Inserting the project root fixes this
-# without affecting normal `from src.X import Y` usage from train_all.py.
+# without affecting normal `from src.X import Y` usage from train_all.ipynb.
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
@@ -113,15 +113,9 @@ def get_val_transforms() -> A.Compose:
 # Dataset
 
 class SkinLesionDataset(Dataset):
-    """
-    PyTorch Dataset for HAM10000 dermoscopy images.
-
-    Args:
-        dataframe:   DataFrame with columns [image_id, dx, image_path].
-        transform:   Albumentations Compose pipeline (train or val).
-        return_path: When True, __getitem__ returns (image, label, path).
-                     Used by GradCAM and error-analysis tools.
-    """
+    
+  #  PyTorch Dataset for HAM10000 dermoscopy images.
+    
 
     def __init__(
         self,
@@ -150,7 +144,7 @@ class SkinLesionDataset(Dataset):
         return image, label
 
 
-# ── Split builder ─────────────────────────────────────────────────────────────
+#  Split builder
 
 def _find_image_path(image_id: str, image_dir: Path) -> str | None:
     """
