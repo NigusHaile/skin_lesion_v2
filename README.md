@@ -372,4 +372,3 @@ Three output grids are generated for each model:
 
 ---
 
-*UNIMIB · Advanced Deep Learning 2026*
