@@ -1,5 +1,5 @@
 # Skin Lesion Diagnosis — Requirements
-Python 3.10+
+# Python 3.10+
 
 # PyTorch
 torch>=2.5.0
