@@ -221,7 +221,9 @@ __marimo__/
 #
 data/
 results/
+# Re-include model checkpoints so the deployed app can load them
+!results/ablations/
+!results/ablations/checkpoints/
+!results/ablations/checkpoints/*.pth
 src/__pycache__/
 _pycache__/
-checkpoints/
-results/abalation/checkpoints/
