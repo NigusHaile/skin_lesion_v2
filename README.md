@@ -4,6 +4,8 @@
 > with explainability (GradCAM), embedding analysis (PCA / t-SNE), ablation studies,
 > and an interactive Streamlit dashboard.
 
+**Live demo:** [skinlesionv2-5imnxbm4nqszvdayq6hcu2.streamlit.app](https://skinlesionv2-5imnxbm4nqszvdayq6hcu2.streamlit.app/)
+
 ---
 
 ## Table of Contents
@@ -301,6 +303,8 @@ parameters, or paths — no code changes required.
 ---
 
 ## Dashboard
+
+**Live demo:** [skinlesionv2-5imnxbm4nqszvdayq6hcu2.streamlit.app](https://skinlesionv2-5imnxbm4nqszvdayq6hcu2.streamlit.app/)
 
 ```bash
 streamlit run dashboard/app.py
