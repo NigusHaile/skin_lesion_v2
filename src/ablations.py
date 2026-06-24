@@ -40,7 +40,7 @@ from src.evaluate import plot_confusion_matrix
 
 
 # Number of epochs per ablation run (shorter than full training to save time)
-ABLATION_EPOCHS = 20
+ABLATION_EPOCHS = 10
 ABLATION_PATIENCE = 5
 
 
@@ -49,7 +49,7 @@ ABLATION_PATIENCE = 5
 def _drop_loser_checkpoint(save_dir: str, result_a: dict, result_b: dict) -> None:
     """Delete the checkpoint of the worse-performing variant; keep only the winner."""
     loser = result_a if result_a["best_val_acc"] <= result_b["best_val_acc"] else result_b
-    path = os.path.join(save_dir, f"{loser['tag']}_best.pth")
+    path = os.path.join(save_dir, "checkpoints", f"{loser['tag']}_best.pth")
     if os.path.exists(path):
         os.remove(path)
         print(f"  [ablation] Removed checkpoint for {loser['tag']} (not best)")
@@ -65,8 +65,9 @@ def _save_ablation_results(
     label_a: str,
     label_b: str,
 ) -> None:
-    """Save JSON and comparison learning curve plot."""
-    os.makedirs(save_dir, exist_ok=True)
+    """Save JSON and comparison learning curve plot to plots/ subfolder."""
+    plots_dir = os.path.join(save_dir, "plots")
+    os.makedirs(plots_dir, exist_ok=True)
 
     # Serialisable version for JSON
     serialisable = {}
@@ -82,7 +83,7 @@ def _save_ablation_results(
                 for k, lst in val["history"].items()
             },
         }
-    with open(f"{save_dir}/{filename}.json", "w") as f:
+    with open(f"{plots_dir}/{filename}.json", "w") as f:
         json.dump(serialisable, f, indent=2)
 
     # Comparison plot
@@ -129,15 +130,15 @@ def _save_ablation_results(
 
     plt.suptitle(title, fontsize=13, y=1.01)
     plt.tight_layout()
-    plt.savefig(f"{save_dir}/{filename}.png", dpi=150, bbox_inches="tight")
+    plt.savefig(f"{plots_dir}/{filename}.png", dpi=150, bbox_inches="tight")
     plt.close()
 
-    # Confusion matrix for each variant (saved to disk; shown in notebook display cells)
+    # Confusion matrix for each variant saved to plots/ subfolder
     for key, label in [(keys[0], label_a), (keys[1], label_b)]:
         r = results[key]
         if "ground_truth" in r and "predictions" in r:
             plot_confusion_matrix(r["ground_truth"], r["predictions"],
-                                  save_dir, r["tag"], show=False)
+                                  plots_dir, r["tag"], show=False)
 
     print(f"\n  Results — {title}:")
     print(f"    {label_a:35s}: acc={result_a['best_val_acc']:.4f}  "
@@ -213,9 +214,11 @@ def _train_ablation_config_generic(
     scaler = (torch.amp.GradScaler("cuda")
               if torch.cuda.is_available() else None)
 
+    ckpt_dir = os.path.join(save_dir, "checkpoints")
+    os.makedirs(ckpt_dir, exist_ok=True)
     early_stop = EarlyStopping(
         patience=ABLATION_PATIENCE,
-        checkpoint_path=f"{save_dir}/{run_tag}_best.pth",
+        checkpoint_path=f"{ckpt_dir}/{run_tag}_best.pth",
     )
 
     history = {
@@ -586,7 +589,7 @@ def study_learning_rate(train_df, val_df, device: torch.device, save_dir: str) -
     best_tag = max(results, key=lambda t: results[t]["best_val_acc"])
     for tag, res in results.items():
         if tag != best_tag:
-            path = os.path.join(save_dir, f"lrsearch_{tag}_best.pth")
+            path = os.path.join(save_dir, "checkpoints", f"lrsearch_{tag}_best.pth")
             if os.path.exists(path):
                 os.remove(path)
                 print(f"  [ablation] Removed LR search checkpoint: lrsearch_{tag}_best.pth")
@@ -777,7 +780,7 @@ def run_multi_seed_robustness(
     best_seed = max(per_seed, key=lambda m: m["val_acc"])["seed"]
     for m in per_seed:
         if m["seed"] != best_seed:
-            path = os.path.join(save_dir, f"robust_seed{m['seed']}_best.pth")
+            path = os.path.join(save_dir, "checkpoints", f"robust_seed{m['seed']}_best.pth")
             if os.path.exists(path):
                 os.remove(path)
                 print(f"  [ablation] Removed robustness checkpoint: robust_seed{m['seed']}_best.pth")

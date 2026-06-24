@@ -42,8 +42,8 @@ data:
 
   # Stratified split ratios
   train_ratio: 0.70
-  val_ratio:   0.15
-  test_ratio:  0.15
+  val_ratio:   0.2
+  test_ratio:  0.1
 
 # DataLoader settings 
 dataloader:
@@ -63,13 +63,6 @@ augmentation:
   contrast_limit:      0.2
   saturation_limit:    0.2
   hue_limit:           0.05
-  elastic_alpha:       120   # simulates soft tissue deformation
-  elastic_sigma:       6
-  elastic_p:           0.3
-  cutout_holes:        4     # forces model to use global context (Cutout)
-  cutout_hole_height:  20
-  cutout_hole_width:   20
-  cutout_p:            0.3
 
 # ViT-B/16 + LoRA (comparison model)
 vit:

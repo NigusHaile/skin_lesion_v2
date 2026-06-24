@@ -27,7 +27,7 @@ from src.gradcam import run_gradcam_single
 
 # ── Page config ────────────────────────────────────────────────
 st.set_page_config(
-    page_title="DermiAI · Skin Lesion Analysis",
+    page_title="MedSkin AI · Skin Lesion Analysis",
     page_icon="🩺",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -788,7 +788,7 @@ def pick_gradcam_model(choice: str):
     if "ResNet" in choice: return load_resnet()
     return load_simple_cnn()
 
-# ── Sidebar ────────────────────────────────────────────────────
+#  Sidebar 
 PAGE_OPTIONS = [
     "🩺  Single Diagnosis",       # [0] → render_single_diagnosis
     "📦  Batch Prediction",        # [1] → render_batch
@@ -808,13 +808,13 @@ with st.sidebar:
     <div class="sb-brand">
       <div class="sb-logo-row">
         <div class="sb-mark">🩺</div>
-        <div class="sb-name">Dermi<em>AI</em></div>
+        <div class="sb-name">MedSkin<em>AI</em></div>
       </div>
       <div class="sb-tagline">Skin Lesion Analysis Platform</div>
     </div>""", unsafe_allow_html=True)
 
     # Navigation — button per page (session_state tracks active page)
-    st.markdown('<p class="sb-sect">Navigation</p>', unsafe_allow_html=True)
+    st.markdown('<p class="sb-sect"></p>', unsafe_allow_html=True)
     for _opt in PAGE_OPTIONS:
         _is_active = st.session_state.page == _opt
         if st.button(_opt, key=f"nav_{_opt}", use_container_width=True,
@@ -839,49 +839,10 @@ with st.sidebar:
 
     st.divider()
 
-    # Auto-selected checkpoint info
-    st.markdown('<p class="sb-sect">Active Checkpoints</p>', unsafe_allow_html=True)
-    _ckpt_labels = {
-        "vit":        "ViT-B/16",
-        "resnet50":   "ResNet50",
-        "simple_cnn": "Simple CNN",
-    }
-    _ckpt_rows = ""
-    for _mk, _display in _ckpt_labels.items():
-        _cp, _bacc, _lbl = _pick_best_ckpt(_mk)
-        _tag = "ablation" if _lbl.startswith("ablation:") else "base"
-        _tag_name = _lbl.replace("ablation:", "") if _tag == "ablation" else "base"
-        _color = "#f59e0b" if _tag == "ablation" else "#14b8a6"
-        _ckpt_rows += (
-            f'<div class="sb-row">'
-            f'<span class="sb-key">{_display}</span>'
-            f'<span class="sb-val" style="color:{_color};font-size:0.72rem;">'
-            f'{_tag_name} ({_bacc:.3f})</span></div>'
-        )
-    st.markdown(f'<div class="sb-stat">{_ckpt_rows}</div>', unsafe_allow_html=True)
-
-    st.divider()
-
-    # Dataset stats
-    st.markdown('<p class="sb-sect">Dataset</p>', unsafe_allow_html=True)
-    st.markdown("""
-    <div class="sb-stat">
-      <div class="sb-stat-head">HAM10000</div>
-      <div class="sb-row"><span class="sb-key">Total images</span><span class="sb-val">10,015</span></div>
-      <div class="sb-row"><span class="sb-key">Classes</span><span class="sb-val">7 lesion types</span></div>
-      <div class="sb-row"><span class="sb-key">Split</span><span class="sb-val">70 / 15 / 15 %</span></div>
-      <div class="sb-row"><span class="sb-key">Explainability</span><span class="sb-val">GradCAM</span></div>
-    </div>""", unsafe_allow_html=True)
-
-    st.markdown("""
-    <div class="sb-foot">
-      <p>UNIMIB · Advanced Deep Learning 2026</p>
-    </div>""", unsafe_allow_html=True)
-
-
-# ═══════════════════════════════════════════════════════════════
+    
+# ═════════════════════════
 # PAGE 1 — Single Diagnosis
-# ═══════════════════════════════════════════════════════════════
+# ═════════════════════════
 def render_single_diagnosis():
     page_banner("🩺", "Single Diagnosis",
                 "Upload a dermoscopy image for AI-assisted lesion classification")
@@ -969,11 +930,11 @@ def render_single_diagnosis():
         </div>""", unsafe_allow_html=True)
 
 
-# ═══════════════════════════════════════════════════════════════
+# ═══════════════════════════════
 # PAGE 2 — GradCAM Explainability
-# ═══════════════════════════════════════════════════════════════
+# ═══════════════════════════════
 def render_gradcam():
-    page_banner("🌡️", "GradCAM Explainability",
+    page_banner("🌡️", "GradCAM",
                 "Visualise which image regions drove the model's prediction")
 
     ctl_a, ctl_b, ctl_c = st.columns([2, 1, 1])
@@ -1046,9 +1007,9 @@ def render_gradcam():
             st.markdown("**Clinical check**\n- ✅ Heat on lesion body/border = reliable\n- ⚠️ Heat on hair or background = artefact bias")
 
 
-# ═══════════════════════════════════════════════════════════════
+# ═════════════════════════
 # PAGE 3 — Model Comparison
-# ═══════════════════════════════════════════════════════════════
+# ═════════════════════════
 def render_comparison():
     page_banner("📊", "Model Comparison",
                 "All four architectures benchmarked on the held-out test set")
@@ -1153,9 +1114,9 @@ def render_comparison():
                     st.markdown('</div>', unsafe_allow_html=True)
 
 
-# ═══════════════════════════════════════════════════════════════
+# ═══════════════════════════
 # PAGE 4 — Embedding Explorer
-# ═══════════════════════════════════════════════════════════════
+# ═══════════════════════════
 def render_embeddings():
     page_banner("🔵", "Embedding Explorer",
                 "Each dot = one test image · colour = ground-truth class label")
@@ -1213,9 +1174,9 @@ def render_embeddings():
             st.markdown("""**t-SNE** (non-linear)\n- Reveals local clusters\n- Best for class separation""")
 
 
-# ═══════════════════════════════════════════════════════════════
+# ═════════════════════════
 # PAGE 5 — Batch Prediction
-# ═══════════════════════════════════════════════════════════════
+# ═════════════════════════
 def render_batch():
     page_banner("📦", "Batch Prediction",
                 "Process multiple images at once · export results as CSV")
@@ -1341,34 +1302,11 @@ def render_batch():
             st.plotly_chart(fig, use_container_width=True)
 
 
-# ═══════════════════════════════════════════════════════════════
+# ═════════════════════════
 # PAGE 6 — Ablation Studies
-# ═══════════════════════════════════════════════════════════════
-
-# Complete map: JSON + PNG files + human labels per model × study
+# ═════════════════════════
 _MODEL_STUDY_MAP = {
-    "SimpleCNN": [
-        dict(json="simplecnn_study1_augmentation.json",   png="simplecnn_study1_augmentation.png",
-             title="Study 1 — Data Augmentation",
-             label_a="No augmentation",                   label_b="With augmentation"),
-        dict(json="simplecnn_study2_class_weights.json",  png="simplecnn_study2_class_weights.png",
-             title="Study 2 — Class Weighting",
-             label_a="Uniform loss",                      label_b="Weighted CE loss"),
-        dict(json="simplecnn_study3_depth.json",          png="simplecnn_study3_depth.png",
-             title="Study 3 — Network Depth",
-             label_a="Shallow (2 blocks)",                label_b="Deep (4 blocks)"),
-    ],
-    "ResNet50": [
-        dict(json="resnet50_study1_augmentation.json",   png="resnet50_study1_augmentation.png",
-             title="Study 1 — Data Augmentation",
-             label_a="No augmentation",                  label_b="With augmentation"),
-        dict(json="resnet50_study2_class_weights.json",  png="resnet50_study2_class_weights.png",
-             title="Study 2 — Class Weighting",
-             label_a="Uniform loss",                     label_b="Weighted CE loss"),
-        dict(json="resnet50_study3_backbone.json",       png="resnet50_study3_backbone.png",
-             title="Study 3 — Backbone Freezing",
-             label_a="Frozen backbone",                  label_b="Full fine-tuning"),
-    ],
+
     "ViT+LoRA": [
         dict(json="vit_study1_augmentation.json",   png="vit_study1_augmentation.png",
              title="Study 1 — Data Augmentation",
@@ -1382,10 +1320,7 @@ _MODEL_STUDY_MAP = {
     ],
 }
 
-# Model prefix used in the Study column of ablation_summary.csv
 _MODEL_CSV_PREFIX = {
-    "SimpleCNN": "SimpleCNN",
-    "ResNet50":  "ResNet50",
     "ViT+LoRA":  "ViT+LoRA",
 }
 
@@ -1578,7 +1513,7 @@ def render_ablations():
     abl_dir  = Path(CFG.paths.results) / "ablations"
     csv_path = abl_dir / "ablation_summary.csv"
 
-    # ── Check if any results exist at all ────────────────────────
+    # Check if any results exist at all 
     any_json = any(
         (abl_dir / study["json"]).exists()
         for studies in _MODEL_STUDY_MAP.values()
@@ -1590,12 +1525,12 @@ def render_ablations():
                    "They will appear here automatically once training completes.")
         return
 
-    # ── Load + normalise summary CSV ─────────────────────────────
+    # ── Load + normalise summary CSV 
     df_summary = None
     if csv_path.exists():
         df_summary = _normalize_summary_df(pd.read_csv(csv_path))
 
-    # ── Global KPI tiles — best metric per model ──────────────────
+    # Global KPI tiles — best metric per model 
     acc_col = "Best Val Acc"
     tile_data = []
     for model_name, csv_prefix in _MODEL_CSV_PREFIX.items():
@@ -1637,7 +1572,7 @@ def render_ablations():
         stat_tiles(tile_data)
         st.markdown("<br>", unsafe_allow_html=True)
 
-    # ── Summary table ─────────────────────────────────────────────
+    # Summary table 
     if df_summary is not None and not df_summary.empty:
         st.markdown("### Summary Table — All Models × All Studies")
         num_cols = [c for c in ["Best Val Acc", "Best Val F1", "Best Val Prec", "Best Val AUC"]
@@ -1652,7 +1587,7 @@ def render_ablations():
         st.markdown('</div>', unsafe_allow_html=True)
         st.markdown("<br>", unsafe_allow_html=True)
 
-    # ── Per-model interactive tabs ────────────────────────────────
+    # ── Per-model interactive tabs 
     st.markdown("### Detailed Results — All Models")
     model_tabs = st.tabs(list(_MODEL_STUDY_MAP.keys()))
 
@@ -1679,7 +1614,7 @@ def render_ablations():
                 jp  = abl_dir / study["json"]
                 png = abl_dir / study["png"]
 
-                # ── Interactive charts from JSON ─────────────────
+                #  Interactive charts from JSON 
                 if jp.exists():
                     model_has_any = True
                     try:
@@ -1757,7 +1692,7 @@ def render_ablations():
                     except Exception as e:
                         st.warning(f"Could not parse {study['json']}: {e}")
 
-                # ── Static PNG fallback ──────────────────────────
+                # Static PNG fallback 
                 elif png.exists():
                     model_has_any = True
                     st.markdown('<div class="card card-sm">', unsafe_allow_html=True)
@@ -1768,7 +1703,7 @@ def render_ablations():
                 st.info(f"No ablation results yet for {model_name}. "
                         "Run the training pipeline to generate them.")
 
-    # ── Study design reference ────────────────────────────────────
+    # Study design reference 
     with st.expander("ℹ️ Study design"):
         st.markdown("""
 | Model | Study 1 | Study 2 | Study 3 |
@@ -1783,9 +1718,9 @@ Solid lines = Balanced Accuracy · Dotted lines = Macro F1 · Long-dashed lines 
         """)
 
 
-# ═══════════════════════════════════════════════════════════════
+# ═════════==
 # Dispatcher
-# ═══════════════════════════════════════════════════════════════
+# ══════════
 PAGE_HANDLERS = {
     PAGE_OPTIONS[0]: render_single_diagnosis,
     PAGE_OPTIONS[1]: render_batch,
