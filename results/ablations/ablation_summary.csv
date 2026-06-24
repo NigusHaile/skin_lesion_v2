@@ -1,0 +1,7 @@
+Study,Setting,Best Val Acc,Best Val F1,Best Val Prec,Best Val AUC
+ViT+LoRA / Study 1,No augmentation,0.8238,0.7248,0.7974,0.9589
+ViT+LoRA / Study 1,With augmentation ✓,0.7194,0.7301,0.7153,0.9643
+ViT+LoRA / Study 2,Uniform loss,0.8697,0.7870,0.8031,0.9760
+ViT+LoRA / Study 2,Weighted CE loss ✓,0.6990,0.7325,0.7284,0.9600
+ViT+LoRA / Study 3,LoRA rank=2,0.7324,0.7095,0.7053,0.9627
+ViT+LoRA / Study 3,LoRA rank=8 ✓,0.6830,0.7086,0.7105,0.9601

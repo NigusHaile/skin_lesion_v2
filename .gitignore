@@ -220,10 +220,12 @@ __marimo__/
 
 #
 data/
-results/
-# Re-include model checkpoints so the deployed app can load them
-!results/ablations/
-!results/ablations/checkpoints/
-!results/ablations/checkpoints/*.pth
+# Ignore large binary/generated outputs but keep metrics and model files for deployment
+results/embeddings/
+results/gradcam/
+results/plots/
+results/*.png
+results/*.csv
+results/ablations/plots/*.png
 src/__pycache__/
 _pycache__/
