@@ -161,21 +161,6 @@ class ResNet50(nn.Module):
 # LoRALinear  — Low-Rank Adaptation wrapper
 
 class LoRALinear(nn.Module):
-    """
-    Wraps an existing nn.Linear with a trainable low-rank delta.
-
-    Original LoRA paper (Hu et al., 2021):
-        W_effective = W_frozen + B @ A * (alpha / rank)
-
-    where:
-        A ∈ R^{rank × d_in}   — init: Kaiming uniform
-        B ∈ R^{d_out × rank}  — init: zeros  → delta = 0 at start
-
-    Why LoRA for ViT?
-    - ViT-B/16 has 86M parameters — full fine-tuning overfits on 10k images
-    - LoRA rank=4 trains only ~0.5% of params
-    - Strong regularisation: model stays close to ImageNet prior
-    """
 
     def __init__(
         self,
@@ -214,11 +199,6 @@ class LoRALinear(nn.Module):
 class ViTWithLoRA(nn.Module):
     """
     ViT-B/16 pretrained on ImageNet21k with LoRA adapters.
-
-    Architecture:
-    - 12 transformer blocks, 12 attention heads, 768-dim embeddings
-    - 196 patches (16×16) for 224×224 input
-    - [CLS] token used for classification
 
     LoRA injection: replaces the fused QKV projection in each attention block.
     This injects trainable low-rank matrices while keeping all other weights frozen.

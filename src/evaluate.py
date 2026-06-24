@@ -1,10 +1,9 @@
 """
 src/evaluate.py
 ===============
-Rubric points covered:
-  - "Results presented clearly: normalized confusion matrix, plots, tables" (+0.8 pt)
-  - "Explicit definition of loss function, evaluation metrics" (+0.8 pt)
-  - "In-depth error analysis: failed examples, confused classes" (+2.0 pt extras)
+  - "Results presented clearly: normalized confusion matrix, plots, tables"
+  - "Explicit definition of loss function, evaluation metrics"
+  - "In-depth error analysis: failed examples, confused class pairs, confidence distribution"
 
 Metrics implemented:
   Accuracy, Balanced Accuracy, Precision, Recall, F1-score, ROC-AUC
@@ -182,7 +181,7 @@ def plot_confusion_matrix(
 ) -> None:
     """
     Plot raw counts and row-normalised confusion matrix side by side.
-    Rubric: "Results presented clearly: normalised confusion matrix" (+0.8 pt)
+    "Results presented clearly: normalised confusion matrix"
     """
     cm      = confusion_matrix(ground_truth, predictions)
     cm_norm = cm.astype(float) / cm.sum(axis=1, keepdims=True)

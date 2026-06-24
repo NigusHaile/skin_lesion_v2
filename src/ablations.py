@@ -677,7 +677,7 @@ def run_multi_seed_robustness(
     Train SimpleCNN with 3 different random seeds and report mean ± std.
 
     Addresses: "Solid experimental evaluation: multiple runs, standard deviation,
-                robustness tests" (+2.0 pt extra)
+                robustness tests"
 
     SimpleCNN is chosen because it trains from scratch and is the fastest model,
     making 3 independent runs feasible. Pretrained models are more stable and

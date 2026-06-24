@@ -1,17 +1,11 @@
 """
 src/train.py
 ============
-Rubric points covered:
-  - "Correct training loop, with monitoring of loss and metrics" (+1.0 pt)
-  - "Correct use of a validation set in addition to the training set" (+1.0 pt)
-  - "Model selection based on validation performance, not last epoch" (+1.0 pt)
-  - "Final testing performed only on the best selected model" (+0.5 pt)
-
-Pattern follows the course lab (arrhythmia.py):
-  - optimizer.zero_grad() → forward → loss → backward → optimizer.step()
-  - Validation loop at end of each epoch (no_grad)
-  - Save best checkpoint when val metric improves
-  - Early stopping when val metric stagnates
+points covered:
+  - "Correct training loop, with monitoring of loss and metrics"
+  - "Correct use of a validation set in addition to the training set"
+  - "Model selection based on validation performance, not last epoch"
+  - "Final testing performed only on the best selected model"
 """
 
 import os
