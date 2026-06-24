@@ -3,10 +3,9 @@ src/gradcam.py
 ==============
 GradCAM explainability for skin lesion models.
 
-Extras covered:
-  - "Use of advanced techniques: explainability" (+2.0 pt)
-  - "In-depth error analysis: GradCAM on failure cases" (+2.0 pt)
-  - "Special care in the demo: visualizations, explainability" (+2.0 pt)
+  - "Use of advanced techniques: explainability"
+  - "In-depth error analysis: GradCAM on failure cases"
+  - "Special care in the demo: visualizations, explainability"
 
 Algorithm (same as lab):
   1. Forward hook  → save feature maps of target layer
@@ -26,7 +25,6 @@ if str(_PROJECT_ROOT) not in sys.path:
 
 import numpy as np
 import matplotlib
-matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import matplotlib.patches as mpatches
@@ -152,7 +150,7 @@ def overlay_cam(
     return np.clip(blended, 0, 255).astype(np.uint8)
 
 
-# Batch visualisation (train_all.py pipeline)
+# Batch visualisation
 
 def generate_gradcam_examples(
     model:        nn.Module,
@@ -281,7 +279,7 @@ def _save_gradcam_grid(
             left=0.02, right=0.98, top=0.96, bottom=0.02,
         )
 
-        # ── Col 0: Original image ────────────────────────────────────────
+        # Original image
         ax0 = fig.add_subplot(gs[row, 0])
         ax0.imshow(ex["image"])
         ax0.set_title(
@@ -293,7 +291,7 @@ def _save_gradcam_grid(
             spine.set_edgecolor(accent); spine.set_linewidth(2.5)
         ax0.set_facecolor("#1a1a2e")
 
-        # ── Col 1: Raw GradCAM heatmap with colorbar ─────────────────────
+        # Raw GradCAM heatmap with colorbar 
         ax1 = fig.add_subplot(gs[row, 1])
         im = ax1.imshow(ex["cam"], cmap="turbo", vmin=0, vmax=1)
         ax1.set_title("Activation map", fontsize=9.5, color="white", pad=4)
@@ -306,7 +304,7 @@ def _save_gradcam_grid(
         plt.setp(cb.ax.yaxis.get_ticklabels(), color="white")
         cb.outline.set_edgecolor("white")
 
-        # ── Col 2: Overlay ───────────────────────────────────────────────
+        # Overlay 
         ax2 = fig.add_subplot(gs[row, 2])
         ax2.imshow(ex["overlay"])
         ax2.set_title(
@@ -315,7 +313,7 @@ def _save_gradcam_grid(
         )
         ax2.axis("off")
 
-        # ── Col 3: Per-class probability bar chart ───────────────────────
+        # Per-class probability bar chart 
         ax3 = fig.add_subplot(gs[row, 3])
         ax3.set_facecolor("#12122a")
 

@@ -150,8 +150,6 @@ def _find_image_path(image_id: str, image_dir: Path) -> str | None:
     """
     Search both HAM10000 image subdirectories for a given image_id.
     Returns the first match or None if the file is missing.
-    HAM10000 ships its images split across two folders; the empty-string fallback
-    handles flat layouts used in some Kaggle repacks.
     """
     for folder in ("HAM10000_images_part_1", "HAM10000_images_part_2", ""):
         for ext in (".jpg", ".jpeg", ".png"):
