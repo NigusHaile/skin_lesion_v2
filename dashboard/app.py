@@ -717,7 +717,7 @@ def _ablation_candidates(model_key: str) -> list:
         return []
 
     abl_dir     = Path(CFG.paths.results) / "ablations"
-    study_jsons = sorted(abl_dir.glob(glob_pat))
+    study_jsons = sorted((abl_dir / "plots").glob(glob_pat))
     candidates  = []
     for sjson in study_jsons:
         data = _read_json_safe(sjson)
