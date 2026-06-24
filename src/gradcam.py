@@ -55,13 +55,16 @@ class GradCAM:
         self.gradients    = None
 
         self._fwd_handle = target_layer.register_forward_hook(self._forward_hook)
-        self._bwd_handle = target_layer.register_full_backward_hook(self._backward_hook)
 
     def _forward_hook(self, module, input, output) -> None:
-        self.activations = output.detach()
+        # Save a detached clone for the CAM computation.
+        self.activations = output.detach().clone()
+        # Register a tensor-level gradient hook — avoids the inplace-ReLU conflict
+        # that register_full_backward_hook causes with inplace activations.
+        output.register_hook(self._gradient_hook)
 
-    def _backward_hook(self, module, grad_input, grad_output) -> None:
-        self.gradients = grad_output[0].detach()
+    def _gradient_hook(self, grad) -> None:
+        self.gradients = grad.detach().clone()
 
     def compute(
         self,
@@ -117,7 +120,6 @@ class GradCAM:
 
     def remove_hooks(self) -> None:
         self._fwd_handle.remove()
-        self._bwd_handle.remove()
 
 
 # Image utilities

@@ -220,9 +220,8 @@ __marimo__/
 
 #
 data/
-reports/
 results/
-samples/
 src/__pycache__/
 _pycache__/
 checkpoints/
+results/abalation/checkpoints/

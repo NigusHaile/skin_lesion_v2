@@ -65,16 +65,7 @@ CLASS_COLORS: list[str] = [
 
 # Augmentation pipelines
 def get_train_transforms() -> A.Compose:
-    """
-    Training augmentation pipeline built around clinical domain knowledge:
-    - HorizontalFlip / VerticalFlip — dermoscopy has no canonical orientation
-    - Rotation                      — lesion angle is diagnostically irrelevant
-    - ColorJitter                   — handles lighting/device variability across hospitals
-    - ElasticTransform              — simulates soft tissue deformation
-    - CoarseDropout                 — forces global context; prevents texture patch over-fitting
-    All probabilities and magnitudes are read from CFG.augmentation so they can be
-    swept in ablation studies without touching this file.
-    """
+    """Training augmentation pipeline — all parameters from CFG.augmentation."""
     aug = CFG.augmentation
     return A.Compose([
         A.Resize(CFG.data.image_size, CFG.data.image_size),
@@ -88,16 +79,8 @@ def get_train_transforms() -> A.Compose:
             hue=aug.hue_limit,
             p=aug.color_jitter_p,
         ),
-        A.ElasticTransform(alpha=aug.elastic_alpha, sigma=aug.elastic_sigma, p=aug.elastic_p),
-        A.CoarseDropout(
-            num_holes_range=(1, aug.cutout_holes),
-            hole_height_range=(1, aug.cutout_hole_height),
-            hole_width_range=(1, aug.cutout_hole_width),
-            fill=0,
-            p=aug.cutout_p,
-        ),
         A.Normalize(mean=CFG.data.imagenet_mean, std=CFG.data.imagenet_std),
-        ToTensorV2(),  # HWC uint8 → CHW float32, required for pretrained backbones
+        ToTensorV2(),
     ])
 
 

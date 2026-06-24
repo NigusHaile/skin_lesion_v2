@@ -76,7 +76,7 @@ skin_lesion_v2/
 ## Dataset
 
 **HAM10000** — Human Against Machine with 10000 training images
-([ISIC 2018 Challenge](https://challenge.isic-archive.com/landing/2018/))
+([Kaggle](https://www.kaggle.com/code/shashwatwork/skin-cancer-analyzer-streamlit-app/input))
 
 | Code | Class | Risk |
 |---|---|---|
@@ -116,8 +116,6 @@ Applied via [albumentations](https://albumentations.ai/):
 - Horizontal & vertical flip (p = 0.5 each)
 - Random rotation ±30° (p = 0.5)
 - Color jitter — brightness, contrast, saturation, hue (p = 0.5)
-- Elastic deformation (simulates soft tissue deformation)
-- Cutout — 4 random patches erased (forces global context learning)
 
 ---
 
@@ -212,8 +210,7 @@ pip install -r requirements.txt
 
 ### 2. Download HAM10000
 
-Download from [Kaggle](https://www.kaggle.com/datasets/kmader/skin-lesion-analysis-toward-melanoma-detection)
-or the [ISIC Archive](https://isic-archive.com/).
+Download from the link in the Dataset section above, or from the [https://www.kaggle.com/code/shashwatwork/skin-cancer-analyzer-streamlit-app/input].
 
 Place files as follows:
 
