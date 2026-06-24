@@ -4,19 +4,21 @@ src/skin_validator.py
 Skin dermoscopy image gatekeeper.
 
 Pipeline:
-  1. Pretrained ResNet50 (ImageNet) extracts 2048-D global-average-pool features.
-  2. PCA reduces to 128-D for a compact, stable representation.
-  3. IsolationForest (trained on HAM10000) scores the image as
-     in-distribution (dermoscopy) or out-of-distribution (non-skin).
+  1. Fine-tuned ResNet50 (HAM10000) extracts 2048-D GAP features.
+     Using the fine-tuned backbone is critical — its later layers are specialised
+     for skin-lesion textures, so non-dermoscopy images land far from the
+     training cluster in feature space.
+  2. L2 distance from the training-set centroid: if the image falls outside the
+     distribution radius (mean + 3.5 × std, covering ~99.9 % of training images),
+     it is rejected as non-dermoscopy.
 
-The fitted PCA + IsolationForest are saved together as a single pickle so
-the backbone weights never need to be persisted separately — timm always
-provides the same ImageNet-pretrained ResNet50.
+The centroid + threshold are saved as a small numpy pickle (~16 KB).
+The ResNet50 backbone comes from the existing fine-tuned checkpoint
+(checkpoints/resnet50/best.pth), so no extra weights are stored.
 """
 
 from __future__ import annotations
 
-import os
 import pickle
 from pathlib import Path
 
@@ -25,8 +27,6 @@ import torch
 import torch.nn as nn
 import timm
 from PIL import Image
-from sklearn.decomposition import PCA
-from sklearn.ensemble import IsolationForest
 from torch.utils.data import DataLoader
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
@@ -41,31 +41,49 @@ from src.config import CFG
 # ── Paths ─────────────────────────────────────────────────────────────────────
 VALIDATOR_DIR  = Path(CFG.paths.checkpoints) / "skin_validator"
 VALIDATOR_PATH = VALIDATOR_DIR / "skin_validator.pkl"
+_RESNET50_CKPT = Path(CFG.paths.checkpoints) / "resnet50" / "best.pth"
 
-# ── Preprocessing (matches ImageNet-pretrained ResNet50) ──────────────────────
-_MEAN = [0.485, 0.456, 0.406]
-_STD  = [0.229, 0.224, 0.225]
-
+# ── Preprocessing ─────────────────────────────────────────────────────────────
 _transform = A.Compose([
     A.Resize(224, 224),
-    A.Normalize(mean=_MEAN, std=_STD),
+    A.Normalize(mean=CFG.data.imagenet_mean, std=CFG.data.imagenet_std),
     ToTensorV2(),
 ])
 
 
 def _pil_to_tensor(pil_img: Image.Image) -> torch.Tensor:
-    """PIL → [1, 3, 224, 224] normalised tensor."""
     arr = np.array(pil_img.convert("RGB"))
     return _transform(image=arr)["image"].unsqueeze(0)
 
 
 # ── Feature extractor ─────────────────────────────────────────────────────────
-class _ResNet50Extractor(nn.Module):
-    """Frozen ImageNet-pretrained ResNet50 backbone — outputs 2048-D GAP features."""
+class _FineTunedResNet50Extractor(nn.Module):
+    """
+    ResNet50 backbone from the fine-tuned HAM10000 checkpoint.
+    State dict keys start with 'backbone.' — the classifier head is discarded.
+    Falls back to ImageNet-pretrained if the checkpoint is missing.
+    """
 
-    def __init__(self) -> None:
+    def __init__(self, ckpt_path: Path = _RESNET50_CKPT) -> None:
         super().__init__()
-        self.backbone = timm.create_model("resnet50", pretrained=True, num_classes=0)
+        self.backbone = timm.create_model(
+            "resnet50", pretrained=False, num_classes=0, global_pool="avg"
+        )
+        if ckpt_path.exists():
+            sd = torch.load(ckpt_path, map_location="cpu", weights_only=True)
+            backbone_sd = {
+                k[len("backbone."):]: v
+                for k, v in sd.items()
+                if k.startswith("backbone.")
+            }
+            self.backbone.load_state_dict(backbone_sd, strict=True)
+            print(f"[SkinValidator] Fine-tuned backbone loaded from {ckpt_path}")
+        else:
+            self.backbone = timm.create_model(
+                "resnet50", pretrained=True, num_classes=0, global_pool="avg"
+            )
+            print("[SkinValidator] WARNING: fine-tuned checkpoint not found — "
+                  "using ImageNet-pretrained ResNet50")
         for p in self.backbone.parameters():
             p.requires_grad_(False)
 
@@ -85,8 +103,7 @@ def _extract_all_features(
     total = len(loader)
     for i, batch in enumerate(loader, 1):
         imgs = batch[0].to(device)
-        feats = extractor(imgs).cpu().numpy()
-        parts.append(feats)
+        parts.append(extractor(imgs).cpu().numpy())
         if i % 50 == 0 or i == total:
             print(f"  [{i}/{total}] batches processed", end="\r")
     print()
@@ -96,31 +113,23 @@ def _extract_all_features(
 # ── Main class ────────────────────────────────────────────────────────────────
 class SkinValidator:
     """
-    ResNet50 + PCA + IsolationForest skin dermoscopy gatekeeper.
+    Fine-tuned ResNet50 centroid-distance skin validator.
 
-    Training (run once on HAM10000):
+    Training (run once after ResNet50 fine-tuning):
         validator = SkinValidator()
         validator.train(train_loader, device, save_dir=VALIDATOR_DIR)
 
-    Inference (deployed app):
+    Inference:
         validator = SkinValidator.load(VALIDATOR_DIR, device)
-        is_skin, score = validator.is_skin(pil_image)
+        is_skin, dist = validator.is_skin(pil_image)
     """
 
-    def __init__(
-        self,
-        pca_components: int   = 128,
-        n_estimators:   int   = 300,
-        contamination:  float = 0.03,
-    ) -> None:
-        self.pca_components = pca_components
-        self.n_estimators   = n_estimators
-        self.contamination  = contamination
-
-        self._extractor: _ResNet50Extractor | None = None
-        self._pca:       PCA                | None = None
-        self._iforest:   IsolationForest    | None = None
-        self._device:    torch.device       | None = None
+    def __init__(self, threshold_std_multiplier: float = 3.5) -> None:
+        self.threshold_std_multiplier = threshold_std_multiplier
+        self._extractor: _FineTunedResNet50Extractor | None = None
+        self._centroid:  np.ndarray                  | None = None
+        self._threshold: float                       | None = None
+        self._device:    torch.device                | None = None
 
     # ── Training ──────────────────────────────────────────────────────────────
 
@@ -131,31 +140,24 @@ class SkinValidator:
         save_dir: str | Path | None = None,
     ) -> "SkinValidator":
         self._device    = device
-        self._extractor = _ResNet50Extractor().to(device)
+        self._extractor = _FineTunedResNet50Extractor().to(device)
 
-        print("[SkinValidator] Step 1/3 — extracting ResNet50 features …")
+        print("[SkinValidator] Extracting fine-tuned ResNet50 features …")
         X = _extract_all_features(self._extractor, train_loader, device)
         print(f"[SkinValidator] Feature matrix: {X.shape}")
 
-        print(f"[SkinValidator] Step 2/3 — PCA({self.pca_components}) …")
-        self._pca = PCA(n_components=self.pca_components, random_state=CFG.project.random_seed)
-        X_pca = self._pca.fit_transform(X)
-        explained = self._pca.explained_variance_ratio_.sum()
-        print(f"[SkinValidator] PCA explains {explained:.1%} of variance")
+        self._centroid  = X.mean(axis=0)
+        dists           = np.linalg.norm(X - self._centroid, axis=1)
+        self._threshold = float(dists.mean() + self.threshold_std_multiplier * dists.std())
 
-        print(f"[SkinValidator] Step 3/3 — IsolationForest({self.n_estimators} trees) …")
-        self._iforest = IsolationForest(
-            n_estimators  = self.n_estimators,
-            contamination = self.contamination,
-            random_state  = CFG.project.random_seed,
-            n_jobs        = -1,
-        )
-        self._iforest.fit(X_pca)
-        print("[SkinValidator] Training complete.")
+        print(f"[SkinValidator] Centroid distance — "
+              f"mean={dists.mean():.3f}  std={dists.std():.3f}  "
+              f"p99={np.percentile(dists, 99):.3f}  max={dists.max():.3f}")
+        print(f"[SkinValidator] Rejection threshold: {self._threshold:.3f} "
+              f"(mean + {self.threshold_std_multiplier}×std)")
 
         if save_dir is not None:
             self.save(save_dir)
-
         return self
 
     # ── Persistence ───────────────────────────────────────────────────────────
@@ -164,11 +166,11 @@ class SkinValidator:
         save_dir = Path(save_dir)
         save_dir.mkdir(parents=True, exist_ok=True)
         path = save_dir / "skin_validator.pkl"
-        payload = {"pca": self._pca, "iforest": self._iforest}
+        payload = {"centroid": self._centroid, "threshold": self._threshold}
         with open(path, "wb") as f:
-            pickle.dump(payload, f, protocol=pickle.HIGHEST_PROTOCOL)
-        size_mb = path.stat().st_size / 1e6
-        print(f"[SkinValidator] Saved → {path}  ({size_mb:.1f} MB)")
+            pickle.dump(payload, f, protocol=4)
+        size_kb = path.stat().st_size / 1e3
+        print(f"[SkinValidator] Saved → {path}  ({size_kb:.0f} KB)")
 
     @classmethod
     def load(cls, save_dir: str | Path, device: torch.device) -> "SkinValidator":
@@ -177,29 +179,22 @@ class SkinValidator:
             payload = pickle.load(f)
         obj = cls()
         obj._device    = device
-        obj._extractor = _ResNet50Extractor().to(device)
-        obj._pca       = payload["pca"]
-        obj._iforest   = payload["iforest"]
-        print(f"[SkinValidator] Loaded from {path}")
+        obj._extractor = _FineTunedResNet50Extractor().to(device)
+        obj._centroid  = payload["centroid"]
+        obj._threshold = payload["threshold"]
+        print(f"[SkinValidator] Loaded — threshold={obj._threshold:.3f}")
         return obj
 
     # ── Inference ─────────────────────────────────────────────────────────────
 
     def is_skin(self, pil_img: Image.Image) -> tuple[bool, float]:
         """
-        Args:
-            pil_img: raw PIL image (any size, any mode).
-
-        Returns:
-            (is_skin, anomaly_score)
-            anomaly_score: higher (less negative) = more like a dermoscopy image.
-            IsolationForest.score_samples returns negative values; threshold is ~0.
+        Returns (is_skin, distance_from_centroid).
+        Images with distance > threshold are rejected as non-dermoscopy.
         """
         tensor = _pil_to_tensor(pil_img).to(self._device)
         self._extractor.eval()
         with torch.no_grad():
-            feat_2048 = self._extractor(tensor).cpu().numpy()
-        feat_pca = self._pca.transform(feat_2048)
-        score    = float(self._iforest.score_samples(feat_pca)[0])
-        label    = int(self._iforest.predict(feat_pca)[0])   # 1=inlier, -1=outlier
-        return label == 1, score
+            feat = self._extractor(tensor).cpu().numpy()[0]
+        dist = float(np.linalg.norm(feat - self._centroid))
+        return dist <= self._threshold, dist

@@ -664,19 +664,8 @@ def _validate_skin_image(pil_img: Image.Image) -> tuple:
             "Please upload a proper dermoscopy photo."
         )
 
-    # ── ML validator (preferred) ─────────────────────────────────────────────
-    validator = _load_skin_validator()
-    if validator is not None:
-        is_skin, score = validator.is_skin(pil_img)
-        if not is_skin:
-            return False, (
-                f"This image does not appear to be a dermoscopy skin lesion image "
-                f"(anomaly score: {score:.3f}). "
-                "Please upload a close-up dermoscopy photograph of a skin lesion."
-            )
-        return True, ""
-
-    # ── YCrCb fallback (used when validator.pkl not yet generated) ───────────
+    # ── Stage 1: YCrCb skin-pixel check (Kovač et al. 2003) ─────────────────
+    # Fast colour-space gate: rejects landscapes, food, objects, etc.
     img_ycrcb  = cv2.cvtColor(img_np, cv2.COLOR_RGB2YCrCb)
     Cr         = img_ycrcb[:, :, 1].astype(np.int32)
     Cb         = img_ycrcb[:, :, 2].astype(np.int32)
@@ -687,9 +676,21 @@ def _validate_skin_image(pil_img: Image.Image) -> tuple:
         pct = f"{skin_ratio:.0%}"
         return False, (
             f"This image does not appear to contain skin tissue "
-            f"({pct} skin-coloured pixels detected). "
+            f"({pct} skin-coloured pixels). "
             "Please upload a close-up dermoscopy photograph of a skin lesion."
         )
+
+    # ── Stage 2: ML distribution check (ResNet50 centroid distance) ──────────
+    # Catches images that pass the colour gate but are not dermoscopy.
+    validator = _load_skin_validator()
+    if validator is not None:
+        is_skin, dist = validator.is_skin(pil_img)
+        if not is_skin:
+            return False, (
+                f"This image does not match the visual distribution of dermoscopy images "
+                f"(distance score: {dist:.2f}). "
+                "Please upload a close-up dermoscopy photograph of a skin lesion."
+            )
 
     return True, ""
 

@@ -30,22 +30,26 @@ def main() -> None:
     train_df, val_df, test_df = build_splits(metadata_csv, CFG.paths.data_raw)
 
     # Use full train + val set for richer coverage of the skin distribution.
-    # The validator is an outlier detector, not a classifier, so it benefits
-    # from seeing as many genuine dermoscopy images as possible.
     import pandas as pd
-    all_train_df = pd.concat([train_df, val_df], ignore_index=True)
+    from torch.utils.data import DataLoader
+    from src.dataset import SkinLesionDataset, get_val_transforms
 
-    train_loader, _, _ = get_dataloaders(
-        all_train_df, val_df, test_df,
-        use_weighted_sampler=False,   # order doesn't matter for feature extraction
+    all_df = pd.concat([train_df, val_df, test_df], ignore_index=True)
+
+    # IMPORTANT: use val transforms (no augmentation) so features match inference-time
+    # features exactly. Augmented images produce a biased centroid.
+    ds = SkinLesionDataset(all_df, transform=get_val_transforms())
+    dl = CFG.dataloader
+    train_loader = DataLoader(
+        ds,
+        batch_size=dl.batch_size,
+        shuffle=False,
+        num_workers=dl.num_workers,
+        pin_memory=dl.pin_memory,
     )
 
     # ── Train ─────────────────────────────────────────────────────────────────
-    validator = SkinValidator(
-        pca_components = 128,
-        n_estimators   = 300,
-        contamination  = 0.03,   # ~3% of HAM10000 training images treated as boundary cases
-    )
+    validator = SkinValidator(threshold_std_multiplier=3.5)
     validator.train(train_loader, device, save_dir=VALIDATOR_DIR)
     print(f"\nDone. Model saved to: {VALIDATOR_DIR}/skin_validator.pkl")
 
