@@ -726,7 +726,7 @@ def _ablation_candidates(model_key: str) -> list:
             bacc = info.get("best_val_bacc")
             if not tag or bacc is None:
                 continue
-            ckpt = abl_dir / f"{tag}_best.pth"
+            ckpt = abl_dir / "checkpoints" / f"{tag}_best.pth"
             if ckpt.exists():
                 candidates.append((ckpt, float(bacc), f"ablation:{tag}"))
     return candidates
