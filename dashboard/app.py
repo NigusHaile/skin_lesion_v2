@@ -24,6 +24,7 @@ from src.dataset import (CLASS_LABELS, CLASS_NAMES, LABEL_TO_IDX, IDX_TO_LABEL,
                           RISK_LEVELS, CLASS_COLORS)
 from src.models import build_model
 from src.gradcam import run_gradcam_single
+from src.skin_validator import SkinValidator, VALIDATOR_DIR
 
 # ── Page config ────────────────────────────────────────────────
 st.set_page_config(
@@ -632,27 +633,53 @@ def preprocess(pil_image: Image.Image) -> torch.Tensor:
     ])
     return t(image=img)["image"]
 
+@st.cache_resource(show_spinner="Loading skin validator …")
+def _load_skin_validator():
+    """Load the ML skin validator from disk (cached across Streamlit reruns)."""
+    dev = get_device(CFG)
+    validator_pkl = VALIDATOR_DIR / "skin_validator.pkl"
+    if not validator_pkl.exists():
+        return None   # fall back to YCrCb heuristic
+    try:
+        return SkinValidator.load(VALIDATOR_DIR, dev)
+    except Exception:
+        return None
+
+
 def _validate_skin_image(pil_img: Image.Image) -> tuple:
     """
     Returns (is_valid: bool, reason: str).
 
-    Two checks:
+    Two-stage check:
     1. Minimum resolution — dermoscopy images are never thumbnails.
-    2. Skin-tone pixel proportion via YCrCb colour space.
-       The Kovac et al. (2003) skin range (Cr 133-173, Cb 77-127) covers
-       all skin tones well enough for close-up dermoscopy shots.
-       Dermoscopy images: typically 60-95 % skin pixels.
-       Non-skin photos (houses, landscapes, food …): typically < 20 %.
+    2. ML skin validator (ResNet50 + IsolationForest trained on HAM10000).
+       Falls back to YCrCb heuristic if the validator model is not available.
     """
     img_np = np.array(pil_img.convert("RGB"))
     h, w   = img_np.shape[:2]
 
     if h < 64 or w < 64:
-        return False, f"Image resolution ({w}×{h}) is too small for analysis. Please upload a proper dermoscopy photo."
+        return False, (
+            f"Image resolution ({w}×{h}) is too small for analysis. "
+            "Please upload a proper dermoscopy photo."
+        )
 
-    img_ycrcb = cv2.cvtColor(img_np, cv2.COLOR_RGB2YCrCb)
-    Cr = img_ycrcb[:, :, 1].astype(np.int32)
-    Cb = img_ycrcb[:, :, 2].astype(np.int32)
+    # ── ML validator (preferred) ─────────────────────────────────────────────
+    validator = _load_skin_validator()
+    if validator is not None:
+        is_skin, score = validator.is_skin(pil_img)
+        if not is_skin:
+            return False, (
+                f"This image does not appear to be a dermoscopy skin lesion image "
+                f"(anomaly score: {score:.3f}). "
+                "Please upload a close-up dermoscopy photograph of a skin lesion."
+            )
+        return True, ""
+
+    # ── YCrCb fallback (used when validator.pkl not yet generated) ───────────
+    img_ycrcb  = cv2.cvtColor(img_np, cv2.COLOR_RGB2YCrCb)
+    Cr         = img_ycrcb[:, :, 1].astype(np.int32)
+    Cb         = img_ycrcb[:, :, 2].astype(np.int32)
     skin_mask  = ((Cr >= 133) & (Cr <= 173) & (Cb >= 77) & (Cb <= 127))
     skin_ratio = float(skin_mask.mean())
 
