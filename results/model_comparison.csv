@@ -1,0 +1,4 @@
+Model,Balanced Acc,Macro Precision,Macro F1,ROC-AUC (macro)
+Simple CNN,0.5953,0.3447,0.3515,0.8600
+ResNet50,0.7201,0.5368,0.5743,0.9237
+ViT-B/16 + LoRA,0.7777,0.5809,0.6368,0.9432
