@@ -1,7 +1,7 @@
 """
 src/skin_validator.py
 =====================
-Skin dermoscopy image gatekeeper.
+Skin dermoscopy image gatekeeper — validator class + training entry-point.
 
 Pipeline:
   1. Fine-tuned ResNet50 (HAM10000) extracts 2048-D GAP features.
@@ -15,14 +15,23 @@ Pipeline:
 The centroid + threshold are saved as a small numpy pickle (~16 KB).
 The ResNet50 backbone comes from the existing fine-tuned checkpoint
 (checkpoints/resnet50/best.pth), so no extra weights are stored.
+
+Run training once from the project root:
+
+    python src/skin_validator.py
+
+The fitted model is saved to checkpoints/skin_validator/skin_validator.pkl
+and is picked up automatically by dashboard/app.py at deploy time.
 """
 
 from __future__ import annotations
 
 import pickle
+import sys
 from pathlib import Path
 
 import numpy as np
+import pandas as pd
 import torch
 import torch.nn as nn
 import timm
@@ -31,12 +40,11 @@ from torch.utils.data import DataLoader
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
 
-import sys as _sys
-_SRC_ROOT = Path(__file__).resolve().parent.parent
-if str(_SRC_ROOT) not in _sys.path:
-    _sys.path.insert(0, str(_SRC_ROOT))
+_ROOT = Path(__file__).resolve().parent.parent
+if str(_ROOT) not in sys.path:
+    sys.path.insert(0, str(_ROOT))
 
-from src.config import CFG
+from src.config import CFG, get_device, seed_everything
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
 VALIDATOR_DIR  = Path(CFG.paths.checkpoints) / "skin_validator"
@@ -198,3 +206,35 @@ class SkinValidator:
             feat = self._extractor(tensor).cpu().numpy()[0]
         dist = float(np.linalg.norm(feat - self._centroid))
         return dist <= self._threshold, dist
+
+
+# ── Training entry-point ──────────────────────────────────────────────────────
+def main() -> None:
+    from src.dataset import build_splits, SkinLesionDataset, get_val_transforms
+
+    seed_everything(CFG.project.random_seed)
+    device = get_device(CFG)
+
+    metadata_csv = f"{CFG.paths.data_raw}/HAM10000_metadata.csv"
+    train_df, val_df, test_df = build_splits(metadata_csv, CFG.paths.data_raw)
+
+    all_df = pd.concat([train_df, val_df, test_df], ignore_index=True)
+
+    # Use val transforms (no augmentation) so features match inference-time exactly.
+    ds = SkinLesionDataset(all_df, transform=get_val_transforms())
+    dl = CFG.dataloader
+    loader = DataLoader(
+        ds,
+        batch_size=dl.batch_size,
+        shuffle=False,
+        num_workers=dl.num_workers,
+        pin_memory=dl.pin_memory,
+    )
+
+    validator = SkinValidator(threshold_std_multiplier=3.5)
+    validator.train(loader, device, save_dir=VALIDATOR_DIR)
+    print(f"\nDone. Model saved to: {VALIDATOR_DIR}/skin_validator.pkl")
+
+
+if __name__ == "__main__":
+    main()

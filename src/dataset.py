@@ -9,6 +9,7 @@ Every other module should import constants from here rather than redefining them
 """
 
 import os
+import shutil
 import sys
 from pathlib import Path
 
@@ -142,6 +143,29 @@ def _find_image_path(image_id: str, image_dir: Path) -> str | None:
     return None
 
 
+def _copy_split_images(df: pd.DataFrame, split_name: str, out_root: Path) -> None:
+    """Copy images for one split into out_root/{split}/{class}/ (ImageFolder layout)."""
+    missing, copied = 0, 0
+    total = len(df)
+    for i, (_, row) in enumerate(df.iterrows(), 1):
+        src = Path(row["image_path"])
+        dst_dir = out_root / split_name / row["dx"]
+        dst_dir.mkdir(parents=True, exist_ok=True)
+        dst = dst_dir / src.name
+        if dst.exists():
+            copied += 1
+            continue
+        if not src.exists():
+            missing += 1
+            continue
+        shutil.copy2(src, dst)
+        copied += 1
+        if i % 500 == 0:
+            print(f"  [{split_name}] {i}/{total} copied...")
+    print(f"[dataset] {split_name}: {copied} images copied to {out_root / split_name}"
+          + (f" ({missing} missing)" if missing else ""))
+
+
 def _log_class_distribution(df: pd.DataFrame, split_name: str) -> None:
     """Print per-class counts and percentages for one split."""
     counts = df["dx"].value_counts()
@@ -189,9 +213,11 @@ def build_splits(metadata_csv: str, image_dir: str) -> tuple[pd.DataFrame, ...]:
         holdout_df, test_size=test_of_holdout, stratify=holdout_df["dx"], random_state=seed,
     )
 
+    images_out = Path(CFG.paths.data_splits) / "images"
     for name, split in (("train", train_df), ("val", val_df), ("test", test_df)):
         split.to_csv(f"{CFG.paths.data_splits}/{name}.csv", index=False)
         _log_class_distribution(split, name.capitalize())
+        _copy_split_images(split, name, images_out)
 
     print(f"\n[dataset] Split sizes — Train: {len(train_df)}  Val: {len(val_df)}  Test: {len(test_df)}")
     return train_df, val_df, test_df

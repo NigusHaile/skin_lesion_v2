@@ -26,7 +26,7 @@ from src.models import build_model
 from src.gradcam import run_gradcam_single
 from src.skin_validator import SkinValidator, VALIDATOR_DIR
 
-# ── Page config ────────────────────────────────────────────────
+# ── Page config 
 st.set_page_config(
     page_title="MedSkin AI · Skin Lesion Analysis",
     page_icon="🩺",
@@ -34,12 +34,12 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# ── CSS ────────────────────────────────────────────────────────
+# CSS 
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
-/* ── TOKENS ─────────────────────────────────────── */
+/*  TOKENS  */
 :root {
   --teal-700: #0f766e; --teal-600: #0d9488; --teal-500: #14b8a6;
   --teal-400: #2dd4bf; --teal-100: #ccfbf1; --teal-50: #f0fdfa;
@@ -55,7 +55,7 @@ st.markdown("""
   --sh-lg: 0 8px 24px rgba(0,0,0,.1), 0 2px 6px rgba(0,0,0,.06);
 }
 
-/* ── GLOBAL ──────────────────────────────────────── */
+/* GLOBAL  */
 *, *::before, *::after { box-sizing: border-box; }
 html, body, [class*="css"] {
   font-family: 'Inter', system-ui, sans-serif !important;
@@ -70,7 +70,7 @@ html, body, [class*="css"] {
   pointer-events: auto !important; z-index: 100000 !important;
 }
 
-/* ── SIDEBAR ─────────────────────────────────────── */
+/*  SIDEBAR  */
 [data-testid="stSidebar"] {
   background: linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%) !important;
   border-right: none !important;
@@ -83,7 +83,7 @@ html, body, [class*="css"] {
   margin: 0.5rem 1rem !important;
 }
 
-/* ── SIDEBAR NAV BUTTONS ─────────────────────────── */
+/*  SIDEBAR NAV BUTTONS  */
 /* Strip default Streamlit button chrome inside the sidebar */
 [data-testid="stSidebar"] .stButton { margin: 1px 0 !important; }
 [data-testid="stSidebar"] .stButton > button {
@@ -118,7 +118,7 @@ html, body, [class*="css"] {
   background: rgba(13,148,136,.45) !important;
 }
 
-/* ── SIDEBAR BRAND ───────────────────────────────── */
+/*  SIDEBAR BRAND  */
 .sb-brand {
   padding: 1.4rem 1.25rem 1.1rem;
   border-bottom: 1px solid rgba(255,255,255,.07);
@@ -143,7 +143,7 @@ html, body, [class*="css"] {
   letter-spacing: .15em; text-transform: uppercase; padding-left: 48px;
 }
 
-/* ── SIDEBAR SECTION LABEL ───────────────────────── */
+/*  SIDEBAR SECTION LABEL  */
 .sb-sect {
   font-size: 0.6rem !important; font-weight: 700 !important;
   letter-spacing: .15em; text-transform: uppercase;
@@ -151,7 +151,7 @@ html, body, [class*="css"] {
   padding: 0 1rem; margin: .8rem 0 .3rem;
 }
 
-/* ── SIDEBAR MODEL CHIPS ─────────────────────────── */
+/*  SIDEBAR MODEL CHIPS  */
 .sb-chips { padding: 0 .75rem; display: flex; flex-direction: column; gap: .28rem; }
 .sb-chip {
   display: flex; align-items: center; gap: .5rem;
@@ -169,7 +169,7 @@ html, body, [class*="css"] {
   letter-spacing: .04em;
 }
 
-/* ── SIDEBAR STAT CARD ───────────────────────────── */
+/*  SIDEBAR STAT CARD */
 .sb-stat {
   margin: 0 .75rem .4rem; padding: .85rem 1rem;
   background: rgba(255,255,255,.04);
@@ -189,14 +189,14 @@ html, body, [class*="css"] {
 .sb-key { font-size: 0.71rem !important; color: rgba(148,163,184,.5) !important; }
 .sb-val { font-size: 0.71rem !important; color: rgba(226,232,240,.85) !important; font-weight: 600 !important; }
 
-/* ── SIDEBAR FOOTER ──────────────────────────────── */
+/*  SIDEBAR FOOTER */
 .sb-foot {
   padding: .75rem 1.25rem 1rem;
   border-top: 1px solid rgba(255,255,255,.06); margin-top: .5rem;
 }
 .sb-foot p { font-size: 0.63rem !important; color: rgba(148,163,184,.35) !important; text-align: center; margin: 0; }
 
-/* ── PAGE HEADER BANNER ──────────────────────────── */
+/*  PAGE HEADER BANNER  */
 .ph-banner {
   background: linear-gradient(135deg, var(--navy) 0%, #1e3a5f 60%, #0f4c75 100%);
   border-radius: var(--r-lg); padding: 1.75rem 2rem;
@@ -224,7 +224,7 @@ html, body, [class*="css"] {
 }
 .ph-sub { font-size: 0.88rem !important; color: rgba(203,213,225,.75) !important; margin: .35rem 0 0; }
 
-/* ── CARDS ───────────────────────────────────────── */
+/*  CARDS  */
 .card {
   background: var(--white); border-radius: var(--r-lg);
   border: 1px solid var(--gray-200); box-shadow: var(--sh);
@@ -232,7 +232,7 @@ html, body, [class*="css"] {
 }
 .card-sm { padding: .9rem 1.1rem; }
 
-/* ── STAT TILES ──────────────────────────────────── */
+/*  STAT TILES */
 .tile {
   background: var(--white); border: 1px solid var(--gray-200);
   border-radius: var(--r-lg); padding: 1.25rem 1rem;
@@ -246,7 +246,7 @@ html, body, [class*="css"] {
 }
 .tile-lbl { font-size: 0.66rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: .08em; margin-top: 5px; }
 
-/* ── PREDICTION CARD ─────────────────────────────── */
+/*  PREDICTION CARD  */
 .pred-card {
   border-radius: var(--r-lg); padding: 1.3rem 1.5rem;
   margin: .5rem 0 .8rem; border-left: 4px solid; position: relative; overflow: hidden;
@@ -269,7 +269,7 @@ html, body, [class*="css"] {
 .badge-medium { background: var(--amber); color: #fff; }
 .badge-low    { background: var(--green); color: #fff; }
 
-/* ── CONFIDENCE STRIP ────────────────────────────── */
+/*  CONFIDENCE STRIP  */
 .conf-strip {
   display: flex; align-items: center; gap: 1rem;
   padding: .8rem 1.1rem; background: var(--white);
@@ -281,7 +281,7 @@ html, body, [class*="css"] {
 .conf-bar-fill  { height: 100%; border-radius: 99px; background: linear-gradient(90deg,var(--teal-600),var(--teal-400)); }
 .conf-pct { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--teal-600); white-space: nowrap; }
 
-/* ── RANK ROWS ───────────────────────────────────── */
+/*  RANK ROWS  */
 .rank-row { display: flex; align-items: center; gap: .7rem; padding: .55rem 0; border-bottom: 1px solid var(--gray-100); }
 .rank-row:last-child { border-bottom: none; }
 .rank-medal { font-size: 1.1rem; flex-shrink: 0; }
@@ -291,19 +291,19 @@ html, body, [class*="css"] {
 .rank-bar   { height: 3px; border-radius: 99px; background: var(--gray-200); overflow: hidden; margin-top: 3px; }
 .rank-fill  { height: 100%; border-radius: 99px; background: linear-gradient(90deg,var(--teal-600),var(--teal-400)); }
 
-/* ── LABEL (UPPERCASE SECTION HEADING) ───────────── */
+/*  LABEL (UPPERCASE SECTION HEADING)  */
 .lbl {
   font-size: .66rem; font-weight: 700; letter-spacing: .13em;
   text-transform: uppercase; color: var(--gray-400); margin: 0 0 .5rem; display: block;
 }
 
-/* ── EMPTY STATE ─────────────────────────────────── */
+/*  EMPTY STATE  */
 .empty { text-align: center; padding: 3.5rem 2rem; }
 .empty-icon  { font-size: 2.8rem; margin-bottom: .7rem; }
 .empty-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--gray-700); margin-bottom: .4rem; }
 .empty-body  { font-size: .84rem; color: var(--gray-500); line-height: 1.65; max-width: 340px; margin: 0 auto; }
 
-/* ── FILE UPLOADER ───────────────────────────────── */
+/*  FILE UPLOADER  */
 [data-testid="stFileUploader"] {
   border: 2px dashed #2dd4bf !important;
   border-radius: var(--r-lg) !important;
@@ -311,7 +311,7 @@ html, body, [class*="css"] {
 }
 [data-testid="stFileUploader"]:hover { border-color: var(--teal-500) !important; }
 
-/* ── WIDGETS ─────────────────────────────────────── */
+/*  WIDGETS  */
 div[data-testid="stSelectbox"] > div { border-radius: var(--r) !important; }
 div[data-testid="stSelectbox"] > div:focus-within {
   border-color: var(--teal-500) !important;
@@ -320,7 +320,7 @@ div[data-testid="stSelectbox"] > div:focus-within {
 .stProgress > div > div > div { background: linear-gradient(90deg,var(--teal-600),var(--teal-400)) !important; border-radius: 99px !important; }
 .stProgress > div > div { border-radius: 99px !important; background: var(--teal-100) !important; }
 
-/* ── TABS ────────────────────────────────────────── */
+/*  TABS  */
 .stTabs [data-baseweb="tab-list"] { gap: 0; background: transparent; border-bottom: 2px solid var(--gray-200); }
 .stTabs [data-baseweb="tab"] {
   border-radius: var(--r) var(--r) 0 0; padding: .55rem 1.25rem;
@@ -331,7 +331,7 @@ div[data-testid="stSelectbox"] > div:focus-within {
   font-weight: 600 !important; border-bottom: 2.5px solid var(--teal-600) !important;
 }
 
-/* ── MISC ────────────────────────────────────────── */
+/*  MISC  */
 .stSpinner > div { border-top-color: var(--teal-500) !important; }
 .stDataFrame { border-radius: var(--r) !important; }
 .stAlert { border-radius: var(--r) !important; }
@@ -368,7 +368,7 @@ st.components.v1.html(r"""
   });
   if (P._trCloseKb) D.removeEventListener('click', P._trCloseKb);
 
-  /* ── CSS → parent <head> ─────────────────────────────────────── */
+  /*  CSS → parent <head>  */
   var sty = D.createElement('style');
   sty.id  = '_trstyle';
   sty.textContent = [
@@ -422,7 +422,7 @@ st.components.v1.html(r"""
   ].join('');
   D.head.appendChild(sty);
 
-  /* ── HTML → parent <body> ────────────────────────────────────── */
+  /*  HTML → parent <body>  */
   var bar = D.createElement('div');
   bar.id  = '_trbar';
   bar.innerHTML =
@@ -469,7 +469,7 @@ st.components.v1.html(r"""
     + '</div></div>';
   D.body.appendChild(bar);
 
-  /* ── Parent-context script ───────────────────────────────────────
+  /*  Parent-context script 
      Injecting a <script> into the parent document means all functions
      (trToggleKb, trToggleRec, trApply, …) live on the parent window,
      so onclick="trToggleKb(event)" on the parent's buttons works.    */
@@ -581,11 +581,11 @@ st.components.v1.html(r"""
 </script>
 """, height=0, scrolling=False)
 
-# ── (dead code sentinel — the old st.markdown block below is gone) ─
+#  (dead code sentinel — the old st.markdown block below is gone)
 if False:
   pass
 
-# ── Constants ──────────────────────────────────────────────────
+#  Constants
 RISK_CSS   = {"High": "high",   "Medium": "medium",   "Low": "low"}
 BADGE_CSS  = {"High": "badge-high", "Medium": "badge-medium", "Low": "badge-low"}
 RISK_ICON  = {"High": "⚠️",  "Medium": "⚡",  "Low": "✅"}
@@ -593,9 +593,84 @@ MODEL_OPTS   = ["ViT-B/16 + LoRA", "ResNet50", "Simple CNN"]
 GRADCAM_OPTS = ["ResNet50", "Simple CNN"]   # CNN-based (ViT has no conv layer)
 TEAL_SEQ     = ["#0d9488", "#14b8a6", "#2dd4bf", "#5eead4"]
 
+CLINICAL_RECOMMENDATIONS: dict[str, dict] = {
+    "nv": {
+        "title": "Monitoring Recommended",
+        "steps": [
+            "Schedule annual full-body skin examination with a dermatologist.",
+            "Perform monthly self-checks using the ABCDE rule (Asymmetry, Border, Colour, Diameter, Evolution).",
+            "Photograph the lesion to track any changes over time.",
+            "Return promptly if the lesion grows, darkens, bleeds, or itches.",
+        ],
+        "icon": "🟢",
+    },
+    "mel": {
+        "title": "Urgent Dermatologist Referral",
+        "steps": [
+            "Seek dermatologist or oncologist consultation within 1–2 weeks.",
+            "A punch or excisional biopsy is required to confirm the diagnosis.",
+            "Avoid sun exposure on the lesion and do not self-treat.",
+            "If confirmed, staging work-up (dermoscopy, sentinel node biopsy) will determine treatment.",
+            "Early intervention is critical — melanoma is highly treatable at stage I/II.",
+        ],
+        "icon": "🔴",
+    },
+    "bkl": {
+        "title": "Routine Review Advised",
+        "steps": [
+            "Confirm diagnosis via dermoscopy or biopsy if the appearance is atypical.",
+            "No treatment required if asymptomatic and diagnosis is certain.",
+            "Cryotherapy, curettage, or laser ablation available for cosmetic removal.",
+            "Annual skin checks recommended — seborrhoeic keratoses rarely become malignant.",
+        ],
+        "icon": "🟡",
+    },
+    "bcc": {
+        "title": "Dermatologist Referral Within Weeks",
+        "steps": [
+            "Arrange dermatology appointment within 2–4 weeks.",
+            "Surgical excision, Mohs micrographic surgery, or radiotherapy depending on location and size.",
+            "Avoid further UV exposure on the lesion until treated.",
+            "BCC rarely metastasises but is locally destructive if untreated.",
+            "Annual skin surveillance after treatment — BCC recurrence risk is ~5–10%.",
+        ],
+        "icon": "🔴",
+    },
+    "akiec": {
+        "title": "Treatment Recommended",
+        "steps": [
+            "Confirm diagnosis and rule out invasive squamous cell carcinoma (SCC) via biopsy if lesion is thick or ulcerated.",
+            "Treatment options: cryotherapy, 5-fluorouracil cream, imiquimod, photodynamic therapy, or excision.",
+            "Apply broad-spectrum SPF 50+ sunscreen daily and avoid peak UV hours.",
+            "Follow-up every 6 months — untreated actinic keratoses can progress to SCC in ~5–10% of cases.",
+        ],
+        "icon": "🟠",
+    },
+    "vasc": {
+        "title": "Low Concern — Monitor or Treat Cosmetically",
+        "steps": [
+            "Vascular lesions are generally benign; confirm via dermoscopy.",
+            "No treatment necessary unless bleeding, painful, or cosmetically undesirable.",
+            "Pulsed-dye laser or sclerotherapy effective for cosmetic removal.",
+            "Annual review to ensure no change in morphology.",
+        ],
+        "icon": "🟢",
+    },
+    "df": {
+        "title": "Benign — No Treatment Required",
+        "steps": [
+            "Dermatofibromas are benign; biopsy only if the diagnosis is uncertain or lesion changes.",
+            "No treatment needed; they are harmless and stable.",
+            "Simple excision available if the lesion is symptomatic or cosmetically bothersome.",
+            "Routine skin checks advised as part of general skin health.",
+        ],
+        "icon": "🟢",
+    },
+}
+
 EMBED_KEYS = {"ViT+LoRA": "vit", "ResNet50": "resnet50", "Simple CNN": "simple_cnn"}
 
-# ── Helpers ────────────────────────────────────────────────────
+#  Helpers 
 def page_banner(icon: str, title: str, sub: str = "") -> None:
     sub_html = f'<p class="ph-sub">{sub}</p>' if sub else ""
     st.markdown(f"""
@@ -623,6 +698,19 @@ def stat_tiles(items: list) -> None:
             f'<div class="tile"><div class="tile-val" style="color:{clr};">{val}</div>'
             f'<div class="tile-lbl">{lbl}</div></div>',
             unsafe_allow_html=True)
+
+@st.cache_data(show_spinner=False)
+def _build_ground_truth_lookup() -> dict[str, str]:
+    """Map image_id → dx from all three split CSVs (loaded once)."""
+    lookup: dict[str, str] = {}
+    splits_dir = ROOT / "data" / "splits"
+    for split in ("train", "val", "test"):
+        p = splits_dir / f"{split}.csv"
+        if p.exists():
+            df = pd.read_csv(p, usecols=["image_id", "dx"])
+            lookup.update(zip(df["image_id"], df["dx"]))
+    return lookup
+
 
 def preprocess(pil_image: Image.Image) -> torch.Tensor:
     img = np.array(pil_image.convert("RGB"))
@@ -664,7 +752,7 @@ def _validate_skin_image(pil_img: Image.Image) -> tuple:
             "Please upload a proper dermoscopy photo."
         )
 
-    # ── Stage 1: YCrCb skin-pixel check (Kovač et al. 2003) ─────────────────
+    #  Stage 1: YCrCb skin-pixel check 
     # Fast colour-space gate: rejects landscapes, food, objects, etc.
     img_ycrcb  = cv2.cvtColor(img_np, cv2.COLOR_RGB2YCrCb)
     Cr         = img_ycrcb[:, :, 1].astype(np.int32)
@@ -680,7 +768,7 @@ def _validate_skin_image(pil_img: Image.Image) -> tuple:
             "Please upload a close-up dermoscopy photograph of a skin lesion."
         )
 
-    # ── Stage 2: ML distribution check (ResNet50 centroid distance) ──────────
+    #  Stage 2: ML distribution check (ResNet50 centroid distance) 
     # Catches images that pass the colour gate but are not dermoscopy.
     validator = _load_skin_validator()
     if validator is not None:
@@ -718,7 +806,7 @@ def _strip(sd: dict) -> dict:
     return {k.removeprefix("_orig_mod."): v for k, v in sd.items()} \
            if any(k.startswith("_orig_mod.") for k in sd) else sd
 
-# ── Best-checkpoint auto-selection ─────────────────────────────
+#  Best-checkpoint auto-selection
 # For each model we gather all (checkpoint_abs_path, bacc, label) candidates
 # and pick the one with the highest balanced accuracy.
 # Ablation checkpoints live in results/ablations/{tag}_best.pth and their
@@ -786,7 +874,7 @@ def _pick_best_ckpt(model_key: str) -> tuple:
     best = max(candidates, key=lambda c: c[1])
     return best
 
-# ── Model loaders ──────────────────────────────────────────────
+#  Model loaders 
 @st.cache_resource
 def _load(model_key: str, ckpt_abs: Path, label: str):
     dev = get_device(CFG)
@@ -821,12 +909,12 @@ PAGE_OPTIONS = [
     "🩺  Single Diagnosis",       # [0] → render_single_diagnosis
     "📦  Batch Prediction",        # [1] → render_batch
     "🔬  Ablation Studies",        # [2] → render_ablations
-    "🌡️  GradCAM Explainability", # [3] → render_gradcam
+    "🌡️  GradCAM         ", # [3] → render_gradcam
     "📊  Model Comparison",        # [4] → render_comparison
     "🔵  Embedding Explorer",      # [5] → render_embeddings
 ]
 
-# ── Session-state navigation (reliable across all Streamlit versions) ──
+# Session-state navigation (reliable across all Streamlit versions)
 if "page" not in st.session_state:
     st.session_state.page = PAGE_OPTIONS[0]
 
@@ -885,6 +973,20 @@ def render_single_diagnosis():
         st.markdown('<span class="lbl" style="margin-top:.8rem;display:block;">Model</span>',
                     unsafe_allow_html=True)
         model_choice = st.selectbox("mdl", MODEL_OPTS, label_visibility="collapsed")
+
+        st.markdown('<span class="lbl" style="margin-top:.8rem;display:block;">Actual Label (for testing)</span>',
+                    unsafe_allow_html=True)
+        actual_options = ["— Unknown —"] + [f"{lb}  ·  {nm}" for lb, nm in zip(CLASS_LABELS, CLASS_NAMES)]
+        # Auto-detect ground truth from filename if it matches a split CSV entry
+        _gt_lookup    = _build_ground_truth_lookup()
+        _auto_lbl     = _gt_lookup.get(Path(uploaded.name).stem) if uploaded else None
+        _default_idx  = (CLASS_LABELS.index(_auto_lbl) + 1) if _auto_lbl else 0
+        actual_choice = st.selectbox("actual_lbl", actual_options,
+                                     index=_default_idx, label_visibility="collapsed")
+        if _auto_lbl and _default_idx > 0:
+            st.caption(f"Auto-detected from filename: **{_auto_lbl}**")
+        actual_lbl = None if actual_choice.startswith("—") else actual_choice.split("  ·  ")[0].strip()
+
         if uploaded:
             pil_img = Image.open(uploaded).convert("RGB")
             st.image(pil_img, caption="Uploaded image", use_container_width=True)
@@ -893,7 +995,7 @@ def render_single_diagnosis():
     with col_r:
         if not uploaded:
             empty_card("🔬", "Ready for analysis",
-                       "Upload a dermoscopy image on the left. DermiAI will return a "
+                       "Upload a dermoscopy image on the left.MedskinAI will return a "
                        "diagnosis, confidence score, and top-3 differential with risk level.")
             return
 
@@ -915,6 +1017,41 @@ def render_single_diagnosis():
         risk = RISK_LEVELS[lbl]
         conf = float(probs[pred_idx])
 
+        # ── Actual vs Predicted comparison (testing mode) ──────────────────
+        if actual_lbl is not None:
+            actual_name    = CLASS_NAMES[CLASS_LABELS.index(actual_lbl)]
+            correct        = actual_lbl == lbl
+            match_bg       = "#ecfdf5" if correct else "#fef2f2"
+            match_border   = "#10b981" if correct else "#ef4444"
+            match_icon     = "✅ Correct" if correct else "❌ Incorrect"
+            match_color    = "#065f46" if correct else "#991b1b"
+            st.markdown(f"""
+            <div style="background:{match_bg};border:1.5px solid {match_border};
+                        border-radius:12px;padding:1rem 1.25rem;margin-bottom:.75rem;">
+              <div style="font-size:.62rem;font-weight:700;letter-spacing:.12em;
+                          text-transform:uppercase;color:{match_color};margin-bottom:.6rem;">
+                Prediction vs Ground Truth &nbsp;·&nbsp; {match_icon}
+              </div>
+              <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
+                <div>
+                  <div style="font-size:.6rem;color:#6b7280;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px;">Actual</div>
+                  <div style="font-weight:700;font-size:1rem;color:#1e293b;">{actual_name}</div>
+                  <div style="font-size:.7rem;font-family:monospace;color:#6b7280;">{actual_lbl}</div>
+                </div>
+                <div style="border-left:1px solid {match_border};opacity:.4;"></div>
+                <div>
+                  <div style="font-size:.6rem;color:#6b7280;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px;">Predicted</div>
+                  <div style="font-weight:700;font-size:1rem;color:#1e293b;">{name}</div>
+                  <div style="font-size:.7rem;font-family:monospace;color:#6b7280;">{lbl}</div>
+                </div>
+                <div style="margin-left:auto;display:flex;align-items:center;">
+                  <div style="font-family:'Playfair Display',serif;font-size:1.6rem;
+                              font-weight:700;color:{match_color};">{conf:.0%}</div>
+                </div>
+              </div>
+            </div>""", unsafe_allow_html=True)
+
+        # ── Prediction card ────────────────────────────────────────────────
         st.markdown(f"""
         <div class="pred-card {RISK_CSS.get(risk,'low')}">
           <div class="pred-name">{name}</div>
@@ -951,6 +1088,25 @@ def render_single_diagnosis():
               </div>
             </div>""", unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
+
+        # ── Clinical Recommendations ───────────────────────────────────────
+        rec = CLINICAL_RECOMMENDATIONS.get(lbl, {})
+        if rec:
+            steps_html = "".join(
+                f'<li style="margin-bottom:.4rem;line-height:1.55;">{s}</li>'
+                for s in rec["steps"]
+            )
+            st.markdown(f"""
+            <div class="card card-sm" style="margin-top:.75rem;">
+              <span class="lbl">Clinical Recommendations</span>
+              <div style="display:flex;align-items:center;gap:.6rem;margin:.4rem 0 .75rem;">
+                <span style="font-size:1.4rem;">{rec['icon']}</span>
+                <span style="font-weight:700;font-size:.95rem;color:#0f172a;">{rec['title']}</span>
+              </div>
+              <ol style="margin:0;padding-left:1.25rem;font-size:.83rem;color:#374151;">
+                {steps_html}
+              </ol>
+            </div>""", unsafe_allow_html=True)
 
         st.markdown("""
         <div class="info-box">
@@ -1227,10 +1383,11 @@ def render_batch():
 
     model, device = pick_model(model_choice)
     model.eval()
-    rows     = []
-    skipped  = []
-    pb       = st.progress(0)
-    stxt     = st.empty()
+    gt_lookup = _build_ground_truth_lookup()
+    rows      = []
+    skipped   = []
+    pb        = st.progress(0)
+    stxt      = st.empty()
 
     for i, f in enumerate(uploaded_files):
         stxt.caption(f"Processing {i+1}/{len(uploaded_files)}: {f.name}")
@@ -1246,12 +1403,18 @@ def render_batch():
         with torch.no_grad():
             probs = torch.softmax(
                 model(tensor.unsqueeze(0).to(device)).float(), dim=1)[0].cpu().numpy()
-        pi  = int(probs.argmax())
-        row = {"filename": f.name,
-               "predicted_label": CLASS_LABELS[pi],
-               "predicted_class": CLASS_NAMES[pi],
-               "confidence":      f"{probs[pi]:.4f}",
-               "risk_level":      RISK_LEVELS[CLASS_LABELS[pi]]}
+        pi       = int(probs.argmax())
+        pred_lbl = CLASS_LABELS[pi]
+        gt_lbl   = gt_lookup.get(Path(f.name).stem)          # None if unknown
+        row = {
+            "filename":        f.name,
+            "ground_truth":    gt_lbl if gt_lbl else "—",
+            "predicted_label": pred_lbl,
+            "predicted_class": CLASS_NAMES[pi],
+            "correct":         ("✅" if gt_lbl == pred_lbl else "❌") if gt_lbl else "—",
+            "confidence":      f"{probs[pi]:.4f}",
+            "risk_level":      RISK_LEVELS[pred_lbl],
+        }
         for j, lb in enumerate(CLASS_LABELS):
             row[f"prob_{lb}"] = f"{probs[j]:.4f}"
         rows.append(row)
@@ -1280,13 +1443,21 @@ def render_batch():
     hn = (rdf["risk_level"] == "High").sum()
     mn = (rdf["risk_level"] == "Medium").sum()
     ln = (rdf["risk_level"] == "Low").sum()
+
+    # Accuracy tile — only shown when at least one ground truth was found
+    labeled  = rdf[rdf["ground_truth"] != "—"]
+    n_labeled = len(labeled)
     st.markdown("<br>", unsafe_allow_html=True)
-    stat_tiles([
+    tiles = [
         (len(rdf), "Processed",   "#0d9488"),
         (hn,       "High Risk",   "#ef4444"),
         (mn,       "Medium Risk", "#f59e0b"),
         (ln,       "Low Risk",    "#10b981"),
-    ])
+    ]
+    if n_labeled > 0:
+        n_correct = (labeled["correct"] == "✅").sum()
+        tiles.append((f"{n_correct}/{n_labeled}", "Correct (GT known)", "#6366f1"))
+    stat_tiles(tiles)
     st.markdown("<br>", unsafe_allow_html=True)
 
     t1, t2 = st.tabs(["📋 Results Table", "📊 Distribution"])
@@ -1296,10 +1467,20 @@ def render_batch():
             return ("background:#fef2f2;color:#b91c1c" if v == "High" else
                     "background:#fffbeb;color:#92400e" if v == "Medium" else
                     "background:#ecfdf5;color:#065f46")
+
+        def highlight_correct(v):
+            if v == "✅": return "background:#ecfdf5;color:#065f46;font-weight:700"
+            if v == "❌": return "background:#fef2f2;color:#b91c1c;font-weight:700"
+            return ""
+
+        display_cols = ["filename", "ground_truth", "predicted_label",
+                        "predicted_class", "correct", "confidence", "risk_level"]
         st.markdown('<div class="card card-sm">', unsafe_allow_html=True)
         st.dataframe(
-            rdf[["filename","predicted_label","predicted_class","confidence","risk_level"]]
-               .style.map(highlight_risk, subset=["risk_level"]),
+            rdf[display_cols]
+               .style
+               .map(highlight_risk,    subset=["risk_level"])
+               .map(highlight_correct, subset=["correct"]),
             use_container_width=True, height=420)
         st.markdown('</div>', unsafe_allow_html=True)
         st.download_button("📥 Download full CSV",
@@ -1602,7 +1783,7 @@ def render_ablations():
 
     # Summary table 
     if df_summary is not None and not df_summary.empty:
-        st.markdown("### Summary Table — All Models × All Studies")
+        st.markdown("### Summary Table of best Model")
         num_cols = [c for c in ["Best Val Acc", "Best Val F1", "Best Val Prec", "Best Val AUC"]
                     if c in df_summary.columns]
         st.markdown('<div class="card card-sm">', unsafe_allow_html=True)
@@ -1615,8 +1796,8 @@ def render_ablations():
         st.markdown('</div>', unsafe_allow_html=True)
         st.markdown("<br>", unsafe_allow_html=True)
 
-    # ── Per-model interactive tabs 
-    st.markdown("### Detailed Results — All Models")
+    #  Per-model interactive tabs 
+    st.markdown("### Detailed Results")
     model_tabs = st.tabs(list(_MODEL_STUDY_MAP.keys()))
 
     for tab, (model_name, studies) in zip(model_tabs, _MODEL_STUDY_MAP.items()):
