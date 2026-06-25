@@ -1,0 +1,1003 @@
+lesion_id,image_id,dx,dx_type,age,sex,localization,image_path
+HAM_0004728,ISIC_0026779,nv,follow_up,45.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026779.jpg
+HAM_0006275,ISIC_0029186,nv,follow_up,35.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029186.jpg
+HAM_0000278,ISIC_0024484,nv,follow_up,55.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024484.jpg
+HAM_0003180,ISIC_0031058,nv,follow_up,40.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031058.jpg
+HAM_0002693,ISIC_0031550,mel,histo,80.0,female,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031550.jpg
+HAM_0006586,ISIC_0034123,bcc,histo,80.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034123.jpg
+HAM_0000199,ISIC_0026127,nv,follow_up,55.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026127.jpg
+HAM_0006442,ISIC_0033295,akiec,histo,70.0,male,hand,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033295.jpg
+HAM_0003256,ISIC_0032269,mel,histo,60.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032269.jpg
+HAM_0003561,ISIC_0034154,nv,consensus,,unknown,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034154.jpg
+HAM_0006917,ISIC_0025861,nv,follow_up,30.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025861.jpg
+HAM_0004933,ISIC_0025558,nv,follow_up,45.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025558.jpg
+HAM_0007256,ISIC_0031480,nv,follow_up,40.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031480.jpg
+HAM_0006801,ISIC_0032570,bkl,histo,60.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032570.jpg
+HAM_0006364,ISIC_0029027,nv,histo,30.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029027.jpg
+HAM_0003753,ISIC_0031911,nv,follow_up,40.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031911.jpg
+HAM_0000250,ISIC_0026838,nv,follow_up,40.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026838.jpg
+HAM_0007205,ISIC_0026269,nv,follow_up,60.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026269.jpg
+HAM_0002101,ISIC_0029398,nv,follow_up,35.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029398.jpg
+HAM_0003929,ISIC_0027792,nv,follow_up,75.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027792.jpg
+HAM_0001057,ISIC_0024381,bkl,histo,75.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024381.jpg
+HAM_0003559,ISIC_0027463,bkl,consensus,75.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027463.jpg
+HAM_0001435,ISIC_0028970,bkl,histo,65.0,female,hand,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028970.jpg
+HAM_0006891,ISIC_0031367,nv,follow_up,50.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031367.jpg
+HAM_0002802,ISIC_0029717,nv,follow_up,45.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029717.jpg
+HAM_0001965,ISIC_0031269,nv,follow_up,40.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031269.jpg
+HAM_0004027,ISIC_0024595,bcc,histo,65.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024595.jpg
+HAM_0000349,ISIC_0033695,df,consensus,45.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033695.jpg
+HAM_0001506,ISIC_0033051,mel,histo,25.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033051.jpg
+HAM_0005944,ISIC_0030850,nv,follow_up,45.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030850.jpg
+HAM_0001277,ISIC_0031927,akiec,histo,75.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031927.jpg
+HAM_0000176,ISIC_0032862,mel,histo,65.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032862.jpg
+HAM_0003884,ISIC_0033605,nv,histo,35.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033605.jpg
+HAM_0000821,ISIC_0031465,bkl,histo,75.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031465.jpg
+HAM_0006197,ISIC_0032334,nv,histo,40.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032334.jpg
+HAM_0006674,ISIC_0029280,nv,follow_up,45.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029280.jpg
+HAM_0006188,ISIC_0024330,df,consensus,40.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024330.jpg
+HAM_0005162,ISIC_0025568,nv,histo,50.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025568.jpg
+HAM_0002906,ISIC_0026604,mel,histo,70.0,male,ear,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026604.jpg
+HAM_0000998,ISIC_0027544,bcc,histo,20.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027544.jpg
+HAM_0005650,ISIC_0030387,akiec,histo,65.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030387.jpg
+HAM_0006642,ISIC_0030916,nv,follow_up,50.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030916.jpg
+HAM_0007268,ISIC_0028600,nv,histo,65.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028600.jpg
+HAM_0003465,ISIC_0024368,nv,follow_up,65.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024368.jpg
+HAM_0007545,ISIC_0027129,nv,histo,35.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027129.jpg
+HAM_0002682,ISIC_0024478,nv,follow_up,45.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024478.jpg
+HAM_0001056,ISIC_0025329,nv,follow_up,25.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025329.jpg
+HAM_0004307,ISIC_0031714,nv,follow_up,70.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031714.jpg
+HAM_0002984,ISIC_0024602,bkl,consensus,75.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024602.jpg
+HAM_0000642,ISIC_0026520,nv,follow_up,45.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026520.jpg
+HAM_0005485,ISIC_0029635,nv,follow_up,40.0,male,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029635.jpg
+HAM_0003941,ISIC_0029745,bcc,histo,35.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029745.jpg
+HAM_0005774,ISIC_0031137,nv,follow_up,50.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031137.jpg
+HAM_0001408,ISIC_0031004,nv,follow_up,80.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031004.jpg
+HAM_0000892,ISIC_0024594,nv,histo,40.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024594.jpg
+HAM_0001860,ISIC_0027665,vasc,consensus,50.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027665.jpg
+HAM_0002448,ISIC_0033285,nv,histo,35.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033285.jpg
+HAM_0000768,ISIC_0028242,nv,follow_up,35.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028242.jpg
+HAM_0004883,ISIC_0030436,bkl,histo,55.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030436.jpg
+HAM_0005446,ISIC_0031868,nv,follow_up,55.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031868.jpg
+HAM_0006582,ISIC_0029487,nv,follow_up,55.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029487.jpg
+HAM_0001715,ISIC_0027208,nv,histo,30.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027208.jpg
+HAM_0006967,ISIC_0026295,nv,consensus,60.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026295.jpg
+HAM_0007422,ISIC_0024862,nv,histo,85.0,male,genital,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024862.jpg
+HAM_0007427,ISIC_0033660,bkl,consensus,60.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033660.jpg
+HAM_0006405,ISIC_0031641,nv,follow_up,35.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031641.jpg
+HAM_0000391,ISIC_0031857,nv,histo,25.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031857.jpg
+HAM_0006570,ISIC_0030343,nv,follow_up,40.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030343.jpg
+HAM_0000929,ISIC_0029727,nv,follow_up,40.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029727.jpg
+HAM_0000673,ISIC_0029659,akiec,histo,70.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029659.jpg
+HAM_0000823,ISIC_0033575,bcc,histo,75.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033575.jpg
+HAM_0004890,ISIC_0028054,nv,follow_up,50.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028054.jpg
+HAM_0000430,ISIC_0032477,nv,follow_up,35.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032477.jpg
+HAM_0004779,ISIC_0024962,mel,histo,35.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024962.jpg
+HAM_0002514,ISIC_0026768,nv,follow_up,55.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026768.jpg
+HAM_0003307,ISIC_0031147,nv,follow_up,35.0,female,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031147.jpg
+HAM_0004174,ISIC_0032281,nv,histo,40.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032281.jpg
+HAM_0002476,ISIC_0034187,nv,histo,15.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034187.jpg
+HAM_0000659,ISIC_0030088,bkl,consensus,75.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030088.jpg
+HAM_0006961,ISIC_0031792,nv,follow_up,50.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031792.jpg
+HAM_0005396,ISIC_0034255,bcc,histo,75.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034255.jpg
+HAM_0001628,ISIC_0024810,nv,follow_up,50.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024810.jpg
+HAM_0007266,ISIC_0031909,nv,follow_up,45.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031909.jpg
+HAM_0000637,ISIC_0027514,nv,histo,75.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027514.jpg
+HAM_0007136,ISIC_0030563,nv,follow_up,40.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030563.jpg
+HAM_0005700,ISIC_0031904,nv,histo,45.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031904.jpg
+HAM_0006439,ISIC_0025621,nv,histo,30.0,female,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025621.jpg
+HAM_0004698,ISIC_0030127,nv,histo,60.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030127.jpg
+HAM_0000187,ISIC_0026260,nv,histo,55.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026260.jpg
+HAM_0006416,ISIC_0028137,nv,follow_up,35.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028137.jpg
+HAM_0003958,ISIC_0029554,nv,histo,40.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029554.jpg
+HAM_0002488,ISIC_0032807,mel,histo,50.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032807.jpg
+HAM_0001020,ISIC_0030912,nv,histo,70.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030912.jpg
+HAM_0002794,ISIC_0031596,nv,histo,55.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031596.jpg
+HAM_0007391,ISIC_0031926,nv,follow_up,55.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031926.jpg
+HAM_0002790,ISIC_0026721,nv,follow_up,50.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026721.jpg
+HAM_0000579,ISIC_0032961,nv,histo,30.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032961.jpg
+HAM_0004708,ISIC_0033775,nv,histo,45.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033775.jpg
+HAM_0005623,ISIC_0030616,mel,histo,80.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030616.jpg
+HAM_0004909,ISIC_0025118,nv,histo,30.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025118.jpg
+HAM_0004158,ISIC_0028229,bkl,histo,70.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028229.jpg
+HAM_0001795,ISIC_0030611,nv,follow_up,30.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030611.jpg
+HAM_0002186,ISIC_0028463,mel,histo,60.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028463.jpg
+HAM_0005394,ISIC_0026903,nv,follow_up,60.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026903.jpg
+HAM_0003584,ISIC_0029875,nv,follow_up,50.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029875.jpg
+HAM_0003511,ISIC_0024321,nv,follow_up,35.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024321.jpg
+HAM_0003807,ISIC_0033620,bkl,consensus,40.0,male,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033620.jpg
+HAM_0005469,ISIC_0026643,bcc,histo,75.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026643.jpg
+HAM_0002190,ISIC_0026046,bkl,consensus,70.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026046.jpg
+HAM_0004990,ISIC_0028433,nv,follow_up,40.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028433.jpg
+HAM_0003428,ISIC_0031170,mel,histo,85.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031170.jpg
+HAM_0004769,ISIC_0025250,vasc,consensus,30.0,male,scalp,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025250.jpg
+HAM_0001521,ISIC_0031860,nv,follow_up,40.0,male,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031860.jpg
+HAM_0006564,ISIC_0031971,bcc,histo,70.0,male,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031971.jpg
+HAM_0005854,ISIC_0025926,nv,histo,60.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025926.jpg
+HAM_0001164,ISIC_0030021,df,histo,50.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030021.jpg
+HAM_0003915,ISIC_0026850,nv,follow_up,40.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026850.jpg
+HAM_0004556,ISIC_0028123,bkl,consensus,65.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028123.jpg
+HAM_0005154,ISIC_0030977,nv,consensus,55.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030977.jpg
+HAM_0000343,ISIC_0027824,nv,follow_up,60.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027824.jpg
+HAM_0007263,ISIC_0028130,nv,histo,50.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028130.jpg
+HAM_0002327,ISIC_0034103,bkl,histo,60.0,female,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034103.jpg
+HAM_0007043,ISIC_0029135,bkl,consensus,75.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029135.jpg
+HAM_0005062,ISIC_0033617,nv,consensus,70.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033617.jpg
+HAM_0007478,ISIC_0033040,nv,consensus,30.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033040.jpg
+HAM_0002092,ISIC_0031624,bkl,histo,35.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031624.jpg
+HAM_0004013,ISIC_0026021,nv,follow_up,35.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026021.jpg
+HAM_0002113,ISIC_0029839,mel,histo,65.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029839.jpg
+HAM_0001852,ISIC_0034196,vasc,histo,80.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034196.jpg
+HAM_0003480,ISIC_0031996,vasc,consensus,70.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031996.jpg
+HAM_0006141,ISIC_0024603,nv,follow_up,65.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024603.jpg
+HAM_0006528,ISIC_0034291,bkl,consensus,70.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034291.jpg
+HAM_0007031,ISIC_0025616,mel,histo,70.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025616.jpg
+HAM_0001987,ISIC_0024636,nv,follow_up,45.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024636.jpg
+HAM_0002398,ISIC_0028208,nv,follow_up,70.0,female,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028208.jpg
+HAM_0000116,ISIC_0031688,nv,follow_up,40.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031688.jpg
+HAM_0006311,ISIC_0024392,nv,follow_up,65.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024392.jpg
+HAM_0000318,ISIC_0028750,bkl,histo,55.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028750.jpg
+HAM_0000976,ISIC_0030833,nv,histo,40.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030833.jpg
+HAM_0005599,ISIC_0030511,bcc,histo,70.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030511.jpg
+HAM_0003738,ISIC_0032139,bcc,histo,85.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032139.jpg
+HAM_0000229,ISIC_0030086,nv,consensus,35.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030086.jpg
+HAM_0005435,ISIC_0025752,bcc,histo,65.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025752.jpg
+HAM_0004064,ISIC_0024399,nv,follow_up,50.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024399.jpg
+HAM_0003933,ISIC_0029854,nv,histo,55.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029854.jpg
+HAM_0001717,ISIC_0028700,nv,follow_up,70.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028700.jpg
+HAM_0004352,ISIC_0034250,nv,consensus,40.0,female,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034250.jpg
+HAM_0003913,ISIC_0027295,bkl,histo,60.0,male,hand,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027295.jpg
+HAM_0002833,ISIC_0030963,nv,consensus,5.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030963.jpg
+HAM_0000691,ISIC_0026535,nv,follow_up,50.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026535.jpg
+HAM_0002786,ISIC_0029258,nv,follow_up,55.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029258.jpg
+HAM_0005198,ISIC_0033673,nv,histo,60.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033673.jpg
+HAM_0002956,ISIC_0032637,mel,histo,35.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032637.jpg
+HAM_0005404,ISIC_0029455,bkl,consensus,70.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029455.jpg
+HAM_0006873,ISIC_0033566,nv,histo,35.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033566.jpg
+HAM_0006729,ISIC_0031790,nv,follow_up,70.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031790.jpg
+HAM_0001636,ISIC_0030866,nv,follow_up,50.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030866.jpg
+HAM_0001715,ISIC_0029504,nv,histo,30.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029504.jpg
+HAM_0004508,ISIC_0033628,nv,consensus,,unknown,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033628.jpg
+HAM_0005684,ISIC_0032468,df,histo,75.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032468.jpg
+HAM_0003092,ISIC_0027301,nv,follow_up,40.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027301.jpg
+HAM_0003134,ISIC_0027001,nv,follow_up,40.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027001.jpg
+HAM_0007227,ISIC_0024973,df,histo,75.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024973.jpg
+HAM_0005325,ISIC_0024971,bkl,histo,50.0,male,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024971.jpg
+HAM_0002571,ISIC_0025881,nv,consensus,70.0,male,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025881.jpg
+HAM_0006214,ISIC_0031189,mel,histo,60.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031189.jpg
+HAM_0001272,ISIC_0032968,mel,histo,85.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032968.jpg
+HAM_0001719,ISIC_0031090,vasc,histo,55.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031090.jpg
+HAM_0000588,ISIC_0028929,mel,histo,65.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028929.jpg
+HAM_0002317,ISIC_0027268,nv,follow_up,45.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027268.jpg
+HAM_0004783,ISIC_0025671,nv,histo,30.0,female,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025671.jpg
+HAM_0006929,ISIC_0026542,nv,follow_up,55.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026542.jpg
+HAM_0002484,ISIC_0029194,nv,histo,30.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029194.jpg
+HAM_0000464,ISIC_0027537,nv,histo,55.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027537.jpg
+HAM_0004454,ISIC_0029834,nv,follow_up,25.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029834.jpg
+HAM_0002799,ISIC_0027975,nv,follow_up,30.0,male,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027975.jpg
+HAM_0004157,ISIC_0031610,nv,follow_up,40.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031610.jpg
+HAM_0003161,ISIC_0030191,akiec,histo,60.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030191.jpg
+HAM_0007349,ISIC_0027184,akiec,histo,60.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027184.jpg
+HAM_0004083,ISIC_0033551,bcc,histo,60.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033551.jpg
+HAM_0004940,ISIC_0026970,bcc,histo,80.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026970.jpg
+HAM_0004155,ISIC_0025269,nv,follow_up,60.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025269.jpg
+HAM_0000609,ISIC_0025778,nv,histo,75.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025778.jpg
+HAM_0000259,ISIC_0028550,bkl,histo,60.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028550.jpg
+HAM_0004063,ISIC_0032896,nv,histo,15.0,female,hand,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032896.jpg
+HAM_0000727,ISIC_0029961,nv,follow_up,50.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029961.jpg
+HAM_0006459,ISIC_0033011,nv,consensus,70.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033011.jpg
+HAM_0002040,ISIC_0033361,bkl,histo,50.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033361.jpg
+HAM_0001849,ISIC_0028966,nv,histo,10.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028966.jpg
+HAM_0006422,ISIC_0030368,nv,follow_up,45.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030368.jpg
+HAM_0005177,ISIC_0029423,nv,follow_up,40.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029423.jpg
+HAM_0004747,ISIC_0031435,nv,histo,55.0,female,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031435.jpg
+HAM_0004012,ISIC_0030803,akiec,histo,65.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030803.jpg
+HAM_0007179,ISIC_0025906,bkl,histo,0.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025906.jpg
+HAM_0002395,ISIC_0029750,nv,follow_up,40.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029750.jpg
+HAM_0003083,ISIC_0033428,mel,histo,75.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033428.jpg
+HAM_0004387,ISIC_0033132,nv,consensus,55.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033132.jpg
+HAM_0001629,ISIC_0032317,nv,follow_up,50.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032317.jpg
+HAM_0001840,ISIC_0025490,nv,follow_up,55.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025490.jpg
+HAM_0003659,ISIC_0033449,bkl,histo,85.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033449.jpg
+HAM_0000261,ISIC_0030053,nv,histo,65.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030053.jpg
+HAM_0004536,ISIC_0025644,bcc,histo,40.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025644.jpg
+HAM_0005995,ISIC_0033689,nv,histo,30.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033689.jpg
+HAM_0006031,ISIC_0025374,bkl,histo,75.0,female,scalp,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025374.jpg
+HAM_0001525,ISIC_0024355,nv,histo,35.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024355.jpg
+HAM_0003186,ISIC_0027297,bcc,histo,70.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027297.jpg
+HAM_0006904,ISIC_0027281,bcc,histo,70.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027281.jpg
+HAM_0001994,ISIC_0033923,nv,histo,60.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033923.jpg
+HAM_0004742,ISIC_0028338,nv,consensus,50.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028338.jpg
+HAM_0004963,ISIC_0032785,nv,histo,45.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032785.jpg
+HAM_0005785,ISIC_0028489,mel,histo,70.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028489.jpg
+HAM_0001334,ISIC_0031363,nv,histo,45.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031363.jpg
+HAM_0005206,ISIC_0032521,nv,histo,50.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032521.jpg
+HAM_0002000,ISIC_0030092,nv,follow_up,45.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030092.jpg
+HAM_0005365,ISIC_0025253,nv,consensus,0.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025253.jpg
+HAM_0003958,ISIC_0029855,nv,histo,40.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029855.jpg
+HAM_0004663,ISIC_0025809,nv,histo,55.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025809.jpg
+HAM_0002458,ISIC_0026155,nv,follow_up,50.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026155.jpg
+HAM_0006997,ISIC_0028375,nv,follow_up,35.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028375.jpg
+HAM_0006354,ISIC_0032137,nv,follow_up,70.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032137.jpg
+HAM_0007206,ISIC_0031524,nv,consensus,60.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031524.jpg
+HAM_0007483,ISIC_0032942,nv,histo,35.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032942.jpg
+HAM_0006666,ISIC_0032908,nv,histo,35.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032908.jpg
+HAM_0001761,ISIC_0026732,nv,follow_up,30.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026732.jpg
+HAM_0004366,ISIC_0030147,nv,follow_up,40.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030147.jpg
+HAM_0000523,ISIC_0025978,nv,histo,30.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025978.jpg
+HAM_0003364,ISIC_0033474,nv,consensus,45.0,female,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033474.jpg
+HAM_0005971,ISIC_0029539,bcc,histo,40.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029539.jpg
+HAM_0000048,ISIC_0032774,mel,histo,75.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032774.jpg
+HAM_0003862,ISIC_0033031,vasc,histo,45.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033031.jpg
+HAM_0006562,ISIC_0031084,nv,follow_up,40.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031084.jpg
+HAM_0004954,ISIC_0030156,nv,histo,35.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030156.jpg
+HAM_0006710,ISIC_0028324,nv,follow_up,45.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028324.jpg
+HAM_0003320,ISIC_0031905,nv,histo,35.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031905.jpg
+HAM_0004872,ISIC_0033202,nv,histo,35.0,female,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033202.jpg
+HAM_0002242,ISIC_0026511,bkl,consensus,45.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026511.jpg
+HAM_0004840,ISIC_0025273,nv,follow_up,45.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025273.jpg
+HAM_0001639,ISIC_0026160,nv,follow_up,55.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026160.jpg
+HAM_0005748,ISIC_0034065,mel,histo,50.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034065.jpg
+HAM_0000209,ISIC_0024776,nv,follow_up,40.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024776.jpg
+HAM_0001557,ISIC_0029939,nv,follow_up,45.0,male,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029939.jpg
+HAM_0002259,ISIC_0028333,nv,follow_up,75.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028333.jpg
+HAM_0001172,ISIC_0024821,nv,consensus,65.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024821.jpg
+HAM_0007344,ISIC_0029461,nv,follow_up,45.0,male,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029461.jpg
+HAM_0000924,ISIC_0031194,nv,histo,25.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031194.jpg
+HAM_0000762,ISIC_0027137,nv,histo,30.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027137.jpg
+HAM_0002628,ISIC_0031204,nv,histo,50.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031204.jpg
+HAM_0006106,ISIC_0032295,nv,follow_up,45.0,female,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032295.jpg
+HAM_0002371,ISIC_0032271,bkl,consensus,50.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032271.jpg
+HAM_0004195,ISIC_0033383,nv,consensus,40.0,female,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033383.jpg
+HAM_0000776,ISIC_0027339,nv,follow_up,50.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027339.jpg
+HAM_0000140,ISIC_0030074,nv,histo,40.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030074.jpg
+HAM_0002070,ISIC_0028659,akiec,histo,70.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028659.jpg
+HAM_0005303,ISIC_0033240,mel,histo,70.0,male,scalp,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033240.jpg
+HAM_0004072,ISIC_0032130,nv,follow_up,60.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032130.jpg
+HAM_0007396,ISIC_0033891,df,consensus,35.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033891.jpg
+HAM_0001050,ISIC_0030317,nv,follow_up,50.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030317.jpg
+HAM_0002970,ISIC_0027350,mel,histo,60.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027350.jpg
+HAM_0001502,ISIC_0027482,nv,follow_up,55.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027482.jpg
+HAM_0000397,ISIC_0024538,nv,histo,35.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024538.jpg
+HAM_0001794,ISIC_0032073,nv,follow_up,50.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032073.jpg
+HAM_0003679,ISIC_0032840,mel,histo,55.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032840.jpg
+HAM_0003951,ISIC_0024317,nv,histo,35.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024317.jpg
+HAM_0000499,ISIC_0029599,nv,follow_up,45.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029599.jpg
+HAM_0001947,ISIC_0032051,bkl,histo,50.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032051.jpg
+HAM_0003137,ISIC_0034184,nv,histo,40.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034184.jpg
+HAM_0000228,ISIC_0025146,nv,follow_up,50.0,female,hand,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025146.jpg
+HAM_0003123,ISIC_0028816,akiec,histo,60.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028816.jpg
+HAM_0000520,ISIC_0026415,nv,follow_up,5.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026415.jpg
+HAM_0005316,ISIC_0033139,nv,consensus,35.0,male,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033139.jpg
+HAM_0004932,ISIC_0032212,nv,follow_up,45.0,female,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032212.jpg
+HAM_0003636,ISIC_0027124,nv,follow_up,45.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027124.jpg
+HAM_0001163,ISIC_0028997,nv,follow_up,35.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028997.jpg
+HAM_0006329,ISIC_0032758,nv,histo,50.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032758.jpg
+HAM_0003953,ISIC_0027158,nv,follow_up,45.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027158.jpg
+HAM_0001878,ISIC_0028165,bkl,histo,60.0,female,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028165.jpg
+HAM_0002364,ISIC_0025446,nv,consensus,5.0,female,hand,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025446.jpg
+HAM_0001523,ISIC_0028523,nv,follow_up,55.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028523.jpg
+HAM_0002716,ISIC_0030779,nv,follow_up,65.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030779.jpg
+HAM_0004300,ISIC_0025266,bcc,histo,65.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025266.jpg
+HAM_0004308,ISIC_0027370,bkl,consensus,50.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027370.jpg
+HAM_0001608,ISIC_0031980,bkl,histo,65.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031980.jpg
+HAM_0003933,ISIC_0031515,nv,histo,55.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031515.jpg
+HAM_0001874,ISIC_0024601,nv,follow_up,40.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024601.jpg
+HAM_0002689,ISIC_0026687,bcc,histo,60.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026687.jpg
+HAM_0006147,ISIC_0033511,nv,histo,45.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033511.jpg
+HAM_0000932,ISIC_0026288,nv,follow_up,30.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026288.jpg
+HAM_0004624,ISIC_0028329,bcc,histo,80.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028329.jpg
+HAM_0001362,ISIC_0025838,bkl,histo,75.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025838.jpg
+HAM_0005079,ISIC_0028420,nv,histo,80.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028420.jpg
+HAM_0003692,ISIC_0029719,nv,histo,45.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029719.jpg
+HAM_0004367,ISIC_0033396,nv,histo,80.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033396.jpg
+HAM_0003123,ISIC_0028232,akiec,histo,60.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028232.jpg
+HAM_0000905,ISIC_0026338,nv,follow_up,65.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026338.jpg
+HAM_0007481,ISIC_0026837,nv,follow_up,55.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026837.jpg
+HAM_0001462,ISIC_0026748,nv,follow_up,75.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026748.jpg
+HAM_0006293,ISIC_0027314,nv,follow_up,60.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027314.jpg
+HAM_0003500,ISIC_0025917,nv,follow_up,30.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025917.jpg
+HAM_0004476,ISIC_0030417,mel,histo,70.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030417.jpg
+HAM_0001246,ISIC_0033283,nv,histo,40.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033283.jpg
+HAM_0004303,ISIC_0033932,nv,histo,60.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033932.jpg
+HAM_0007167,ISIC_0026400,nv,histo,75.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026400.jpg
+HAM_0002966,ISIC_0024509,nv,follow_up,55.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024509.jpg
+HAM_0001528,ISIC_0025601,bcc,histo,40.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025601.jpg
+HAM_0003469,ISIC_0031636,nv,follow_up,75.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031636.jpg
+HAM_0006007,ISIC_0031737,nv,follow_up,45.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031737.jpg
+HAM_0005566,ISIC_0033266,nv,histo,70.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033266.jpg
+HAM_0007005,ISIC_0032568,nv,histo,40.0,female,acral,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032568.jpg
+HAM_0002318,ISIC_0026797,nv,follow_up,50.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026797.jpg
+HAM_0001943,ISIC_0025769,nv,histo,30.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025769.jpg
+HAM_0005609,ISIC_0025847,nv,histo,40.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025847.jpg
+HAM_0005431,ISIC_0026413,nv,follow_up,65.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026413.jpg
+HAM_0001608,ISIC_0028792,bkl,histo,65.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028792.jpg
+HAM_0001748,ISIC_0031739,nv,follow_up,40.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031739.jpg
+HAM_0006881,ISIC_0026922,nv,histo,60.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026922.jpg
+HAM_0003455,ISIC_0027896,akiec,histo,75.0,male,hand,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027896.jpg
+HAM_0001990,ISIC_0027612,bkl,consensus,55.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027612.jpg
+HAM_0005393,ISIC_0025506,nv,histo,35.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025506.jpg
+HAM_0005459,ISIC_0029268,akiec,histo,85.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029268.jpg
+HAM_0004127,ISIC_0027073,nv,histo,55.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027073.jpg
+HAM_0004428,ISIC_0025317,mel,histo,80.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025317.jpg
+HAM_0001405,ISIC_0033033,nv,histo,55.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033033.jpg
+HAM_0006807,ISIC_0031341,nv,follow_up,40.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031341.jpg
+HAM_0006964,ISIC_0027163,mel,histo,60.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027163.jpg
+HAM_0004118,ISIC_0032593,nv,histo,30.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032593.jpg
+HAM_0004545,ISIC_0025985,bkl,histo,70.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025985.jpg
+HAM_0002325,ISIC_0033835,nv,histo,45.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033835.jpg
+HAM_0005552,ISIC_0025723,nv,follow_up,35.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025723.jpg
+HAM_0005594,ISIC_0033703,nv,histo,40.0,female,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033703.jpg
+HAM_0002754,ISIC_0025892,nv,histo,40.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025892.jpg
+HAM_0004152,ISIC_0025137,nv,follow_up,50.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025137.jpg
+HAM_0004577,ISIC_0027134,nv,follow_up,65.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027134.jpg
+HAM_0001803,ISIC_0031567,nv,histo,70.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031567.jpg
+HAM_0000105,ISIC_0031362,bkl,consensus,70.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031362.jpg
+HAM_0004444,ISIC_0033108,nv,histo,55.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033108.jpg
+HAM_0007285,ISIC_0026718,nv,follow_up,55.0,female,genital,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026718.jpg
+HAM_0006255,ISIC_0026548,nv,follow_up,65.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026548.jpg
+HAM_0003317,ISIC_0026590,bkl,consensus,55.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026590.jpg
+HAM_0005768,ISIC_0029330,nv,follow_up,50.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029330.jpg
+HAM_0003309,ISIC_0028403,nv,follow_up,55.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028403.jpg
+HAM_0005681,ISIC_0027234,mel,histo,65.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027234.jpg
+HAM_0005777,ISIC_0034208,mel,histo,60.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034208.jpg
+HAM_0001175,ISIC_0033191,nv,histo,5.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033191.jpg
+HAM_0004472,ISIC_0025368,akiec,histo,40.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025368.jpg
+HAM_0002334,ISIC_0027786,bcc,histo,55.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027786.jpg
+HAM_0001729,ISIC_0028325,mel,histo,85.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028325.jpg
+HAM_0006972,ISIC_0030340,nv,histo,75.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030340.jpg
+HAM_0003910,ISIC_0026194,akiec,histo,30.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026194.jpg
+HAM_0002756,ISIC_0027157,nv,follow_up,30.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027157.jpg
+HAM_0005945,ISIC_0032053,nv,follow_up,50.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032053.jpg
+HAM_0004507,ISIC_0029958,mel,histo,65.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029958.jpg
+HAM_0003946,ISIC_0026991,nv,histo,45.0,female,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026991.jpg
+HAM_0003593,ISIC_0027478,bcc,histo,40.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027478.jpg
+HAM_0001227,ISIC_0032210,nv,follow_up,55.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032210.jpg
+HAM_0005150,ISIC_0028161,nv,follow_up,45.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028161.jpg
+HAM_0000114,ISIC_0029674,bkl,histo,65.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029674.jpg
+HAM_0001732,ISIC_0024502,nv,follow_up,45.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024502.jpg
+HAM_0000584,ISIC_0025888,nv,follow_up,35.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025888.jpg
+HAM_0003233,ISIC_0031571,nv,follow_up,40.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031571.jpg
+HAM_0000648,ISIC_0027080,nv,follow_up,65.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027080.jpg
+HAM_0006758,ISIC_0029234,nv,follow_up,35.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029234.jpg
+HAM_0005789,ISIC_0032095,mel,histo,55.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032095.jpg
+HAM_0002515,ISIC_0028744,nv,histo,50.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028744.jpg
+HAM_0005176,ISIC_0031117,nv,histo,70.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031117.jpg
+HAM_0005186,ISIC_0026993,mel,histo,45.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026993.jpg
+HAM_0006558,ISIC_0031639,bkl,histo,65.0,female,genital,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031639.jpg
+HAM_0006866,ISIC_0030713,nv,follow_up,65.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030713.jpg
+HAM_0004172,ISIC_0034171,nv,histo,45.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034171.jpg
+HAM_0003033,ISIC_0025970,nv,histo,60.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025970.jpg
+HAM_0002617,ISIC_0034172,mel,histo,60.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034172.jpg
+HAM_0006955,ISIC_0025105,mel,histo,65.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025105.jpg
+HAM_0004829,ISIC_0032595,nv,histo,45.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032595.jpg
+HAM_0001632,ISIC_0029132,nv,follow_up,55.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029132.jpg
+HAM_0000065,ISIC_0028085,bcc,histo,50.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028085.jpg
+HAM_0006965,ISIC_0026475,mel,histo,40.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026475.jpg
+HAM_0002276,ISIC_0025366,bkl,consensus,50.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025366.jpg
+HAM_0001224,ISIC_0030777,nv,follow_up,50.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030777.jpg
+HAM_0004746,ISIC_0029021,mel,histo,65.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029021.jpg
+HAM_0002577,ISIC_0028035,bcc,histo,70.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028035.jpg
+HAM_0003803,ISIC_0033083,nv,histo,5.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033083.jpg
+HAM_0007003,ISIC_0025638,nv,histo,20.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025638.jpg
+HAM_0001803,ISIC_0026330,nv,histo,70.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026330.jpg
+HAM_0000237,ISIC_0027893,bkl,histo,80.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027893.jpg
+HAM_0005017,ISIC_0026752,nv,histo,75.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026752.jpg
+HAM_0006670,ISIC_0027335,bkl,histo,75.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027335.jpg
+HAM_0000538,ISIC_0030650,nv,follow_up,45.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030650.jpg
+HAM_0002805,ISIC_0031722,nv,follow_up,50.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031722.jpg
+HAM_0006914,ISIC_0027462,nv,histo,75.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027462.jpg
+HAM_0000685,ISIC_0026291,bkl,consensus,80.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026291.jpg
+HAM_0002180,ISIC_0027479,nv,follow_up,45.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027479.jpg
+HAM_0006869,ISIC_0032711,nv,histo,45.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032711.jpg
+HAM_0006576,ISIC_0024606,nv,follow_up,65.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024606.jpg
+HAM_0001445,ISIC_0029433,nv,follow_up,35.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029433.jpg
+HAM_0004564,ISIC_0026761,nv,histo,15.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026761.jpg
+HAM_0002587,ISIC_0030485,nv,consensus,60.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030485.jpg
+HAM_0001113,ISIC_0031900,mel,histo,55.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031900.jpg
+HAM_0000960,ISIC_0025779,nv,histo,25.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025779.jpg
+HAM_0000879,ISIC_0033203,bcc,histo,65.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033203.jpg
+HAM_0001377,ISIC_0030054,nv,follow_up,35.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030054.jpg
+HAM_0003158,ISIC_0025456,nv,histo,30.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025456.jpg
+HAM_0003225,ISIC_0033593,mel,histo,65.0,male,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033593.jpg
+HAM_0004127,ISIC_0031700,nv,histo,55.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031700.jpg
+HAM_0002732,ISIC_0034022,mel,histo,65.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034022.jpg
+HAM_0002574,ISIC_0033157,nv,histo,55.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033157.jpg
+HAM_0002576,ISIC_0025414,mel,histo,55.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025414.jpg
+HAM_0006886,ISIC_0033953,mel,histo,55.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033953.jpg
+HAM_0003468,ISIC_0025641,nv,histo,60.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025641.jpg
+HAM_0001900,ISIC_0028323,bcc,histo,80.0,female,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028323.jpg
+HAM_0000872,ISIC_0031171,bcc,histo,75.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031171.jpg
+HAM_0005082,ISIC_0026843,bkl,histo,65.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026843.jpg
+HAM_0001282,ISIC_0028269,nv,follow_up,45.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028269.jpg
+HAM_0003678,ISIC_0026197,nv,follow_up,55.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026197.jpg
+HAM_0000965,ISIC_0029190,nv,histo,45.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029190.jpg
+HAM_0004548,ISIC_0032832,nv,histo,45.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032832.jpg
+HAM_0000473,ISIC_0027356,nv,follow_up,35.0,male,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027356.jpg
+HAM_0004615,ISIC_0033094,nv,histo,35.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033094.jpg
+HAM_0005003,ISIC_0026689,nv,follow_up,35.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026689.jpg
+HAM_0002996,ISIC_0025496,nv,follow_up,45.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025496.jpg
+HAM_0001832,ISIC_0031030,nv,follow_up,45.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031030.jpg
+HAM_0001069,ISIC_0028898,mel,histo,60.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028898.jpg
+HAM_0003338,ISIC_0029722,nv,follow_up,35.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029722.jpg
+HAM_0007443,ISIC_0031206,nv,histo,25.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031206.jpg
+HAM_0000848,ISIC_0026294,nv,follow_up,50.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026294.jpg
+HAM_0001796,ISIC_0029473,mel,histo,70.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029473.jpg
+HAM_0001142,ISIC_0029667,nv,histo,50.0,male,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029667.jpg
+HAM_0002012,ISIC_0026327,akiec,histo,55.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026327.jpg
+HAM_0001397,ISIC_0026796,mel,histo,70.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026796.jpg
+HAM_0001214,ISIC_0025439,mel,histo,55.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025439.jpg
+HAM_0006796,ISIC_0025707,vasc,consensus,35.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025707.jpg
+HAM_0004806,ISIC_0032327,nv,histo,80.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032327.jpg
+HAM_0004106,ISIC_0028943,bkl,histo,70.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028943.jpg
+HAM_0000364,ISIC_0024505,bkl,histo,40.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024505.jpg
+HAM_0000232,ISIC_0029950,nv,follow_up,50.0,male,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029950.jpg
+HAM_0000876,ISIC_0032396,mel,histo,55.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032396.jpg
+HAM_0006321,ISIC_0033985,mel,histo,70.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033985.jpg
+HAM_0004857,ISIC_0031222,nv,consensus,70.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031222.jpg
+HAM_0000592,ISIC_0030781,nv,follow_up,50.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030781.jpg
+HAM_0003102,ISIC_0032389,mel,histo,65.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032389.jpg
+HAM_0007133,ISIC_0027490,nv,histo,30.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027490.jpg
+HAM_0002352,ISIC_0032319,nv,follow_up,60.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032319.jpg
+HAM_0006295,ISIC_0032720,nv,histo,25.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032720.jpg
+HAM_0003772,ISIC_0024379,nv,follow_up,35.0,female,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024379.jpg
+HAM_0002300,ISIC_0029861,nv,histo,35.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029861.jpg
+HAM_0005860,ISIC_0024641,nv,follow_up,45.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024641.jpg
+HAM_0007309,ISIC_0025151,nv,follow_up,30.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025151.jpg
+HAM_0005156,ISIC_0033330,nv,consensus,,unknown,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033330.jpg
+HAM_0000508,ISIC_0027495,nv,histo,75.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027495.jpg
+HAM_0007071,ISIC_0030449,nv,follow_up,35.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030449.jpg
+HAM_0001192,ISIC_0031546,nv,histo,50.0,female,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031546.jpg
+HAM_0003507,ISIC_0032710,nv,histo,30.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032710.jpg
+HAM_0007592,ISIC_0027149,mel,histo,80.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027149.jpg
+HAM_0007227,ISIC_0029891,df,histo,75.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029891.jpg
+HAM_0004650,ISIC_0028149,nv,follow_up,35.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028149.jpg
+HAM_0000292,ISIC_0031445,nv,follow_up,45.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031445.jpg
+HAM_0004581,ISIC_0032539,nv,consensus,55.0,male,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032539.jpg
+HAM_0007097,ISIC_0033762,vasc,histo,60.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033762.jpg
+HAM_0004339,ISIC_0026332,nv,follow_up,75.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026332.jpg
+HAM_0004816,ISIC_0031608,nv,follow_up,50.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031608.jpg
+HAM_0003994,ISIC_0026648,nv,follow_up,55.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026648.jpg
+HAM_0006704,ISIC_0025464,nv,follow_up,50.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025464.jpg
+HAM_0001096,ISIC_0026932,nv,follow_up,50.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026932.jpg
+HAM_0000404,ISIC_0031241,nv,follow_up,35.0,male,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031241.jpg
+HAM_0002674,ISIC_0029646,nv,follow_up,20.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029646.jpg
+HAM_0002867,ISIC_0033084,akiec,histo,40.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033084.jpg
+HAM_0003142,ISIC_0031806,nv,histo,60.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031806.jpg
+HAM_0006835,ISIC_0031594,nv,histo,75.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031594.jpg
+HAM_0006303,ISIC_0026911,nv,histo,55.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026911.jpg
+HAM_0002843,ISIC_0031855,nv,follow_up,40.0,male,hand,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031855.jpg
+HAM_0000054,ISIC_0026498,nv,histo,35.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026498.jpg
+HAM_0006460,ISIC_0027292,nv,follow_up,75.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027292.jpg
+HAM_0004091,ISIC_0033587,bkl,histo,75.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033587.jpg
+HAM_0000087,ISIC_0034070,bkl,histo,45.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034070.jpg
+HAM_0004879,ISIC_0032419,nv,follow_up,45.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032419.jpg
+HAM_0000068,ISIC_0031160,nv,histo,35.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031160.jpg
+HAM_0003801,ISIC_0033978,nv,histo,45.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033978.jpg
+HAM_0006360,ISIC_0027926,nv,follow_up,55.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027926.jpg
+HAM_0005035,ISIC_0025536,nv,follow_up,35.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025536.jpg
+HAM_0005953,ISIC_0033534,mel,histo,35.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033534.jpg
+HAM_0005008,ISIC_0030919,nv,histo,60.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030919.jpg
+HAM_0001813,ISIC_0030858,nv,histo,60.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030858.jpg
+HAM_0000555,ISIC_0026791,nv,follow_up,60.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026791.jpg
+HAM_0004793,ISIC_0028102,nv,follow_up,60.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028102.jpg
+HAM_0002471,ISIC_0028326,mel,histo,40.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028326.jpg
+HAM_0001125,ISIC_0031304,nv,histo,60.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031304.jpg
+HAM_0003855,ISIC_0028801,nv,follow_up,50.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028801.jpg
+HAM_0002120,ISIC_0028010,nv,histo,50.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028010.jpg
+HAM_0006279,ISIC_0027195,nv,follow_up,25.0,female,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027195.jpg
+HAM_0001814,ISIC_0028567,mel,histo,65.0,female,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028567.jpg
+HAM_0001529,ISIC_0025103,bkl,consensus,70.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025103.jpg
+HAM_0000898,ISIC_0025529,bkl,histo,80.0,male,scalp,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025529.jpg
+HAM_0000458,ISIC_0025714,nv,follow_up,20.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025714.jpg
+HAM_0003109,ISIC_0028946,nv,follow_up,40.0,male,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028946.jpg
+HAM_0007009,ISIC_0032384,bcc,histo,50.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032384.jpg
+HAM_0006376,ISIC_0034317,mel,histo,70.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034317.jpg
+HAM_0001131,ISIC_0029601,nv,follow_up,35.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029601.jpg
+HAM_0003826,ISIC_0026433,bcc,histo,70.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026433.jpg
+HAM_0001572,ISIC_0028933,nv,follow_up,35.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028933.jpg
+HAM_0003713,ISIC_0033291,nv,histo,35.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033291.jpg
+HAM_0002535,ISIC_0027754,bkl,histo,50.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027754.jpg
+HAM_0006185,ISIC_0032309,nv,histo,25.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032309.jpg
+HAM_0005643,ISIC_0032015,nv,histo,50.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032015.jpg
+HAM_0001272,ISIC_0029265,mel,histo,85.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029265.jpg
+HAM_0003768,ISIC_0029929,bkl,histo,80.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029929.jpg
+HAM_0002779,ISIC_0026515,nv,follow_up,45.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026515.jpg
+HAM_0001524,ISIC_0032915,mel,histo,75.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032915.jpg
+HAM_0001720,ISIC_0032819,nv,histo,45.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032819.jpg
+HAM_0000844,ISIC_0024773,bkl,histo,70.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024773.jpg
+HAM_0000031,ISIC_0028177,nv,follow_up,45.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028177.jpg
+HAM_0004188,ISIC_0032996,nv,consensus,40.0,female,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032996.jpg
+HAM_0005893,ISIC_0033432,mel,histo,55.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033432.jpg
+HAM_0005942,ISIC_0033119,nv,histo,60.0,unknown,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033119.jpg
+HAM_0002860,ISIC_0030027,nv,follow_up,20.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030027.jpg
+HAM_0002659,ISIC_0026448,nv,follow_up,60.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026448.jpg
+HAM_0007606,ISIC_0025870,nv,histo,70.0,female,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025870.jpg
+HAM_0006430,ISIC_0026487,nv,histo,20.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026487.jpg
+HAM_0004133,ISIC_0024941,nv,histo,40.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024941.jpg
+HAM_0005447,ISIC_0026389,nv,histo,70.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026389.jpg
+HAM_0004404,ISIC_0025822,nv,follow_up,55.0,male,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025822.jpg
+HAM_0004004,ISIC_0029872,bkl,consensus,65.0,female,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029872.jpg
+HAM_0005335,ISIC_0031580,bkl,histo,40.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031580.jpg
+HAM_0006504,ISIC_0031098,nv,follow_up,55.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031098.jpg
+HAM_0003004,ISIC_0028889,nv,follow_up,65.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028889.jpg
+HAM_0005804,ISIC_0024573,bcc,histo,85.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024573.jpg
+HAM_0007462,ISIC_0032633,nv,histo,25.0,male,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032633.jpg
+HAM_0001935,ISIC_0033067,nv,histo,50.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033067.jpg
+HAM_0004270,ISIC_0028455,nv,follow_up,50.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028455.jpg
+HAM_0001368,ISIC_0029445,nv,follow_up,30.0,male,genital,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029445.jpg
+HAM_0002493,ISIC_0027436,mel,histo,50.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027436.jpg
+HAM_0003665,ISIC_0030573,nv,follow_up,50.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030573.jpg
+HAM_0001356,ISIC_0026333,nv,consensus,60.0,female,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026333.jpg
+HAM_0005847,ISIC_0033460,bkl,consensus,85.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033460.jpg
+HAM_0007254,ISIC_0027541,nv,follow_up,50.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027541.jpg
+HAM_0000012,ISIC_0029348,nv,histo,85.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029348.jpg
+HAM_0007135,ISIC_0024460,nv,follow_up,50.0,female,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024460.jpg
+HAM_0001564,ISIC_0027913,nv,follow_up,40.0,male,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027913.jpg
+HAM_0003401,ISIC_0029002,akiec,histo,55.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029002.jpg
+HAM_0006381,ISIC_0025023,nv,follow_up,45.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025023.jpg
+HAM_0004950,ISIC_0031878,nv,follow_up,70.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031878.jpg
+HAM_0001768,ISIC_0026019,nv,follow_up,30.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026019.jpg
+HAM_0006668,ISIC_0027808,nv,follow_up,50.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027808.jpg
+HAM_0004032,ISIC_0032403,nv,follow_up,50.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032403.jpg
+HAM_0005481,ISIC_0029000,mel,histo,45.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029000.jpg
+HAM_0006963,ISIC_0032351,nv,follow_up,55.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032351.jpg
+HAM_0005616,ISIC_0029107,bkl,consensus,80.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029107.jpg
+HAM_0004732,ISIC_0024858,nv,follow_up,40.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024858.jpg
+HAM_0001168,ISIC_0024803,nv,follow_up,45.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024803.jpg
+HAM_0003532,ISIC_0026517,nv,follow_up,65.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026517.jpg
+HAM_0005229,ISIC_0030003,nv,follow_up,35.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030003.jpg
+HAM_0002882,ISIC_0026014,akiec,histo,85.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026014.jpg
+HAM_0001835,ISIC_0026652,mel,histo,65.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026652.jpg
+HAM_0005987,ISIC_0026741,nv,histo,80.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026741.jpg
+HAM_0003958,ISIC_0027360,nv,histo,40.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027360.jpg
+HAM_0002961,ISIC_0031947,nv,follow_up,45.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031947.jpg
+HAM_0004240,ISIC_0034284,mel,histo,50.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034284.jpg
+HAM_0000410,ISIC_0031796,nv,histo,55.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031796.jpg
+HAM_0006158,ISIC_0033096,nv,histo,40.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033096.jpg
+HAM_0000416,ISIC_0028162,nv,follow_up,45.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028162.jpg
+HAM_0003878,ISIC_0031072,nv,follow_up,30.0,female,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031072.jpg
+HAM_0006174,ISIC_0028116,nv,histo,75.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028116.jpg
+HAM_0007070,ISIC_0032192,mel,histo,80.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032192.jpg
+HAM_0006232,ISIC_0033043,nv,consensus,60.0,male,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033043.jpg
+HAM_0003246,ISIC_0029018,nv,histo,0.0,male,ear,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029018.jpg
+HAM_0006042,ISIC_0033983,nv,histo,50.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033983.jpg
+HAM_0004116,ISIC_0026613,nv,follow_up,40.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026613.jpg
+HAM_0006918,ISIC_0031491,nv,follow_up,65.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031491.jpg
+HAM_0006158,ISIC_0033972,nv,histo,40.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033972.jpg
+HAM_0000901,ISIC_0032120,nv,follow_up,50.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032120.jpg
+HAM_0002094,ISIC_0030549,akiec,histo,50.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030549.jpg
+HAM_0003083,ISIC_0032604,mel,histo,75.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032604.jpg
+HAM_0000931,ISIC_0028820,akiec,histo,80.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028820.jpg
+HAM_0000169,ISIC_0032960,mel,histo,,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032960.jpg
+HAM_0005656,ISIC_0026478,nv,follow_up,45.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026478.jpg
+HAM_0003418,ISIC_0033632,nv,histo,50.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033632.jpg
+HAM_0006499,ISIC_0031027,nv,follow_up,40.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031027.jpg
+HAM_0000896,ISIC_0026560,nv,histo,45.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026560.jpg
+HAM_0004381,ISIC_0027426,nv,follow_up,45.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027426.jpg
+HAM_0004847,ISIC_0030906,nv,follow_up,45.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030906.jpg
+HAM_0003742,ISIC_0031631,nv,histo,20.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031631.jpg
+HAM_0003708,ISIC_0027232,nv,follow_up,75.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027232.jpg
+HAM_0001299,ISIC_0026545,mel,histo,55.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026545.jpg
+HAM_0000369,ISIC_0029400,nv,follow_up,55.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029400.jpg
+HAM_0001432,ISIC_0024393,nv,follow_up,80.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024393.jpg
+HAM_0004048,ISIC_0025203,nv,follow_up,55.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025203.jpg
+HAM_0000601,ISIC_0026578,nv,follow_up,40.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026578.jpg
+HAM_0001891,ISIC_0024466,nv,histo,50.0,male,scalp,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024466.jpg
+HAM_0004136,ISIC_0029787,nv,follow_up,55.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029787.jpg
+HAM_0003698,ISIC_0025518,nv,histo,40.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025518.jpg
+HAM_0004808,ISIC_0029078,nv,follow_up,60.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029078.jpg
+HAM_0002965,ISIC_0026446,bkl,consensus,75.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026446.jpg
+HAM_0000552,ISIC_0026083,akiec,histo,55.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026083.jpg
+HAM_0005810,ISIC_0030469,nv,follow_up,45.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030469.jpg
+HAM_0002410,ISIC_0026639,nv,follow_up,45.0,female,genital,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026639.jpg
+HAM_0006799,ISIC_0033501,nv,histo,25.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033501.jpg
+HAM_0002205,ISIC_0026217,nv,histo,35.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026217.jpg
+HAM_0000019,ISIC_0025396,nv,histo,50.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025396.jpg
+HAM_0000049,ISIC_0029130,df,consensus,70.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029130.jpg
+HAM_0007386,ISIC_0024568,nv,follow_up,40.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024568.jpg
+HAM_0002452,ISIC_0024491,nv,follow_up,70.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024491.jpg
+HAM_0007532,ISIC_0024662,vasc,consensus,75.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024662.jpg
+HAM_0005486,ISIC_0024565,nv,follow_up,45.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024565.jpg
+HAM_0005540,ISIC_0024525,mel,histo,65.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024525.jpg
+HAM_0000044,ISIC_0025152,nv,histo,70.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025152.jpg
+HAM_0007003,ISIC_0032363,nv,histo,20.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032363.jpg
+HAM_0006113,ISIC_0031696,nv,follow_up,35.0,female,genital,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031696.jpg
+HAM_0002893,ISIC_0025037,nv,follow_up,75.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025037.jpg
+HAM_0006816,ISIC_0026254,df,consensus,45.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026254.jpg
+HAM_0006458,ISIC_0027578,nv,histo,80.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027578.jpg
+HAM_0004518,ISIC_0031960,nv,histo,35.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031960.jpg
+HAM_0002538,ISIC_0030770,vasc,histo,65.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030770.jpg
+HAM_0006186,ISIC_0029320,bkl,consensus,0.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029320.jpg
+HAM_0006900,ISIC_0030080,mel,histo,75.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030080.jpg
+HAM_0001602,ISIC_0032458,nv,follow_up,55.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032458.jpg
+HAM_0003424,ISIC_0033552,nv,histo,45.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033552.jpg
+HAM_0007556,ISIC_0028893,nv,follow_up,35.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028893.jpg
+HAM_0000118,ISIC_0027419,bkl,histo,80.0,male,scalp,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027419.jpg
+HAM_0001828,ISIC_0030692,nv,follow_up,70.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030692.jpg
+HAM_0007032,ISIC_0034294,mel,histo,70.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034294.jpg
+HAM_0000738,ISIC_0027443,nv,follow_up,60.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027443.jpg
+HAM_0006023,ISIC_0025002,nv,follow_up,35.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025002.jpg
+HAM_0000195,ISIC_0028495,bcc,histo,50.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028495.jpg
+HAM_0006217,ISIC_0031043,akiec,histo,85.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031043.jpg
+HAM_0006104,ISIC_0026323,nv,histo,30.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026323.jpg
+HAM_0000004,ISIC_0024645,nv,follow_up,40.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024645.jpg
+HAM_0006643,ISIC_0033982,nv,consensus,,unknown,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033982.jpg
+HAM_0004784,ISIC_0029512,mel,histo,55.0,female,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029512.jpg
+HAM_0006926,ISIC_0030839,nv,histo,70.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030839.jpg
+HAM_0006512,ISIC_0030140,nv,histo,35.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030140.jpg
+HAM_0005793,ISIC_0024629,nv,follow_up,65.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024629.jpg
+HAM_0005451,ISIC_0029643,nv,follow_up,35.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029643.jpg
+HAM_0006150,ISIC_0031404,nv,histo,70.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031404.jpg
+HAM_0000101,ISIC_0032100,nv,follow_up,75.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032100.jpg
+HAM_0006298,ISIC_0030613,nv,follow_up,40.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030613.jpg
+HAM_0000439,ISIC_0034137,nv,histo,65.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034137.jpg
+HAM_0006372,ISIC_0032820,nv,histo,35.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032820.jpg
+HAM_0007245,ISIC_0032870,mel,histo,85.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032870.jpg
+HAM_0003770,ISIC_0034175,bkl,histo,80.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034175.jpg
+HAM_0000854,ISIC_0029534,nv,histo,65.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029534.jpg
+HAM_0005275,ISIC_0028749,bkl,histo,65.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028749.jpg
+HAM_0006201,ISIC_0030801,bkl,histo,55.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030801.jpg
+HAM_0000981,ISIC_0024311,nv,follow_up,75.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024311.jpg
+HAM_0002298,ISIC_0031483,nv,histo,25.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031483.jpg
+HAM_0004402,ISIC_0025397,nv,follow_up,45.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025397.jpg
+HAM_0001893,ISIC_0025110,nv,follow_up,40.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025110.jpg
+HAM_0002003,ISIC_0031934,nv,histo,20.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031934.jpg
+HAM_0007355,ISIC_0026803,bkl,confocal,45.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026803.jpg
+HAM_0004039,ISIC_0026383,nv,follow_up,80.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026383.jpg
+HAM_0002063,ISIC_0024819,nv,follow_up,70.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024819.jpg
+HAM_0003459,ISIC_0025697,nv,follow_up,50.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025697.jpg
+HAM_0001040,ISIC_0033237,nv,histo,70.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033237.jpg
+HAM_0005463,ISIC_0028411,bkl,consensus,45.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028411.jpg
+HAM_0005996,ISIC_0031338,nv,follow_up,55.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031338.jpg
+HAM_0003881,ISIC_0029061,bkl,consensus,70.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029061.jpg
+HAM_0000234,ISIC_0032431,nv,follow_up,65.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032431.jpg
+HAM_0000322,ISIC_0033942,mel,histo,65.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033942.jpg
+HAM_0001164,ISIC_0027118,df,histo,50.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027118.jpg
+HAM_0006879,ISIC_0029573,akiec,histo,70.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029573.jpg
+HAM_0001642,ISIC_0028490,bkl,confocal,65.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028490.jpg
+HAM_0003357,ISIC_0032912,nv,consensus,45.0,female,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032912.jpg
+HAM_0000918,ISIC_0029133,akiec,histo,65.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029133.jpg
+HAM_0001920,ISIC_0029486,vasc,histo,55.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029486.jpg
+HAM_0002824,ISIC_0025987,mel,histo,25.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025987.jpg
+HAM_0000795,ISIC_0033468,bcc,histo,80.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033468.jpg
+HAM_0002946,ISIC_0031663,nv,histo,40.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031663.jpg
+HAM_0005312,ISIC_0034231,nv,histo,20.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034231.jpg
+HAM_0006636,ISIC_0028051,mel,histo,45.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028051.jpg
+HAM_0001046,ISIC_0032951,nv,histo,40.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032951.jpg
+HAM_0002641,ISIC_0034077,nv,histo,40.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034077.jpg
+HAM_0004991,ISIC_0028809,nv,histo,65.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028809.jpg
+HAM_0007302,ISIC_0028302,nv,follow_up,35.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028302.jpg
+HAM_0006488,ISIC_0031066,nv,follow_up,60.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031066.jpg
+HAM_0002295,ISIC_0025488,nv,histo,40.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025488.jpg
+HAM_0005614,ISIC_0030397,nv,histo,35.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030397.jpg
+HAM_0003762,ISIC_0024736,nv,follow_up,40.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024736.jpg
+HAM_0005831,ISIC_0026418,nv,follow_up,50.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026418.jpg
+HAM_0006484,ISIC_0027244,nv,histo,55.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027244.jpg
+HAM_0006654,ISIC_0033910,bkl,histo,75.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033910.jpg
+HAM_0006757,ISIC_0024497,nv,histo,55.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024497.jpg
+HAM_0002233,ISIC_0025774,nv,follow_up,45.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025774.jpg
+HAM_0005220,ISIC_0025479,nv,follow_up,35.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025479.jpg
+HAM_0000509,ISIC_0026027,nv,histo,50.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026027.jpg
+HAM_0000460,ISIC_0025197,vasc,consensus,50.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025197.jpg
+HAM_0004093,ISIC_0030562,nv,follow_up,50.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030562.jpg
+HAM_0001647,ISIC_0033730,mel,histo,70.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033730.jpg
+HAM_0000591,ISIC_0026654,nv,histo,70.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026654.jpg
+HAM_0004321,ISIC_0033479,mel,histo,40.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033479.jpg
+HAM_0002358,ISIC_0028650,bkl,histo,85.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028650.jpg
+HAM_0000872,ISIC_0029323,bcc,histo,75.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029323.jpg
+HAM_0002510,ISIC_0031124,nv,follow_up,35.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031124.jpg
+HAM_0006822,ISIC_0030350,nv,histo,30.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030350.jpg
+HAM_0000483,ISIC_0033643,mel,histo,70.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033643.jpg
+HAM_0001466,ISIC_0027850,bkl,histo,75.0,male,ear,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027850.jpg
+HAM_0006011,ISIC_0034150,mel,histo,85.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034150.jpg
+HAM_0006681,ISIC_0030219,nv,histo,70.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030219.jpg
+HAM_0005372,ISIC_0030476,nv,follow_up,55.0,female,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030476.jpg
+HAM_0003506,ISIC_0033336,mel,histo,70.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033336.jpg
+HAM_0003442,ISIC_0027929,nv,follow_up,45.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027929.jpg
+HAM_0003345,ISIC_0024834,nv,histo,70.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024834.jpg
+HAM_0002956,ISIC_0032993,mel,histo,35.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032993.jpg
+HAM_0003292,ISIC_0029173,nv,follow_up,65.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029173.jpg
+HAM_0006633,ISIC_0028598,nv,histo,40.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028598.jpg
+HAM_0004085,ISIC_0028471,nv,follow_up,55.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028471.jpg
+HAM_0004254,ISIC_0027030,mel,histo,65.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027030.jpg
+HAM_0003365,ISIC_0033890,nv,consensus,45.0,female,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033890.jpg
+HAM_0003073,ISIC_0033444,mel,histo,50.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033444.jpg
+HAM_0002306,ISIC_0027606,bkl,histo,65.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027606.jpg
+HAM_0003082,ISIC_0029579,nv,follow_up,30.0,female,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029579.jpg
+HAM_0005389,ISIC_0031012,akiec,histo,70.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031012.jpg
+HAM_0003035,ISIC_0024617,nv,consensus,10.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024617.jpg
+HAM_0001245,ISIC_0031168,bkl,histo,60.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031168.jpg
+HAM_0007596,ISIC_0033223,nv,consensus,20.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033223.jpg
+HAM_0000231,ISIC_0024608,nv,histo,55.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024608.jpg
+HAM_0005059,ISIC_0034027,nv,consensus,70.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034027.jpg
+HAM_0003789,ISIC_0031277,bkl,confocal,55.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031277.jpg
+HAM_0001926,ISIC_0032414,bcc,histo,75.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032414.jpg
+HAM_0006972,ISIC_0031832,nv,histo,75.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031832.jpg
+HAM_0004501,ISIC_0028856,bkl,histo,65.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028856.jpg
+HAM_0004114,ISIC_0026844,bkl,histo,75.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026844.jpg
+HAM_0004226,ISIC_0032760,nv,histo,25.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032760.jpg
+HAM_0000016,ISIC_0029142,nv,follow_up,55.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029142.jpg
+HAM_0004460,ISIC_0028784,nv,follow_up,65.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028784.jpg
+HAM_0002609,ISIC_0029318,mel,histo,60.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029318.jpg
+HAM_0005512,ISIC_0025194,nv,follow_up,35.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025194.jpg
+HAM_0005087,ISIC_0024765,nv,follow_up,45.0,female,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024765.jpg
+HAM_0001141,ISIC_0028918,nv,histo,25.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028918.jpg
+HAM_0002703,ISIC_0025402,nv,histo,70.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025402.jpg
+HAM_0004202,ISIC_0033623,nv,consensus,40.0,female,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033623.jpg
+HAM_0004604,ISIC_0027133,nv,consensus,5.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027133.jpg
+HAM_0000439,ISIC_0034307,nv,histo,65.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034307.jpg
+HAM_0002701,ISIC_0026764,nv,histo,55.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026764.jpg
+HAM_0005279,ISIC_0030322,nv,follow_up,45.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030322.jpg
+HAM_0004149,ISIC_0033880,nv,histo,45.0,female,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033880.jpg
+HAM_0007357,ISIC_0031265,nv,follow_up,40.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031265.jpg
+HAM_0007035,ISIC_0030332,nv,follow_up,55.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030332.jpg
+HAM_0003681,ISIC_0032907,nv,consensus,20.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032907.jpg
+HAM_0003643,ISIC_0027923,nv,follow_up,50.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027923.jpg
+HAM_0006711,ISIC_0029986,nv,histo,70.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029986.jpg
+HAM_0004275,ISIC_0026921,nv,histo,70.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026921.jpg
+HAM_0001358,ISIC_0033674,nv,histo,50.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033674.jpg
+HAM_0006663,ISIC_0033482,bkl,histo,85.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033482.jpg
+HAM_0004009,ISIC_0024856,nv,follow_up,75.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024856.jpg
+HAM_0003072,ISIC_0033499,bcc,histo,85.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033499.jpg
+HAM_0002197,ISIC_0028709,mel,histo,50.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028709.jpg
+HAM_0000386,ISIC_0026787,bkl,histo,65.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026787.jpg
+HAM_0002140,ISIC_0032472,nv,follow_up,45.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032472.jpg
+HAM_0003466,ISIC_0033038,mel,histo,70.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033038.jpg
+HAM_0002300,ISIC_0024366,nv,histo,35.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024366.jpg
+HAM_0007192,ISIC_0030558,nv,follow_up,35.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030558.jpg
+HAM_0002652,ISIC_0024934,nv,histo,25.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024934.jpg
+HAM_0002337,ISIC_0029949,nv,follow_up,55.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029949.jpg
+HAM_0005840,ISIC_0032260,nv,histo,45.0,female,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032260.jpg
+HAM_0003458,ISIC_0024623,bkl,histo,85.0,female,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024623.jpg
+HAM_0000042,ISIC_0033981,mel,histo,45.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033981.jpg
+HAM_0004781,ISIC_0025025,nv,follow_up,35.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025025.jpg
+HAM_0000113,ISIC_0029548,bkl,histo,75.0,female,hand,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029548.jpg
+HAM_0006733,ISIC_0024804,nv,follow_up,55.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024804.jpg
+HAM_0002611,ISIC_0026192,bcc,histo,70.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026192.jpg
+HAM_0006587,ISIC_0025780,akiec,histo,70.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025780.jpg
+HAM_0003503,ISIC_0027555,nv,follow_up,60.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027555.jpg
+HAM_0005360,ISIC_0027264,nv,histo,50.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027264.jpg
+HAM_0001406,ISIC_0030914,nv,histo,25.0,female,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030914.jpg
+HAM_0003657,ISIC_0026740,nv,follow_up,65.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026740.jpg
+HAM_0006129,ISIC_0029560,nv,histo,45.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029560.jpg
+HAM_0004772,ISIC_0027223,nv,follow_up,35.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027223.jpg
+HAM_0004359,ISIC_0025087,nv,follow_up,50.0,female,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025087.jpg
+HAM_0005631,ISIC_0025492,nv,histo,55.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025492.jpg
+HAM_0003755,ISIC_0033489,nv,consensus,35.0,male,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033489.jpg
+HAM_0001818,ISIC_0025620,nv,histo,30.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025620.jpg
+HAM_0000752,ISIC_0026419,nv,histo,15.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026419.jpg
+HAM_0003985,ISIC_0025570,nv,follow_up,40.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025570.jpg
+HAM_0003392,ISIC_0030240,bkl,histo,70.0,male,scalp,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030240.jpg
+HAM_0003170,ISIC_0029631,nv,follow_up,50.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029631.jpg
+HAM_0004423,ISIC_0030318,bkl,histo,65.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030318.jpg
+HAM_0004524,ISIC_0030273,nv,histo,75.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030273.jpg
+HAM_0005273,ISIC_0025065,nv,consensus,30.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025065.jpg
+HAM_0000698,ISIC_0027431,nv,consensus,,male,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027431.jpg
+HAM_0001842,ISIC_0028359,nv,follow_up,45.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028359.jpg
+HAM_0006469,ISIC_0024479,nv,consensus,5.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024479.jpg
+HAM_0002249,ISIC_0029520,nv,follow_up,65.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029520.jpg
+HAM_0006601,ISIC_0031511,bkl,consensus,80.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031511.jpg
+HAM_0005263,ISIC_0034163,nv,consensus,40.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034163.jpg
+HAM_0001597,ISIC_0026265,bkl,histo,50.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026265.jpg
+HAM_0001137,ISIC_0029359,nv,histo,60.0,female,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029359.jpg
+HAM_0003164,ISIC_0027897,nv,histo,30.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027897.jpg
+HAM_0002901,ISIC_0028722,nv,follow_up,40.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028722.jpg
+HAM_0007013,ISIC_0029544,nv,histo,85.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029544.jpg
+HAM_0006637,ISIC_0033435,nv,histo,30.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033435.jpg
+HAM_0003869,ISIC_0025766,mel,histo,50.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025766.jpg
+HAM_0003341,ISIC_0027212,nv,follow_up,55.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027212.jpg
+HAM_0001757,ISIC_0025049,nv,histo,65.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025049.jpg
+HAM_0002618,ISIC_0027705,nv,follow_up,35.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027705.jpg
+HAM_0003105,ISIC_0026388,akiec,histo,75.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026388.jpg
+HAM_0000059,ISIC_0027822,mel,histo,85.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027822.jpg
+HAM_0007075,ISIC_0032195,nv,histo,50.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032195.jpg
+HAM_0000916,ISIC_0032167,nv,follow_up,45.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032167.jpg
+HAM_0005498,ISIC_0032335,bkl,histo,80.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032335.jpg
+HAM_0003271,ISIC_0031850,nv,follow_up,50.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031850.jpg
+HAM_0005028,ISIC_0031190,nv,follow_up,55.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031190.jpg
+HAM_0000851,ISIC_0025074,nv,histo,50.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025074.jpg
+HAM_0000505,ISIC_0024902,nv,consensus,25.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024902.jpg
+HAM_0000208,ISIC_0033509,bkl,consensus,70.0,male,scalp,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033509.jpg
+HAM_0002150,ISIC_0027364,nv,histo,25.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027364.jpg
+HAM_0005381,ISIC_0031598,mel,histo,45.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031598.jpg
+HAM_0007331,ISIC_0031752,nv,follow_up,50.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031752.jpg
+HAM_0004070,ISIC_0027657,nv,follow_up,40.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027657.jpg
+HAM_0004277,ISIC_0026472,nv,follow_up,50.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026472.jpg
+HAM_0005084,ISIC_0027261,mel,histo,75.0,male,ear,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027261.jpg
+HAM_0002774,ISIC_0029683,bkl,histo,65.0,male,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029683.jpg
+HAM_0004191,ISIC_0032562,nv,consensus,40.0,female,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032562.jpg
+HAM_0005147,ISIC_0029076,nv,follow_up,80.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029076.jpg
+HAM_0003191,ISIC_0029524,bcc,histo,65.0,female,hand,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029524.jpg
+HAM_0005747,ISIC_0027105,mel,histo,45.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027105.jpg
+HAM_0003924,ISIC_0030569,nv,follow_up,80.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030569.jpg
+HAM_0004069,ISIC_0029589,nv,histo,70.0,male,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029589.jpg
+HAM_0007200,ISIC_0026304,nv,follow_up,50.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026304.jpg
+HAM_0001442,ISIC_0034053,nv,consensus,40.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034053.jpg
+HAM_0001506,ISIC_0033061,mel,histo,25.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033061.jpg
+HAM_0000038,ISIC_0026057,nv,follow_up,45.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026057.jpg
+HAM_0003137,ISIC_0033233,nv,histo,40.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033233.jpg
+HAM_0005877,ISIC_0029204,nv,follow_up,50.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029204.jpg
+HAM_0001881,ISIC_0032340,nv,histo,20.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032340.jpg
+HAM_0002709,ISIC_0025773,nv,follow_up,70.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025773.jpg
+HAM_0005682,ISIC_0028770,nv,follow_up,50.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028770.jpg
+HAM_0001691,ISIC_0029264,nv,follow_up,75.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029264.jpg
+HAM_0000632,ISIC_0031070,nv,histo,25.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031070.jpg
+HAM_0001724,ISIC_0027386,nv,follow_up,45.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027386.jpg
+HAM_0001760,ISIC_0024389,nv,follow_up,45.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024389.jpg
+HAM_0003127,ISIC_0024658,nv,histo,35.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024658.jpg
+HAM_0002997,ISIC_0029972,nv,follow_up,35.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029972.jpg
+HAM_0001811,ISIC_0028579,mel,histo,35.0,female,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028579.jpg
+HAM_0004224,ISIC_0027194,bkl,confocal,80.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027194.jpg
+HAM_0004792,ISIC_0031604,nv,follow_up,50.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031604.jpg
+HAM_0003176,ISIC_0030756,mel,histo,85.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030756.jpg
+HAM_0004659,ISIC_0027993,nv,follow_up,60.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027993.jpg
+HAM_0004949,ISIC_0033883,mel,histo,55.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033883.jpg
+HAM_0000641,ISIC_0027477,nv,follow_up,60.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027477.jpg
+HAM_0003703,ISIC_0030468,nv,follow_up,50.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030468.jpg
+HAM_0007168,ISIC_0028115,nv,histo,15.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028115.jpg
+HAM_0000208,ISIC_0032681,bkl,consensus,70.0,male,scalp,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032681.jpg
+HAM_0004937,ISIC_0026988,bcc,histo,60.0,male,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026988.jpg
+HAM_0006675,ISIC_0032846,nv,histo,65.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032846.jpg
+HAM_0001680,ISIC_0030125,nv,histo,55.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030125.jpg
+HAM_0006450,ISIC_0028724,nv,follow_up,45.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028724.jpg
+HAM_0004600,ISIC_0028865,nv,histo,45.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028865.jpg
+HAM_0006909,ISIC_0031777,nv,follow_up,45.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031777.jpg
+HAM_0003484,ISIC_0028003,mel,histo,30.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028003.jpg
+HAM_0004976,ISIC_0028499,akiec,histo,80.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028499.jpg
+HAM_0001466,ISIC_0031633,bkl,histo,75.0,male,ear,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031633.jpg
+HAM_0002590,ISIC_0025010,nv,follow_up,70.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025010.jpg
+HAM_0007504,ISIC_0026359,nv,histo,60.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026359.jpg
+HAM_0004459,ISIC_0029971,nv,follow_up,55.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029971.jpg
+HAM_0003272,ISIC_0027979,nv,follow_up,30.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027979.jpg
+HAM_0005045,ISIC_0030701,nv,follow_up,40.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030701.jpg
+HAM_0007531,ISIC_0030837,nv,follow_up,45.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030837.jpg
+HAM_0006535,ISIC_0032069,nv,follow_up,45.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032069.jpg
+HAM_0003572,ISIC_0029817,nv,follow_up,25.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029817.jpg
+HAM_0006206,ISIC_0030438,nv,follow_up,40.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030438.jpg
+HAM_0005566,ISIC_0032746,nv,histo,70.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032746.jpg
+HAM_0003256,ISIC_0028218,mel,histo,60.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028218.jpg
+HAM_0004656,ISIC_0027475,nv,histo,45.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027475.jpg
+HAM_0007514,ISIC_0028118,nv,histo,80.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028118.jpg
+HAM_0007157,ISIC_0030600,nv,follow_up,35.0,male,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030600.jpg
+HAM_0000434,ISIC_0031635,nv,follow_up,45.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031635.jpg
+HAM_0007588,ISIC_0031728,bcc,histo,55.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031728.jpg
+HAM_0005040,ISIC_0033805,mel,histo,40.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033805.jpg
+HAM_0005335,ISIC_0028389,bkl,histo,40.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028389.jpg
+HAM_0007389,ISIC_0029090,nv,follow_up,45.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029090.jpg
+HAM_0001469,ISIC_0029289,bkl,histo,60.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029289.jpg
+HAM_0005023,ISIC_0031805,nv,follow_up,40.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031805.jpg
+HAM_0000579,ISIC_0034112,nv,histo,30.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034112.jpg
+HAM_0001731,ISIC_0028172,nv,follow_up,55.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028172.jpg
+HAM_0004791,ISIC_0032538,vasc,histo,80.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032538.jpg
+HAM_0003356,ISIC_0032572,nv,consensus,45.0,female,unknown,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032572.jpg
+HAM_0003981,ISIC_0025731,bcc,histo,65.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025731.jpg
+HAM_0005436,ISIC_0026658,nv,histo,65.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026658.jpg
+HAM_0006009,ISIC_0026174,bkl,consensus,65.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026174.jpg
+HAM_0002523,ISIC_0024516,mel,histo,40.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024516.jpg
+HAM_0000711,ISIC_0029387,nv,follow_up,80.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029387.jpg
+HAM_0006253,ISIC_0028291,mel,histo,65.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028291.jpg
+HAM_0005683,ISIC_0025416,nv,follow_up,50.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025416.jpg
+HAM_0007332,ISIC_0027780,bkl,histo,70.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027780.jpg
+HAM_0006539,ISIC_0032516,nv,histo,40.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032516.jpg
+HAM_0005193,ISIC_0026742,nv,consensus,50.0,female,ear,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026742.jpg
+HAM_0007511,ISIC_0024333,mel,histo,85.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024333.jpg
+HAM_0002108,ISIC_0025457,nv,follow_up,50.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025457.jpg
+HAM_0007496,ISIC_0028083,nv,follow_up,55.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028083.jpg
+HAM_0001956,ISIC_0030038,nv,consensus,30.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030038.jpg
+HAM_0002726,ISIC_0025473,nv,consensus,5.0,male,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025473.jpg
+HAM_0002955,ISIC_0029212,mel,histo,75.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029212.jpg
+HAM_0007014,ISIC_0027798,nv,histo,45.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027798.jpg
+HAM_0000835,ISIC_0024409,bkl,confocal,55.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024409.jpg
+HAM_0003077,ISIC_0031230,nv,follow_up,40.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031230.jpg
+HAM_0001916,ISIC_0033537,nv,consensus,20.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033537.jpg
+HAM_0004167,ISIC_0033753,nv,histo,15.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033753.jpg
+HAM_0003086,ISIC_0032349,akiec,histo,60.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032349.jpg
+HAM_0001640,ISIC_0031026,bcc,histo,65.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031026.jpg
+HAM_0005642,ISIC_0030223,mel,histo,70.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030223.jpg
+HAM_0005563,ISIC_0029784,nv,follow_up,50.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029784.jpg
+HAM_0002368,ISIC_0024841,nv,histo,60.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024841.jpg
+HAM_0003860,ISIC_0025669,nv,follow_up,35.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025669.jpg
+HAM_0003504,ISIC_0028075,mel,histo,55.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028075.jpg
+HAM_0003866,ISIC_0025046,bcc,histo,65.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025046.jpg
+HAM_0000947,ISIC_0025959,nv,histo,55.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025959.jpg
+HAM_0001783,ISIC_0029256,nv,follow_up,50.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029256.jpg
+HAM_0005767,ISIC_0030975,nv,follow_up,35.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030975.jpg
+HAM_0004330,ISIC_0030555,df,histo,70.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030555.jpg
+HAM_0004007,ISIC_0027596,nv,histo,35.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027596.jpg
+HAM_0001679,ISIC_0027783,nv,histo,50.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027783.jpg
+HAM_0002959,ISIC_0025362,bcc,histo,65.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025362.jpg
+HAM_0006323,ISIC_0029465,nv,histo,75.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029465.jpg
+HAM_0003558,ISIC_0026989,mel,histo,55.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026989.jpg
+HAM_0002296,ISIC_0026834,nv,consensus,35.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026834.jpg
+HAM_0000823,ISIC_0032894,bcc,histo,75.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032894.jpg
+HAM_0002326,ISIC_0027346,nv,histo,55.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027346.jpg
+HAM_0000982,ISIC_0032356,akiec,histo,60.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032356.jpg
+HAM_0005433,ISIC_0033298,nv,histo,55.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033298.jpg
+HAM_0007541,ISIC_0032540,nv,histo,30.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032540.jpg
+HAM_0002065,ISIC_0028776,nv,follow_up,55.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028776.jpg
+HAM_0002067,ISIC_0025094,nv,histo,50.0,male,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025094.jpg
+HAM_0004166,ISIC_0028313,nv,follow_up,45.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028313.jpg
+HAM_0002099,ISIC_0026847,mel,histo,65.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026847.jpg
+HAM_0007385,ISIC_0025043,nv,histo,30.0,male,scalp,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025043.jpg
+HAM_0003219,ISIC_0024737,nv,follow_up,50.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024737.jpg
+HAM_0000266,ISIC_0030209,nv,histo,45.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030209.jpg
+HAM_0000067,ISIC_0034153,nv,histo,50.0,female,ear,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034153.jpg
+HAM_0003947,ISIC_0033544,nv,histo,55.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033544.jpg
+HAM_0005351,ISIC_0033549,nv,histo,20.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033549.jpg
+HAM_0006128,ISIC_0028701,bkl,histo,55.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028701.jpg
+HAM_0001940,ISIC_0028502,nv,follow_up,45.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028502.jpg
+HAM_0007540,ISIC_0032118,nv,follow_up,45.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032118.jpg
+HAM_0002006,ISIC_0025360,nv,follow_up,50.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025360.jpg
+HAM_0005352,ISIC_0027100,mel,histo,75.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027100.jpg
+HAM_0003162,ISIC_0033529,bkl,histo,75.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033529.jpg
+HAM_0007500,ISIC_0027435,bkl,confocal,70.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027435.jpg
+HAM_0000083,ISIC_0028622,bkl,confocal,60.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028622.jpg
+HAM_0005265,ISIC_0032998,nv,histo,45.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032998.jpg
+HAM_0001375,ISIC_0026238,nv,follow_up,45.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026238.jpg
+HAM_0007480,ISIC_0024406,nv,histo,35.0,male,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024406.jpg
+HAM_0000949,ISIC_0032444,nv,histo,65.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032444.jpg
+HAM_0004011,ISIC_0033023,mel,histo,80.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033023.jpg
+HAM_0003328,ISIC_0026453,bcc,histo,55.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026453.jpg
+HAM_0003183,ISIC_0027017,bkl,histo,75.0,male,neck,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027017.jpg
+HAM_0000085,ISIC_0028421,nv,follow_up,45.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028421.jpg
+HAM_0003792,ISIC_0029069,nv,follow_up,30.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029069.jpg
+HAM_0004858,ISIC_0032239,nv,follow_up,50.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032239.jpg
+HAM_0005299,ISIC_0032732,bkl,histo,55.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032732.jpg
+HAM_0003019,ISIC_0032001,nv,follow_up,30.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032001.jpg
+HAM_0000365,ISIC_0026534,nv,follow_up,70.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026534.jpg
+HAM_0001881,ISIC_0024620,nv,histo,20.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024620.jpg
+HAM_0001928,ISIC_0033287,mel,histo,55.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033287.jpg
+HAM_0000452,ISIC_0029048,bkl,consensus,45.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029048.jpg
+HAM_0005047,ISIC_0029105,nv,follow_up,45.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0029105.jpg
+HAM_0005256,ISIC_0033728,mel,histo,80.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033728.jpg
+HAM_0003589,ISIC_0025403,nv,follow_up,45.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025403.jpg
+HAM_0005011,ISIC_0026393,vasc,consensus,80.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026393.jpg
+HAM_0001304,ISIC_0028328,nv,follow_up,40.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028328.jpg
+HAM_0004113,ISIC_0034165,bkl,consensus,55.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034165.jpg
+HAM_0001417,ISIC_0032382,bkl,histo,55.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032382.jpg
+HAM_0006088,ISIC_0028760,mel,histo,30.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028760.jpg
+HAM_0006222,ISIC_0025069,akiec,histo,75.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025069.jpg
+HAM_0006323,ISIC_0024680,nv,histo,75.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024680.jpg
+HAM_0000967,ISIC_0025539,akiec,histo,75.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025539.jpg
+HAM_0003116,ISIC_0030453,nv,follow_up,30.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030453.jpg
+HAM_0004415,ISIC_0024532,nv,follow_up,40.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024532.jpg
+HAM_0001072,ISIC_0026041,nv,follow_up,45.0,female,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026041.jpg
+HAM_0001229,ISIC_0032401,nv,follow_up,25.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032401.jpg
+HAM_0007087,ISIC_0031425,nv,follow_up,40.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031425.jpg
+HAM_0005063,ISIC_0030419,nv,follow_up,60.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030419.jpg
+HAM_0007025,ISIC_0029963,nv,histo,20.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029963.jpg
+HAM_0004234,ISIC_0025984,bkl,histo,85.0,female,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025984.jpg
+HAM_0003342,ISIC_0027726,nv,follow_up,60.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027726.jpg
+HAM_0004434,ISIC_0024744,nv,follow_up,50.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0024744.jpg
+HAM_0007021,ISIC_0034092,mel,histo,65.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0034092.jpg
+HAM_0001006,ISIC_0027602,nv,follow_up,40.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027602.jpg
+HAM_0001772,ISIC_0032636,bkl,consensus,85.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032636.jpg
+HAM_0002403,ISIC_0028612,nv,follow_up,75.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028612.jpg
+HAM_0002424,ISIC_0028104,bkl,histo,65.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028104.jpg
+HAM_0006727,ISIC_0030197,bcc,histo,75.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030197.jpg
+HAM_0004899,ISIC_0027930,akiec,histo,60.0,male,scalp,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027930.jpg
+HAM_0005339,ISIC_0031618,nv,histo,35.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031618.jpg
+HAM_0007120,ISIC_0029782,nv,follow_up,60.0,male,trunk,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029782.jpg
+HAM_0001907,ISIC_0025513,bcc,histo,40.0,male,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025513.jpg
+HAM_0007419,ISIC_0029543,nv,histo,85.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029543.jpg
+HAM_0004627,ISIC_0031597,bcc,histo,85.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0031597.jpg
+HAM_0004041,ISIC_0026375,nv,follow_up,50.0,female,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026375.jpg
+HAM_0000719,ISIC_0027915,bcc,histo,80.0,male,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027915.jpg
+HAM_0006317,ISIC_0029934,nv,follow_up,50.0,female,abdomen,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0029934.jpg
+HAM_0000855,ISIC_0033897,nv,histo,45.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033897.jpg
+HAM_0000835,ISIC_0026530,bkl,confocal,55.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026530.jpg
+HAM_0000214,ISIC_0033364,nv,consensus,25.0,female,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033364.jpg
+HAM_0006533,ISIC_0028497,bkl,consensus,80.0,male,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028497.jpg
+HAM_0003943,ISIC_0025973,bkl,histo,80.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025973.jpg
+HAM_0004594,ISIC_0032418,nv,follow_up,55.0,female,back,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032418.jpg
+HAM_0002112,ISIC_0030820,nv,follow_up,55.0,male,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0030820.jpg
+HAM_0006553,ISIC_0026942,nv,consensus,20.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0026942.jpg
+HAM_0002313,ISIC_0025530,bcc,histo,80.0,female,foot,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025530.jpg
+HAM_0002800,ISIC_0027089,mel,histo,55.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0027089.jpg
+HAM_0004284,ISIC_0032709,mel,histo,80.0,female,face,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032709.jpg
+HAM_0000284,ISIC_0025597,nv,histo,50.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0025597.jpg
+HAM_0007415,ISIC_0032541,nv,histo,35.0,female,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032541.jpg
+HAM_0000521,ISIC_0032148,nv,histo,55.0,male,chest,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0032148.jpg
+HAM_0002814,ISIC_0028140,nv,follow_up,50.0,male,lower extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_1/ISIC_0028140.jpg
+HAM_0004716,ISIC_0033282,nv,histo,40.0,female,upper extremity,/mnt/1080356580355308/Big_data_final_project/skin_lesion_v2/data/raw/HAM10000_images_part_2/ISIC_0033282.jpg
