@@ -1,5 +1,5 @@
 """
-dashboard/app.py  ·  DermiAI  ·  Skin Lesion Analysis Platform
+dashboard/app.py  ·  DermiAI  ·  Skin Lesion Analysis
 Run:  streamlit run dashboard/app.py
 """
 import sys
