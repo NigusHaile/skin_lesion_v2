@@ -1,5 +1,5 @@
 """
-dashboard/app.py  ·  DermiAI  ·  Skin Lesion Analysis
+dashboard/app.py | DermiAI | Skin Lesion Analysis
 Run:  streamlit run dashboard/app.py
 """
 import sys
@@ -801,7 +801,6 @@ def _skin_error_ui(reason: str) -> None:
       </div>
     </div>""", unsafe_allow_html=True)
 
-
 def _strip(sd: dict) -> dict:
     return {k.removeprefix("_orig_mod."): v for k, v in sd.items()} \
            if any(k.startswith("_orig_mod.") for k in sd) else sd
@@ -955,10 +954,7 @@ with st.sidebar:
 
     st.divider()
 
-    
-# ═════════════════════════
 # PAGE 1 — Single Diagnosis
-# ═════════════════════════
 def render_single_diagnosis():
     page_banner("🩺", "Single Diagnosis",
                 "Upload a dermoscopy image for AI-assisted lesion classification")
@@ -1017,7 +1013,7 @@ def render_single_diagnosis():
         risk = RISK_LEVELS[lbl]
         conf = float(probs[pred_idx])
 
-        # ── Actual vs Predicted comparison (testing mode) ──────────────────
+        # Actual vs Predicted comparison (testing mode)
         if actual_lbl is not None:
             actual_name    = CLASS_NAMES[CLASS_LABELS.index(actual_lbl)]
             correct        = actual_lbl == lbl
@@ -1051,7 +1047,7 @@ def render_single_diagnosis():
               </div>
             </div>""", unsafe_allow_html=True)
 
-        # ── Prediction card ────────────────────────────────────────────────
+        # Prediction card
         st.markdown(f"""
         <div class="pred-card {RISK_CSS.get(risk,'low')}">
           <div class="pred-name">{name}</div>
@@ -1089,7 +1085,7 @@ def render_single_diagnosis():
             </div>""", unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
 
-        # ── Clinical Recommendations ───────────────────────────────────────
+        # Clinical Recommendations
         rec = CLINICAL_RECOMMENDATIONS.get(lbl, {})
         if rec:
             steps_html = "".join(
@@ -1114,9 +1110,7 @@ def render_single_diagnosis():
         </div>""", unsafe_allow_html=True)
 
 
-# ═══════════════════════════════
 # PAGE 2 — GradCAM Explainability
-# ═══════════════════════════════
 def render_gradcam():
     page_banner("🌡️", "GradCAM",
                 "Visualise which image regions drove the model's prediction")
@@ -1191,9 +1185,7 @@ def render_gradcam():
             st.markdown("**Clinical check**\n- ✅ Heat on lesion body/border = reliable\n- ⚠️ Heat on hair or background = artefact bias")
 
 
-# ═════════════════════════
 # PAGE 3 — Model Comparison
-# ═════════════════════════
 def render_comparison():
     page_banner("📊", "Model Comparison",
                 "All four architectures benchmarked on the held-out test set")
@@ -1297,10 +1289,7 @@ def render_comparison():
                     st.image(str(p), caption=dname, use_container_width=True)
                     st.markdown('</div>', unsafe_allow_html=True)
 
-
-# ═══════════════════════════
 # PAGE 4 — Embedding Explorer
-# ═══════════════════════════
 def render_embeddings():
     page_banner("🔵", "Embedding Explorer",
                 "Each dot = one test image · colour = ground-truth class label")
@@ -1357,10 +1346,7 @@ def render_embeddings():
         with eb:
             st.markdown("""**t-SNE** (non-linear)\n- Reveals local clusters\n- Best for class separation""")
 
-
-# ═════════════════════════
 # PAGE 5 — Batch Prediction
-# ═════════════════════════
 def render_batch():
     page_banner("📦", "Batch Prediction",
                 "Process multiple images at once · export results as CSV")
@@ -1510,10 +1496,7 @@ def render_batch():
             fig.update_traces(marker_line_width=0, textfont_size=12)
             st.plotly_chart(fig, use_container_width=True)
 
-
-# ═════════════════════════
 # PAGE 6 — Ablation Studies
-# ═════════════════════════
 _MODEL_STUDY_MAP = {
 
     "ViT+LoRA": [
@@ -1616,7 +1599,6 @@ def _study_bar_chart(label_a: str, label_b: str,
     )
     fig.update_traces(marker_line_width=0)
     return fig
-
 
 def _learning_curve_chart(label_a: str, label_b: str,
                            hist_a: dict, hist_b: dict, title: str) -> go.Figure | None:
@@ -1926,10 +1908,7 @@ Each condition trains for up to **10 epochs** with patience-5 early stopping.
 Solid lines = Balanced Accuracy · Dotted lines = Macro F1 · Long-dashed lines = Macro Precision
         """)
 
-
-# ═════════==
 # Dispatcher
-# ══════════
 PAGE_HANDLERS = {
     PAGE_OPTIONS[0]: render_single_diagnosis,
     PAGE_OPTIONS[1]: render_batch,
@@ -1939,5 +1918,4 @@ PAGE_HANDLERS = {
     PAGE_OPTIONS[5]: render_embeddings,
 
 }
-
 PAGE_HANDLERS[selected_page]()
